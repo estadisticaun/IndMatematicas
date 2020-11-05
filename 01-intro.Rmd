@@ -19,3 +19,5 @@ knitr::kable(
 ```
 
 You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+
+Elaborar anualmente, teniendo en cuenta los informes presentados por las sedes y por las principales unidades académico-administrativas del Nivel Nacional de la Universidad, un informe sobre la gestión institucional en el año inmediatamente anterior, fundamentado esencialmente en los logros y avances del Plan Global de Desarrollo y su relación con el Plan Estratégico Institucional.
