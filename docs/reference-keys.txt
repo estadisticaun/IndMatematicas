@@ -1,0 +1,10 @@
+fig:nice-fig
+tab:nice-tab
+intro
+proporciones
+porcentaje
+methods
+applications
+example-one
+example-two
+final-words
