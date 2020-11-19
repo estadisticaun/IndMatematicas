@@ -1,8 +1,11 @@
-fig:nice-fig
-tab:nice-tab
 intro
-proporciones
+razón
+proporción
 porcentaje
+tasas
+tasa-de-variación
+razón-1
+porcentaje-1
 methods
 applications
 example-one
