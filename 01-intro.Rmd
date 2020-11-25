@@ -81,7 +81,9 @@ Dos razones forman una proporción sí y sólo si el producto de los extremos es
 $\frac{a}{b}=\frac{c}{d} \Longleftrightarrow  ad=bc.$ 
 Asimismo son equivalentes las siguientes expresiones en la interpretación de proporciones:
 
- $a=\frac{bc}{d} \Longleftrightarrow c=\frac{ad}{b}$
+ $$\begin{equation}
+ a=\frac{bc}{d} \Longleftrightarrow c=\frac{ad}{b}.
+ \end{equation}$$
 
 Esto implica que en ocasiones veremos a la proporción expresadas de esas maneras.  
 
@@ -93,20 +95,28 @@ Cuando al aumentar una de las cantidades y aumente proporcionalmente la otra dir
 Dos variables $x$ e $y$, son directamente proporcionales si existe una constante no nula $k$ tal que $y=kx$. Para $x\neq 0$ la constante de proporcionalidad $k$ puede expresarse como $k=yx$.
 
 Una proporcionalidad directa  puede verse como una ecuación lineal de la forma $y=mx+b$ con  $b=0$ y una pendiente $m=k$ . Esto corresponde al crecimiento lineal.
-```{r}
+```{r, echo=FALSE}
 x<- c(0:100)
 y<- c(0:100)
-plot(x,y,xlab='', ylab='', type='l',pch = 19, panel.first = grid())
+plot(x,y,xlab='', ylab='', main='Figura 1', type='l',pch = 19, panel.first = grid())
 ```
 
 **2. Proporcionalidad inversa:** 
 Dos variables, $x$ e $y$, son inversamente proporcionales si el del producto $xy$ es constante, es decir, $xy=k$, donde $k$ es la constante de proporcionalidad.
 La gráfica de dos variables que varían inversamente en el plano cartesiano de coordenadas es una hipérbola rectangular . El producto de las $x$  y $y$ entre cada punto de la curva es igual a la constante de proporcionalidad . Dado que ni $x$ y ni y pueden ser iguales a cero (porque k no es cero), la gráfica nunca cruza ninguno de los ejes.
 
+```{r, echo=FALSE}
+x<- c(-100:100)
+y<- 1/x
+plot(x,y,xlab='', ylab='', main='Figura 2', type='l',pch = 19, panel.first = grid())
+```
+
 ### Porcentaje
 Un porcentaje es la forma de expresar un número como partes de cada cien. Los porcentajes son el cociente o razón entre dos variables con una misma unidad de medida en el mismo periodo. De manera más clara, podemos construir indicadores de porcentaje aplicando la operación 
 
-$\frac{Numerador}{Denominador}\times 100$.
+$$\begin{equation}
+\frac{Numerador}{Denominador}\times 100.
+\end{equation}$$
 
 Algunos ejemplos son los siguientes 
 
@@ -119,39 +129,79 @@ Algunos ejemplos son los siguientes
 Adicional a esto, es importante mencionar los procedimientos en el cálculo de porcentajes: Por aplicación directa o por proporciones, los cuales sirven como ruta para determinar otros hallazgos del indicador. 
 - Por aplicación directa,  para el cálculo del $t\%$ de una cantidad $N$ y es hallado mediante la expresión :
 
-$\frac{t}{100}\times N$.
+$$\begin{equation}
+\frac{t}{100}\times N.
+\end{equation}$$
 
 
 Un claro ejemplo, es cuando se quiere comprar un artículo en descuento, este simple cálculo nos ayuda a determinar el precio final del artículo. 
 - Por  proporciones, es utilizado cuando se plantea una proporción asignando el $100\%$ al total y se calcula mediante la expresión:
 
-$\frac{t\%}{x}=\frac{100\%}{N}$
+$$\begin{equation}
+\frac{t\%}{x}=\frac{100\%}{N}
+\end{equation}$$
 
 En definitiva, un porcentaje es un ejemplo de proporcionalidad. Además note que 
 
-$\frac{t\%}{x}=\frac{100\%}{N}=k \Longleftrightarrow \frac{t\%}{x}=k \Longleftrightarrow t\%=kx$
+$$\begin{equation}
+\frac{t\%}{x}=\frac{100\%}{N}=k \Longleftrightarrow \frac{t\%}{x}=k \Longleftrightarrow t\%=kx
+\end{equation}$$
 
 es decir, es proporcionalmente directo.
 
 ### Tasas 
 Una tasa es una razón entre dos cantidades con unidades distintas. Si la tasa o la cantidad frente a la cual algo está cambiando no está especificada, usualmente la tasa es por unidad de tiempo.  Sin embargo, una tasa de cambio puede ser especificada por unidad de tiempo, por unidad de medida o masa o cualquier otra cantidad. Naturalmente para describir las unidades de una tasa, la palabra "por" se utiliza para poder separar las unidades de dos medidas utilizadas para calcular la tasa como por ejemplo, pesos por libra, metros por segundo, millas por hora, y días enfermo por año. De aquí es conveniente clasificar una tasa cuando *el denominador es una variable temporal* ó *cuando el denominador es un “stock” poblacional*.
 
-*1. cuando el denominador es una variable temporal*. Mide la frecuencia con la que, en un periodo de tiempo, aparece un suceso en una población. El cálculo de tasas se realiza dividiendo el total de eventos ocurridos en un periodo dado en una población entre el tiempo de observación en el que ocurrieron dichos eventos. Las tasas se expresan multiplicando el resultado obtenido por una potencia de 10, en particular con 100, con el fin de permitir rápidamente su comparación con otras hechos.
+*1. cuando el denominador es un “stock” poblacional*. Haciendo referencia a un “stock” poblacional como las poblaciones en un punto exacto del tiempo y tienen como fuentes los censos, padrones, estimaciones de población o encuestas. El cálculo es el cociente que resulta de dividir un número de acontecimientos sucedidos durante un periodo de tiempo por la población media existente durante ese periodo (stock). Algunos ejemplos clásicos son los siguientes
 
-$\frac{\text{Número de eventos sucedidos}}{\text{Periodo en que fueron observados}}\times 100$
+* *Tasa de natalidad:*
+$\frac{\text{Número de nacimientos en un periodo de tiempo}}{\text{Población media en ese periodo}}\times 10^n$
+
+
+El uso de la constante $10^n$, responde a la necesidad de comunicar el indicador de una manera comprensible y de fácil uso o recordación con el fin de permitir rápidamente su comparación con otras hechos. 
+
+|Ejemplo. *Tasa de natalidad de una población* |
+|--------------------------------------------------------------------|
+|En una población nacieron $73.010$ niños a la fecha frente a una población de $5'000.000$ habitantes. La tasa de natalidad a la fecha es $\frac{73.010}{5'000.000}\times 1.000=14,6$.|
+
+La tasa de natalidad será de $0,0146$. No obstante, al usar el factor de $1.000$ la cifra se presenta como "$14,6$ nacimientos por cada $1.000$ habitantes" lo cual es evidentemente más claro.
+
+* *Tasa de mortalidad:*
+$\frac{\text{Número de difunciones en un periodo de tiempo}}{\text{Población media en ese periodo}}\times 10^n$
+
+* *Tasa de desempleados:*
+$\frac{\text{Número de desempleados en un periodo de tiempo}}{\text{Población media en ese periodo}}\times 10^n$
+
+No siempre el “stock” poblacional representa la poblacion media de una región. Tambien puede ser una población con alguna caracteristica en cuestión, como lo veremos a continuación: 
+
+* *Tasa de prevalencia:* Es una medida que dice cuantas personas sufren una enfermedad en una momento específico.
+
+$$\begin{equation}
+\frac{\text{Número de personas con la enfermedad en un periodo de tiempo}}{\text{Número de personas en la población expuesta al riesgo
+en el momento}}\times 10^{n}
+\end{equation}$$
+
+* *Tasa de letalidad:* indica qué proporción de los diagnosticados con una enfermedad mueren por esa causa y su fórmula de cálculo es la siguiente:
+
+$$\begin{equation}
+\frac{\text{Número de muertes por una enfermedad en un periodo de tiempo}}{\text{Población dignosticada de la enfermedad en ese periodo}}\times 10^n
+\end{equation}$$
+
+|Ejemplo. *Letalidad del cancer de páncreas*|
+|:--------------------------------------------------------------------:|
+|En una población murieron $266$ personas por cancer de pancreas en el 2016 frente a un total de $278$ personas diagnosticadas con cancer de pancreas en ese mismo año. Se calcula que la tasa de letalidad sería  $\frac{266}{278}\times 100=95,7\%$.|
+
+*2. cuando el denominador es una variable temporal*. Mide la frecuencia con la que, en un periodo de tiempo, aparece un suceso en una población. El cálculo de tasas se realiza dividiendo el total de eventos ocurridos en un periodo dado en una población entre el tiempo de observación en el que ocurrieron dichos eventos. Las tasas se expresan multiplicando el resultado obtenido por una potencia de $10$, que puede variar entre $10$ y $100.000$.
+
+$$\begin{equation}
+\frac{\text{Número de eventos sucedidos}}{\text{Periodo en que fueron observados}}\times 10^{n}
+\end{equation}$$
 
 En efecto, magnitudes vectoriales como la velocidad  que describe el cambio de posición con respecto al tiempo y la aceleración, el cambio de velocidad por unidad de tiempo son  ejemplos de tasas muy comunes según esta clasificación. En otras áreas, también encontramos la tasa de flujo volumétrico, el cual  relaciona el volumen de un líquido que pasa a través de un superfície dado por unidad temporal o la tasa de bits, en computación, que relaciona el número de bits enviados o procesados por un computador por unidad temporal.
 
-*2. cuando el denominador es un “stock” poblacional*. Haciendo referencia a un “stock” poblacional como las poblaciones en un punto exacto del tiempo y tienen como fuentes los censos, padrones, estimaciones de población o encuestas. El cálculo es el cociente que resulta de dividir un número de acontecimientos sucedidos durante un periodo de tiempo por la población media existente durante ese periodo (stock). Algunos ejemplos clásicos son los siguientes
 
-* Tasa de mortalidad:
-$\frac{\text{Número de difunciones en un periodo de tiempo}}{\text{Población media en ese periodo}}\times 100$
 
-* Tasa de natalidad:
-$\frac{\text{Número de nacimientos en un periodo de tiempo}}{\text{Población media en ese periodo}}\times 100$
 
-* Tasa de desempleados:
-$\frac{\text{Número de desempleados en un periodo de tiempo}}{\text{Población media en ese periodo}}\times 100$
 
 
 #### Tasa de Variación
