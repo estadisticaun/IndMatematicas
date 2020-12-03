@@ -246,7 +246,7 @@ Con lo anterior, tenemos que la tasa de variación es un ejemplo de razón que p
 |Tasa de variación del total de docentes en la universidad entre los semestres 2008-II y 2020-I. |[(Total de docentes  en el semestre 2020-I / Total de docentes en el semestre 2008-II) -1]$\times 100$ | $\left[\frac{3113}{2940}-1\right]\times 100=5,8\%$ |
 |Tasa de variación del total de estudiantes matriculados en la universidad entre los semestres 2009-II y 2020-I.|[(Total de estudiantes matriculados en el semestre 2020-I / Total de estudiantes matriculados en el semestre 2009-II) -1]$\times 100$ | $\left[\frac{54284}{45200}-1\right]\times 100=20\%$ |
 
-En la economia, encontramos otros ejemplos de tasa de variación como estos
+En la economia, encontramos otros ejemplos de tasa de variación,
 
 * ***Tasa de inflación:*** muestra la variación porcentual de los precios de un determinado territorio, durante un periodo determinado y con esto, podemos saber como se han comportado los precios en un lugar determinado. El cálculo de esta tasa se determina  en términos del *Índice de Precios al Consumidor* (IPC) el cual es el encargado de recoger el cambio de los precios, mes a mes para evaluar el coste de la vida mediante artículos como alimentos, casa, transporte, cuidado de la salud, entretenimiento, ropa y otros gastos. 
 
@@ -260,4 +260,126 @@ $$\begin{equation}
 \left[\frac{\text{PBI actual}}{\text{PBI anterior}}-1\right]\times 10^{n}
 \end{equation}$$
 
-##Índice
+## Índice
+Un índice (número índice) es una medida estadística diseñada para estudiar las variaciones de una magnitud o de más de una en relación con el tiempo o el espacio. Particularmente, el número índice recoge la evolución relativa en el periodo $t$ de una magnitud económica (precios, producciones, …) de un conjunto de bienes o productos respecto de un periodo base ó de referencia $0$. También permite comparar una magnitud económica en una zona geográfica respecto de una zona de referencia. Ahora, por simplicidad, sólo se considerará el caso de magnitudes temporales.
+
+Al periodo inicial se le denomina periodo base o referencia y se le asigna el valor $100$ y se compara con el periodo actual o también llamado corriente.  Así si definimos a $I_{0}^{t}$ como el número índice de un determinado valor en el período $t$, respecto al período base $0$.
+
+Si la comparación se realiza para valores de una sola magnitud, hablaremos  de *índices simples*, en caso contrario, cuando se trabaja con más de dos magnitudes a la vez, hablaremos de *índices compuestos*. 
+
+### Índice simple
+: Se denominada *índice simple* de la magnitud $X$ en el periodo $t$ respecto al perido $0$, a la razón, 
+
+$$\begin{equation}
+I_{0/t}=\frac{x_t}{x_0}\times 100
+\end{equation}$$
+
+donde $x_t$ representa el valor de bien en el periodo $t$ y $x_0$ el valor del bien en el periodo $0$.
+
+**Ejemplo.** ***Presupuesto de los ingresos totales de la Universidad Nacional, vigencias 2008 a 2017 (pesos constantes a 2017, cifras en millones de pesos).***
+
+|*Año* |2008|2009|2010|2011|2012|2013|
+|----------|--------|---------|-----------|----------|----------|----------|
+|*Total Presupuesto UN*|1.479.526|1.572.523|1.649.495|1.604.608|1.720.856|1.838.882|
+$I_{año/2008}$ | 100|106,28|104,89|97,27|107,24|106,85|
+
+$I_{2009/2008}=\frac{1.572.523}{1.479.526}\times 100=106,28$, lo que significa que el presupuesto de los ingresos totales en el año 2009 aumentó un $6,28\%$ con respecto al año 2008.
+
+Dentro de la estadistica económica, los índices simples se clasifican como: *Índice de precios, cantidades y valores.*
+
+*a). Índice de precios:* Refleja la variación de los precios de un conjunto de artículos entre dos momentos de tiempo o dos puntos en el espacio. Su formula de cálculo consiste en 
+
+ $$\begin{equation}
+P_{t/0}=\frac{p_{t}}{p_{0}}\times 100
+\end{equation}$$
+
+ donde $p_{t}$ indica el valor del precio de un producto en un periodo $t$ y $p_{0}$ el precio del producto en el periodo base. 
+ 
+**Ejemplo: Precio de una libra de arroz en una población desde el año 2012 a 2015.**
+
+|*Año* |2012|2013|2014|2015|
+|----------|--------|---------|-----------|----------|----------|
+|*Precio del arroz (pesos)*|700|850|910|1.050|
+|$I_{año/2012}$($\%$)|$\frac{700}{700}\times 100=100$|$\frac{850}{700}\times 100=121,4$|$\frac{910}{850}\times 100=107$|$\frac{1.050}{910}\times 100=115,3$|
+
+  *-índice de precios al consumidor (IPC):* El IPC nos indica cómo va evolucionando con respecto del conjunto de precios de los bienes y servicios básicos que consume la población.La principal función del IPC es señalar la evolución del coste de la vida y resulta primordial para el conocimiento de la inflación.
+  
+  $$\begin{equation}
+IPC=\frac{\text{Precio de la cesta de bienes y servicios en el año en cuestión}}{\text{Precio de la cesta en el año base}}\times 100.
+\end{equation}$$
+
+*b). Índice de cantidad:* Consiste en comparar las cantidades (o volúmenes) de producción, consumo o exportación. 
+De igual manera, si $q_{t}$ indica la cantidad de un articulo producido o vendido en el periodo $t$ dado y $q_{0}$ la cantidad en el periodo base, la formula general para el índice simple de cantidad es:
+
+ $$\begin{equation}
+Q_{t/0}=\frac{q_{t}}{q_{0}}\times 100.
+\end{equation}$$
+
+**Ejemplo: Consumo de una libra de arroz en una población desde el año 2012 a 2015.**
+
+Continuando con el estudio del arroz, supongamos que obtenemos los siguiente datos.  
+
+|*Año* |2012|2013|2014|2015|
+|----------|--------|---------|-----------|----------|----------|
+|*Consumo (kg)*|39,62|40,21|41,60|39,20|
+|$I_{año/2012}$($\%$)|100|$\frac{40,21}{39,62}\times 100=101,48$|$\frac{41,60}{40,21}\times 100=103,45$|$\frac{39,20}{41,60}\times 100=94,23$|
+
+*c). Índice de valores:* Se define como la razón entre el valor de cierto producto en el periodo actual, y el valor del mismo en el periodo base, donde el valor de un bien en un periodo es el producto del precio de ese bien por el consumo del producto.
+
+  $$\begin{equation}
+V_{t/0}=\frac{q_{t}p_{t}}{q_{0}p_{0}}\times 100.
+\end{equation}$$
+
+**Ejemplo: Valor de una libra de arroz en una población desde el año 2012 a 2015.**
+
+Teniendo en cuenta las tablas anteriores, podemos calcular el índice de valores del arroz aplicando la formula de cálculo, en particular para el año 2013 se obtiene que el índice de valor es: 
+$\frac{(850)(40,21)}{(700)(39,62)}\times 100=123.23$
+y así, se obtiene el resto de valores.
+
+|*Año* |2012|2013|2014|2015|
+|----------|--------|---------|-----------|----------|----------|
+|$I_{año/2012}$($\%$)|100|123,2|110,7|108,7|
+
+### Índice complejo
+
+Hablaremos de *índices complejos* cuando queremos comparar  magnitudes para grandes grupos de bienes y se desea recoger la evolución conjunta de los precios, las cantidades o los valores de una cantidad de bienes o productos.
+
+Distinguiremos dos tipos de índices complejos:
+
+* Índice complejo **no ponderado**, que dan igual importancia a todos los bienes.
+
+* Índice complejo **ponderado**, donde cada bien lleva asociado un peso o ponderación.
+
+***1. Índice complejo no ponderado (Media aritmética de índices simples)*** 
+
+$$ \overline{I}_{t/0}=\frac{1}{N}\sum^{N}_{i=1}I_i $$
+donde $N$ es el número de productos, e $I_i=\frac{x_{i/t}}{x_{i/0}}$, es decir el índice simple de la variable $x$ en el periodo $t$.
+
+**Ejemplo:**
+
+|Artículo|Precio en 2017|Precio en 2018|Índice simple 2017|Índice simple 2018|
+|----------|------|-----|-----------|----------|
+|Huevos|300|350|100|116,6|
+|Leche|1.000|1.100|100|110|
+|Harina|800|1.000|100|125|
+
+Teniendo en cuenta que $N=3$ y el periodo base es 2017,  encontramos que el índice no ponderado es
+
+$$ I_{2018/2017}=\frac{116,6+110+125}{3}=117,2$$.
+
+***1. Índice complejo ponderado (Media aritmética ponderada)*** 
+
+Sea $w_i$ la ponderación asociada, luego se define el índice complejos ponderados por el método de media aritmética ponderada como,
+
+$$ \overline{I}_{t/0}=\frac{\sum^{N}_{i=1}w_iI_i}{\sum^{N}_{i=1}w_i} $$
+**Ejemplo.**
+
+Consideremos los datos del ejemplo anterior con las siguientes ponderaciones
+
+|Huevos|Leche|Harina|
+|--------|--------|---------|
+|$w_1=40$|$w_2=55$|$w_3=71$|
+
+$$\overline{I}_{1018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118$$
+
+

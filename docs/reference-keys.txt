@@ -4,6 +4,7 @@ proporción
 porcentaje
 tasas
 tasa-de-variación
+índice
 razón-1
 porcentaje-1
 methods
@@ -11,3 +12,7 @@ applications
 example-one
 example-two
 final-words
+índices-simples
+índices-complejos
+índice-simple
+índice-complejo
