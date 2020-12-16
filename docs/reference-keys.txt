@@ -7,6 +7,7 @@ tasa-de-variación
 índice
 índice-simple
 índice-complejo
+otros-indicadores
 razón-1
 porcentaje-1
 methods

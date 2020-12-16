@@ -24,7 +24,7 @@
 <meta name="author" content="Valentina Londoño Ramirez" />
 
 
-<meta name="date" content="2020-12-03" />
+<meta name="date" content="2020-12-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="1-4-tasas.html"/>
-<link rel="next" href="2-razón-1.html"/>
+<link rel="next" href="1-6-otros-indicadores.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -83,6 +83,7 @@
 <li class="chapter" data-level="1.5.1" data-path="1-5-índice.html"><a href="1-5-índice.html#índice-simple"><i class="fa fa-check"></i><b>1.5.1</b> Índice simple</a></li>
 <li class="chapter" data-level="1.5.2" data-path="1-5-índice.html"><a href="1-5-índice.html#índice-complejo"><i class="fa fa-check"></i><b>1.5.2</b> Índice complejo</a></li>
 </ul></li>
+<li class="chapter" data-level="1.6" data-path="1-6-otros-indicadores.html"><a href="1-6-otros-indicadores.html"><i class="fa fa-check"></i><b>1.6</b> Otros indicadores</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-razón-1.html"><a href="2-razón-1.html"><i class="fa fa-check"></i><b>2</b> Razón</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-1-porcentaje-1.html"><a href="2-1-porcentaje-1.html"><i class="fa fa-check"></i><b>2.1</b> Porcentaje</a></li>
@@ -118,7 +119,7 @@
 <p>Si la comparación se realiza para valores de una sola magnitud, hablaremos de <em>índices simples</em>, en caso contrario, cuando se trabaja con más de dos magnitudes a la vez, hablaremos de <em>índices compuestos</em>.</p>
 <div id="índice-simple" class="section level3">
 <h3><span class="header-section-number">1.5.1</span> Índice simple</h3>
-<p>: Se denominada <em>índice simple</em> de la magnitud <span class="math inline">\(X\)</span> en el periodo <span class="math inline">\(t\)</span> respecto al perido <span class="math inline">\(0\)</span>, a la razón,</p>
+<p>Se denominada <em>índice simple</em> de la magnitud <span class="math inline">\(X\)</span> en el periodo <span class="math inline">\(t\)</span> respecto al perido <span class="math inline">\(0\)</span>, a la razón,</p>
 <p><span class="math display">\[\begin{equation}
 I_{0/t}=\frac{x_t}{x_0}\times 100
 \end{equation}\]</span></p>
@@ -167,8 +168,37 @@ I_{0/t}=\frac{x_t}{x_0}\times 100
 </tbody>
 </table>
 <p><span class="math inline">\(I_{2009/2008}=\frac{1.572.523}{1.479.526}\times 100=106,28\)</span>, lo que significa que el presupuesto de los ingresos totales en el año 2009 aumentó un <span class="math inline">\(6,28\%\)</span> con respecto al año 2008.</p>
-<p>Dentro de la estadistica económica, los índices simples se clasifican como: <em>Índice de precios, cantidades y valores.</em></p>
-<p><em>a). Índice de precios:</em> Refleja la variación de los precios de un conjunto de artículos entre dos momentos de tiempo o dos puntos en el espacio. Su formula de cálculo consiste en</p>
+<p>Seria deseable que todo numero índice satisfaciera las siguientes propiedades:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Propiedades</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><em>1. Existencia:</em></strong> Un número índice debe ser un número determinado y no nulo.</td>
+</tr>
+<tr class="even">
+<td><strong><em>2. Identidad:</em></strong> Cuando coincide el período base y el período actual, el indicador tomará un valor unitario (o 100 si se expresa en porcentaje).</td>
+</tr>
+<tr class="odd">
+<td><strong><em>3. Homogeneidad:</em></strong> El valor del índice no se altera si se produce un cambio en las unidades de medida.</td>
+</tr>
+<tr class="even">
+<td><strong><em>4. Inversión:</em></strong> Si permutamos el periodo base y el actual, el índice que se obtiene es el inverso del original.</td>
+</tr>
+<tr class="odd">
+<td><strong><em>5. Proporcionalidad:</em></strong> Si se produce una variación proporcional en todas las magnitudes, el índice variará en la misma proporción.</td>
+</tr>
+</tbody>
+</table>
+<p>Lo índices simples satisfacen estas cinco propiedades, pero no siempre se cumple para índices complejos.</p>
+<p>Por tanto, lo que nos interesa ahora, es encontrar una clasificación para identificar mejor los índices simples. Pues bien, dentro de la estadistica económica, los índices simples se clasifican como: <em>Índice de precios, cantidades y valores.</em></p>
+<p><strong><em>a). Índice de precios:</em></strong> Refleja la variación de los precios de un conjunto de artículos entre dos momentos de tiempo o dos puntos en el espacio. Su formula de cálculo consiste en</p>
 <p><span class="math display">\[\begin{equation}
 P_{t/0}=\frac{p_{t}}{p_{0}}\times 100
 \end{equation}\]</span></p>
@@ -212,11 +242,13 @@ P_{t/0}=\frac{p_{t}}{p_{0}}\times 100
 </tr>
 </tbody>
 </table>
-<p><em>-índice de precios al consumidor (IPC):</em> El IPC nos indica cómo va evolucionando con respecto del conjunto de precios de los bienes y servicios básicos que consume la población.La principal función del IPC es señalar la evolución del coste de la vida y resulta primordial para el conocimiento de la inflación.</p>
+<ul>
+<li><em>Índice de precios al consumidor (IPC):</em> El IPC nos indica cómo va evolucionando con respecto del conjunto de precios de los bienes y servicios básicos que consume la población.La principal función del IPC es señalar la evolución del coste de la vida y resulta primordial para el conocimiento de la inflación.</li>
+</ul>
 <p><span class="math display">\[\begin{equation}
 IPC=\frac{\text{Precio de la cesta de bienes y servicios en el año en cuestión}}{\text{Precio de la cesta en el año base}}\times 100.
 \end{equation}\]</span></p>
-<p><em>b). Índice de cantidad:</em> Consiste en comparar las cantidades (o volúmenes) de producción, consumo o exportación.
+<p><strong><em>b). Índice de cantidad:</em></strong> Consiste en comparar las cantidades (o volúmenes) de producción, consumo o exportación.
 De igual manera, si <span class="math inline">\(q_{t}\)</span> indica la cantidad de un articulo producido o vendido en el periodo <span class="math inline">\(t\)</span> dado y <span class="math inline">\(q_{0}\)</span> la cantidad en el periodo base, la formula general para el índice simple de cantidad es:</p>
 <p><span class="math display">\[\begin{equation}
 Q_{t/0}=\frac{q_{t}}{q_{0}}\times 100.
@@ -253,7 +285,7 @@ Q_{t/0}=\frac{q_{t}}{q_{0}}\times 100.
 </tr>
 <tr class="even">
 <td><span class="math inline">\(I_{año/2012}\)</span>(<span class="math inline">\(\%\)</span>)</td>
-<td>100</td>
+<td><span class="math inline">\(100\)</span></td>
 <td><span class="math inline">\(\frac{40,21}{39,62}\times 100=101,48\)</span></td>
 <td><span class="math inline">\(\frac{41,60}{40,21}\times 100=103,45\)</span></td>
 <td><span class="math inline">\(\frac{39,20}{41,60}\times 100=94,23\)</span></td>
@@ -261,12 +293,12 @@ Q_{t/0}=\frac{q_{t}}{q_{0}}\times 100.
 </tr>
 </tbody>
 </table>
-<p><em>c). Índice de valores:</em> Se define como la razón entre el valor de cierto producto en el periodo actual, y el valor del mismo en el periodo base, donde el valor de un bien en un periodo es el producto del precio de ese bien por el consumo del producto.</p>
+<p><strong><em>c). Índice de valores:</em></strong> Se define como la razón entre el valor de cierto producto en el periodo actual, y el valor del mismo en el periodo base, donde el valor de un bien en un periodo es el producto del precio de ese bien por el consumo del producto.</p>
 <p><span class="math display">\[\begin{equation}
 V_{t/0}=\frac{q_{t}p_{t}}{q_{0}p_{0}}\times 100.
 \end{equation}\]</span></p>
 <p><strong>Ejemplo: Valor de una libra de arroz en una población desde el año 2012 a 2015.</strong></p>
-<p>Teniendo en cuenta las tablas anteriores, podemos calcular el índice de valores del arroz aplicando la formula de cálculo, en particular para el año 2013 se obtiene que el índice de valor es:
+<p>Teniendo en cuenta las tablas anteriores, podemos calcular el índice de valores del arroz aplicando la formula de cálculo. En particular, para el año 2013 se obtiene que el índice de valor es,
 <span class="math inline">\(\frac{(850)(40,21)}{(700)(39,62)}\times 100=123.23\)</span>
 y así, se obtiene el resto de valores.</p>
 <table>
@@ -294,16 +326,41 @@ y así, se obtiene el resto de valores.</p>
 </div>
 <div id="índice-complejo" class="section level3">
 <h3><span class="header-section-number">1.5.2</span> Índice complejo</h3>
-<p>Hablaremos de <em>índices complejos</em> cuando queremos comparar magnitudes para grandes grupos de bienes y se desea recoger la evolución conjunta de los precios, las cantidades o los valores de una cantidad de bienes o productos.</p>
-<p>Distinguiremos dos tipos de índices complejos:</p>
+<p>Hablaremos de <em>índices complejos</em> cuando se forman a partir de los índices simples. Por consiguiente, su función principal será sintetizar o resumir la información que proporcionan los índices simples que entran en su composición.</p>
+<p>Supongamos ahora que se observa la evolución de variables <span class="math inline">\(X_1,X_2,\cdots, X_n\)</span> a lo largo de una sucesión de “años” <span class="math inline">\(t=0,1,2,\cdots,T\)</span> cuya descripción es la siguiente:</p>
+<p>$$<span class="math display">\[\begin{equation}
+\begin{bmatrix}
+  \textbf{Años} &amp; \mathbf{X_1} &amp; \mathbf{X_2} &amp; \mathbf{X_3} &amp;\cdots &amp; \mathbf{X_n}\\
+     \mathbf{0}&amp; x_{10} &amp; x_{20} &amp; x_{30} &amp; \cdots &amp; x_{n0}\\
+    \mathbf{1} &amp; x_{11} &amp; x_{21} &amp; x_{21} &amp; \cdots &amp; x_{n1}\\
+     \vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \cdots &amp; \vdots\\
+     \mathbf{T} &amp; x_{1T} &amp; X_{2T} &amp; X_{3T} &amp; \cdots &amp; X_{nT}
+    \end{bmatrix}
+    
+\end{equation}\]</span>$$</p>
+<p>donde <span class="math inline">\(x_{ij}\)</span> denota el valor que la variable <span class="math inline">\(X_i\)</span> toma en el período <span class="math inline">\(j\)</span>. Ahora, con lo anterior podemos obtener las siguientes series de índices simples con una base año 0:</p>
+<p>$$<span class="math display">\[\begin{equation}
+\begin{bmatrix}
+  \textbf{Años} &amp; \mathbf{X_1} &amp; \mathbf{X_2} &amp; \mathbf{X_3} &amp;\cdots &amp; \mathbf{X_n}\\
+     \mathbf{0}&amp; I_{00}^{1} &amp; I_{00}^{2} &amp; I_{00}^{3} &amp; \cdots &amp; I_{00}^{n}\\
+    \mathbf{1} &amp; I_{10}^{1} &amp; I_{10}^{2} &amp; I_{10}^{3} &amp; \cdots &amp; I_{10}^{n}\\
+     \vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \cdots &amp; \vdots\\
+     \mathbf{T} &amp; I_{T0}^{1} &amp; I_{T0}^{2} &amp; I_{T0}^{3} &amp; \cdots &amp; I_{T0}^{n}
+    \end{bmatrix}
+    
+\end{equation}\]</span>$$</p>
+<p>donde <span class="math inline">\(I_{t0}^{i}=\frac{x_{it}}{x_{i0}}\)</span> es el índice simple de la <span class="math inline">\(i\)</span>-ésima variable correspondiente al año <span class="math inline">\(t\)</span> con base el año 0.</p>
+<p>De lo anteriormente expuesto, debemos tener en cuenta si las magnitudes de cada uno de los índices simples que conforman los índices complejos tienen la misma importancia o de lo contrario, unas son más relevantes que otras. En otros términos, por ejemplo, para medir la evolución de los precios de los bienes de consumo en un país determinado, habrá que dar mas importancia a la evolución de los precios de la alimentación que los de las medicinas, ya que el gasto de alimentación es mayor que el gasto en medicinas. Otro ejemplo, en el sector industrial, el índice salarial se elabora a partir de los índices salariales de cada una de las empresas que integran el sector, resulta evidente que habrá que ponderar más los índices correspondientes a las empresas con más trabajadores.</p>
+<p>Por lo tanto, conviene distinguir dos tipos de índices complejos:</p>
 <ul>
-<li><p>Índice complejo <strong>no ponderado</strong>, que dan igual importancia a todos los bienes.</p></li>
-<li><p>Índice complejo <strong>ponderado</strong>, donde cada bien lleva asociado un peso o ponderación.</p></li>
+<li><p>Índice complejo <strong>no ponderado</strong>, que dan igual importancia a cada magnitud del índice.</p></li>
+<li><p>Índice complejo <strong>ponderado</strong>, cuando se tiene en cuenta la distinta importancia que tiene cada magnitud en el conjunto de ellas y para cada <span class="math inline">\(X_i\)</span> viene indicada por un peso o ponderación <span class="math inline">\(w_i\)</span>.</p></li>
 </ul>
-<p><strong><em>1. Índice complejo no ponderado (Media aritmética de índices simples)</em></strong></p>
-<p><span class="math display">\[ \overline{I}_{t/0}=\frac{1}{N}\sum^{N}_{i=1}I_i \]</span>
-donde <span class="math inline">\(N\)</span> es el número de productos, e <span class="math inline">\(I_i=\frac{x_{i/t}}{x_{i/0}}\)</span>, es decir el índice simple de la variable <span class="math inline">\(x\)</span> en el periodo <span class="math inline">\(t\)</span>.</p>
-<p><strong>Ejemplo:</strong></p>
+<p>Ilustraremos ahora los dos tipos de índices mediante la media aritmética o promedio, la cual es la más conocida y usada para el análisis de los datos.</p>
+<p><strong>Índice complejo no ponderado (Media aritmética de índices simples)</strong></p>
+<p><span class="math display">\[ \overline{I}_{t/0}=\frac{1}{N}\sum^{N}_{i=1}I_{t0}^{i} \]</span>
+donde <span class="math inline">\(N\)</span> es el número de elementos de cada índice simple.
+<strong>Ejemplo:</strong></p>
 <table>
 <thead>
 <tr class="header">
@@ -340,9 +397,9 @@ donde <span class="math inline">\(N\)</span> es el número de productos, e <span
 </table>
 <p>Teniendo en cuenta que <span class="math inline">\(N=3\)</span> y el periodo base es 2017, encontramos que el índice no ponderado es</p>
 <p><span class="math display">\[ I_{2018/2017}=\frac{116,6+110+125}{3}=117,2\]</span>.</p>
-<p><strong><em>1. Índice complejo ponderado (Media aritmética ponderada)</em></strong></p>
+<p><strong>Índice complejo ponderado (Media aritmética ponderada)</strong></p>
 <p>Sea <span class="math inline">\(w_i\)</span> la ponderación asociada, luego se define el índice complejos ponderados por el método de media aritmética ponderada como,</p>
-<p><span class="math display">\[ \overline{I}_{t/0}=\frac{\sum^{N}_{i=1}w_iI_i}{\sum^{N}_{i=1}w_i} \]</span>
+<p><span class="math display">\[ \overline{I}_{t/0}=\frac{\sum^{N}_{i=1}w_iI_{t0}^{i}}{\sum^{N}_{i=1}w_i} \]</span>
 <strong>Ejemplo.</strong></p>
 <p>Consideremos los datos del ejemplo anterior con las siguientes ponderaciones</p>
 <table>
@@ -362,17 +419,15 @@ donde <span class="math inline">\(N\)</span> es el número de productos, e <span
 </tbody>
 </table>
 <p><span class="math display">\[\overline{I}_{1018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118\]</span></p>
-
 </div>
 </div>
-<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
 <a href="1-4-tasas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="2-razón-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="1-6-otros-indicadores.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
