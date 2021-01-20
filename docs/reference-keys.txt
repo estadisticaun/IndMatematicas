@@ -4,6 +4,7 @@ proporción
 porcentaje
 tasas
 tasa-de-variación
+diferencia-entre-proporción-y-tasa
 índice
 índice-simple
 índice-complejo
