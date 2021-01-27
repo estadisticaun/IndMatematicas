@@ -24,7 +24,7 @@
 <meta name="author" content="Valentina Londoño Ramirez" />
 
 
-<meta name="date" content="2021-01-19" />
+<meta name="date" content="2021-01-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="1-5-diferencia-entre-proporción-y-tasa.html"/>
-<link rel="next" href="1-7-otros-indicadores.html"/>
+<link rel="next" href="2-razón-1.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -83,8 +83,8 @@
 <li class="chapter" data-level="1.6" data-path="1-6-índice.html"><a href="1-6-índice.html"><i class="fa fa-check"></i><b>1.6</b> Índice</a><ul>
 <li class="chapter" data-level="1.6.1" data-path="1-6-índice.html"><a href="1-6-índice.html#índice-simple"><i class="fa fa-check"></i><b>1.6.1</b> Índice simple</a></li>
 <li class="chapter" data-level="1.6.2" data-path="1-6-índice.html"><a href="1-6-índice.html#índice-complejo"><i class="fa fa-check"></i><b>1.6.2</b> Índice complejo</a></li>
+<li class="chapter" data-level="1.6.3" data-path="1-6-índice.html"><a href="1-6-índice.html#índices-sintéticos"><i class="fa fa-check"></i><b>1.6.3</b> Índices sintéticos</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="1-7-otros-indicadores.html"><a href="1-7-otros-indicadores.html"><i class="fa fa-check"></i><b>1.7</b> Otros indicadores</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-razón-1.html"><a href="2-razón-1.html"><i class="fa fa-check"></i><b>2</b> Razón</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-1-porcentaje-1.html"><a href="2-1-porcentaje-1.html"><i class="fa fa-check"></i><b>2.1</b> Porcentaje</a></li>
@@ -184,13 +184,13 @@ I_{0/t}=\frac{x_t}{x_0}\times 100
 <td><strong><em>1. Existencia:</em></strong> Un número índice debe ser un número determinado y no nulo.</td>
 </tr>
 <tr class="even">
-<td><strong><em>2. Identidad:</em></strong> Cuando coincide el período base y el período actual, el indicador tomará un valor unitario (o 100 si se expresa en porcentaje).</td>
+<td><strong><em>2. Identidad:</em></strong> Cuando coincide el período base y el período actual, el indicador tomará un valor unitario (o 100 si se expresa en porcentaje).<span class="math display">\[I_{t/t}=\frac{x_t}{x_t}=1\]</span></td>
 </tr>
 <tr class="odd">
 <td><strong><em>3. Homogeneidad:</em></strong> El valor del índice no se altera si se produce un cambio en las unidades de medida.</td>
 </tr>
 <tr class="even">
-<td><strong><em>4. Inversión:</em></strong> Si permutamos el periodo base y el actual, el índice que se obtiene es el inverso del original.</td>
+<td><strong><em>4. Inversión:</em></strong> Si permutamos el periodo base y el actual, el índice que se obtiene es el inverso del original.<span class="math display">\[I_{t/0}=\frac{x_t}{x_0}=\frac{1}{\frac{x_0}{x_t}}=\frac{1}{I_{0/t}}\longrightarrow I_{t/0}I_{0/t}=I_{t/t}=1\]</span></td>
 </tr>
 <tr class="odd">
 <td><strong><em>5. Proporcionalidad:</em></strong> Si se produce una variación proporcional en todas las magnitudes, el índice variará en la misma proporción.</td>
@@ -421,16 +421,141 @@ donde <span class="math inline">\(N\)</span> es el número de elementos de cada 
 </tr>
 </tbody>
 </table>
-<p><span class="math display">\[\overline{I}_{1018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118\]</span>.</p>
+<p><span class="math display">\[\overline{I}_{1018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118\]</span></p>
+</div>
+<div id="índices-sintéticos" class="section level3">
+<h3><span class="header-section-number">1.6.3</span> Índices sintéticos</h3>
+<p>Los índices sintéticos representan una medida que se obtiene mediante la agregación adecuada de un conjunto de indicadores sociales. Su elaboración no es sencilla, ya que los indicadores son de distinta naturaleza y provienen de diferentes fuentes de datos. En este sentido, en la literatura se recomienda seguir distintas etapas para su elaboración: <em>selección de los indicadores</em>, <em>selección de la técnica de estandarización, ponderación</em> y <em>agregación</em>.</p>
+<p><em>1. Selección de los indicadores</em>: En esta primera etapa se deberá seleccionar los indicadores, los cuales llamaremos indicadores parciales, esto perimite marcar la ruta hacia lo que queremos medir. Estos indicadores pueden ser, a su vez, tasas, proporciones, razones o índices.</p>
+<p><em>2. Selección de la técnica de estandarización:</em> Los indices sociales se miden en distintas unidades de medida: años, personas, porcentajes, etc. La estandarización permite que un conjunto heterogéneo de indicadores pueda ser transformado a una unidad de medida común.</p>
+<p><em>3. Técnica de ponderación</em>: No se puede dar la misma importancia a
+todos los indicadores y, por ende, es necesario ponderarlos.</p>
+<p><em>4. Selección del método de agregación:</em> En esta etapa se busca unificar los indicadores en un índice sintético a través de algún procedimiento estadístico, matemático o lógico. Resulta deseable que el valor que arroje la medida final represente niveles factibles de ser interpretados en una escala de alto, medio, bajo o nulo. Esto último dependerá de la técnica de estandarización utilizada y de que el procedimiento de agregación no haga perder esa propiedad. La agregación se puede efectuar como la media aritmética ponderada, o bien,
+como la media geométrica poderada. La primera es la más utilizada y sencilla en su elaboración.</p>
+<p>Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y veremos como se calcula a grandes rasgos. El índice sintético de bienestar social (IBS) se mide con seis índices parciales: índice de salud, seguridad ciudadana, educacíon, trabajo, vivienda e ingresos relativos y estos a su vez, se subdividen en los siguientes índices simples.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Índice de salud <span class="math inline">\((A_1)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.Índice de años potenciales de vida perdidos</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Índice de Seguridad ciudadana <span class="math inline">\((A_2)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2. Índice de homicidios dolorosos</td>
+</tr>
+<tr class="even">
+<td>3. Índice de homicidios culposos en accidentes de tránsito</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Índice de Educación <span class="math inline">\((A_3)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4. Índice de educación de 6 a 17 años</td>
+</tr>
+<tr class="even">
+<td>5. Índice de educación de 18 a 24 años</td>
+</tr>
+<tr class="odd">
+<td>6. Índice de educación mayores de 25 años</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Índice de trabajo <span class="math inline">\((A_4)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>7. Índice de trabajo decente</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Índice de vivienda <span class="math inline">\((A_5)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8. Índice de techo-piso</td>
+</tr>
+<tr class="even">
+<td>9. Índice de de acceso al agua</td>
+</tr>
+<tr class="odd">
+<td>10. Índice sobre disposición de excretas y saneamiento</td>
+</tr>
+<tr class="even">
+<td>11. Índice de personas por dormitorio</td>
+</tr>
+<tr class="odd">
+<td>12. Índice sobre seguridad jurídica en la tenencia</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Índice de ingresos <span class="math inline">\((A_6)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Índice de ingresos relativos</td>
+</tr>
+</tbody>
+</table>
+<p>Es decir, que para realizar la síntesis final partimos de una matriz de datos que contiene la valoración o el puntaje obtenido en cada uno de estos seis índices parciales. Porteriormente, a través de los métodos de agregación como la media ponderada, generamos el
+número de rankings. En el caso hipotético, asignaremos a salud y
+seguridad un peso del <span class="math inline">\(15\%\)</span>, a trabajo un <span class="math inline">\(30\%\)</span>, a vivienda un <span class="math inline">\(20\%\)</span> y a ingresos y educación le introducimos un <span class="math inline">\(10\%\)</span>.</p>
+<p><span class="math display">\[\begin{equation}
+IBS=0,15A_1+0,15A_2+0,1A_3+0,3A_4+0,2A_5+0,1A_6
+\end{equation}\]</span></p>
+<p><strong><em>Índice Sintético de la Calidad Educativa (ISCE)</em></strong></p>
+<p>Es un índice, calculado por el Icfes, que mide cuatro
+aspectos de la calidad de la educación en todos los colegios
+del país: Progreso, Desempeño, Eficiencia y Ambiente Escolar. El ISCE está en una escala de 1 a 10, en donde Progreso y Desempeño pesan 40 por ciento, cada uno, y Eficiencia y Ambiente Escolar pesan 10 por ciento, cada uno. Para el caso de la Media, el componente Eficiencia pesa el 20 por ciento.</p>
+<p><strong><em>Puntaje Básico de Matrícula PBM</em></strong></p>
+<p>Es el indicador que utiliza la Universidad Nacional de Colombia para hacer la
+clasificación socioeconómica del estudiante y asignar la matrícula. El Puntaje Básico de Matrícula PBM, es calculado con la información de 7 variables, cuyo
+soporte documental es aportado por el estudiante. A cada variable se le asigna un puntaje, un peso ponderado y una función específica dentro de la fórmula, el cual es calculado mediante la siguiente fórmula</p>
+<p><span class="math display">\[\begin{equation}
+PBM=(0,4A_1+0,3A_2+0,3A_3)\times B_1 \times B_2 \times B_3 \times B_4.
+\end{equation}\]</span></p>
+<p>donde las variables <span class="math inline">\(A_2\)</span> y <span class="math inline">\(A_1\)</span> constituyen al estrato y el valor pensión escolar en el último año de secundaria respectivamente y son indicadores del nivel de gastos en el hogar, mientras <span class="math inline">\(A_3\)</span> representa el nivel de ingresos. Las variables <span class="math inline">\(B_1\)</span> es tipo de colegio, <span class="math inline">\(B_2\)</span> es el lugar de residencia, <span class="math inline">\(B_3\)</span> propiedad de la vivienda familiar y número de hijos dependientes del ingreso del hogar es <span class="math inline">\(B_4\)</span> y son igualmente, indicadores del nivel de gastos.</p>
+<p><a href="https://planeacion.medellin.unal.edu.co/images/documentos/EvaluacionMatriculasUnalMed.pdf">documentopbm</a></p>
+
 </div>
 </div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
 <a href="1-5-diferencia-entre-proporción-y-tasa.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="1-7-otros-indicadores.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="2-razón-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

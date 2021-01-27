@@ -362,10 +362,10 @@ Sería deseable que todo numero índice satisfaciera las siguientes propiedades:
 
 |Propiedades|
 |--------------------------------------------------------|
-|***1. Existencia:*** Un número índice debe ser un número determinado y no nulo.|
-|***2. Identidad:*** Cuando coincide el período base y el período actual, el indicador tomará un valor unitario (o 100 si se expresa en porcentaje).|
+|***1. Existencia:*** Un número índice debe ser un número determinado y no nulo. |
+|***2. Identidad:*** Cuando coincide el período base y el período actual, el indicador tomará un valor unitario (o 100 si se expresa en porcentaje).$$I_{t/t}=\frac{x_t}{x_t}=1$$|
 |***3. Homogeneidad:*** El valor del índice no se altera si se produce un cambio en las unidades de medida. |
-|***4. Inversión:*** Si permutamos el periodo base y el actual, el índice que se obtiene es el inverso del original.| 
+|***4. Inversión:*** Si permutamos el periodo base y el actual, el índice que se obtiene es el inverso del original.$$I_{t/0}=\frac{x_t}{x_0}=\frac{1}{\frac{x_0}{x_t}}=\frac{1}{I_{0/t}}\longrightarrow I_{t/0}I_{0/t}=I_{t/t}=1$$| 
 |***5. Proporcionalidad:*** Si se produce una variación proporcional en todas las magnitudes, el índice variará en la misma proporción. |
 
 Lo índices simples satisfacen estas cinco propiedades, pero no siempre se cumple para índices complejos. 
@@ -501,10 +501,68 @@ Consideremos los datos del ejemplo anterior con las siguientes ponderaciones
 |--------|--------|---------|
 |$w_1=40$|$w_2=55$|$w_3=71$|
 
-$$\overline{I}_{1018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118$$.
+$$\overline{I}_{1018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118$$
 
+### Índices sintéticos
+ 
+Los índices sintéticos representan una medida que se obtiene mediante la agregación adecuada de un conjunto de indicadores sociales. Su elaboración no es sencilla, ya que los indicadores son de distinta naturaleza y provienen de diferentes fuentes de datos. En este sentido, en la literatura se recomienda seguir distintas etapas para su elaboración: *selección de los indicadores*, *selección de la técnica de estandarización, ponderación* y *agregación*. 
 
-##  Otros indicadores
+*1. Selección de los indicadores*: En esta primera etapa se deberá seleccionar los indicadores, los cuales llamaremos indicadores parciales, esto perimite marcar la ruta hacia lo que queremos medir. Estos indicadores pueden ser, a su vez, tasas, proporciones, razones o índices. 
+
+*2. Selección de la técnica de estandarización:* Los indices sociales se miden en distintas unidades de medida: años, personas, porcentajes, etc. La estandarización permite que un conjunto heterogéneo de indicadores pueda ser transformado a una unidad de medida común.
+
+*3. Técnica de ponderación*: No se puede dar la misma importancia a
+todos los indicadores y, por ende, es necesario ponderarlos.
+
+*4. Selección del método de agregación:* En esta etapa se busca unificar los indicadores en un índice sintético a través de algún procedimiento estadístico, matemático o lógico. Resulta deseable que el valor que arroje la medida final represente niveles factibles de ser interpretados en una escala  de alto, medio, bajo o nulo. Esto último dependerá de la técnica de estandarización utilizada y de que el procedimiento de agregación no haga perder esa propiedad. La agregación se puede efectuar como la media aritmética ponderada, o bien,
+como la media geométrica poderada. La primera es la más utilizada y sencilla en su elaboración.
+
+Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y veremos como se calcula a grandes rasgos. El índice sintético de bienestar social (IBS) se mide con seis índices parciales: índice de salud, seguridad ciudadana, educacíon, trabajo, vivienda e ingresos relativos y estos a su vez, se subdividen en los siguientes índices simples.
+
+|Índice de salud $(A_1)$|
+|------------------------------------------------|
+|1.Índice de años potenciales de vida perdidos|
+
+|Índice de Seguridad ciudadana $(A_2)$|
+|-----------------------------------------------------|
+|2. Índice de homicidios dolorosos|
+|3. Índice de homicidios culposos en accidentes de tránsito|
+
+|Índice de Educación $(A_3)$|
+|-----------------------------------------------------|
+|4. Índice de educación de 6 a 17 años|
+|5. Índice de educación de 18 a 24 años|
+|6. Índice de educación mayores de 25 años|
+
+|Índice de trabajo $(A_4)$|
+|------------------------------------------------|
+|7. Índice de trabajo decente |
+
+|Índice de vivienda $(A_5)$|
+|-----------------------------------------------------|
+|8. Índice de techo-piso|
+|9. Índice de de acceso al agua |
+|10. Índice sobre disposición de excretas y saneamiento|
+|11. Índice de personas por dormitorio|
+|12. Índice sobre seguridad jurídica en la tenencia|
+
+|Índice de ingresos $(A_6)$|
+|------------------------------------------------|
+|13. Índice de ingresos relativos|
+
+Es decir, que para realizar la síntesis final partimos de una matriz de datos que contiene la valoración o el puntaje obtenido en cada uno de estos seis índices parciales. Porteriormente, a través de los  métodos de agregación como la media ponderada, generamos el
+número de rankings. En el caso hipotético, asignaremos a salud y
+seguridad un peso del $15\%$, a trabajo  un $30\%$, a vivienda un $20\%$ y a ingresos y educación le introducimos un $10\%$. 
+
+$$\begin{equation}
+IBS=0,15A_1+0,15A_2+0,1A_3+0,3A_4+0,2A_5+0,1A_6
+\end{equation}$$
+
+***Índice Sintético de la Calidad Educativa (ISCE)***
+
+Es un índice, calculado por el Icfes, que mide cuatro
+aspectos de la calidad de la educación en todos los colegios
+del país: Progreso, Desempeño, Eficiencia y Ambiente Escolar. El ISCE está en una escala de 1 a 10, en donde Progreso y Desempeño pesan 40 por ciento, cada uno, y Eficiencia y Ambiente Escolar pesan 10 por ciento, cada uno. Para el caso de la Media, el componente Eficiencia pesa el 20 por ciento.
 
 ***Puntaje Básico de Matrícula PBM***
 
