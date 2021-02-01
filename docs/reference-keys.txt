@@ -8,7 +8,7 @@ diferencia-entre-proporción-y-tasa
 índice
 índice-simple
 índice-complejo
-otros-indicadores
+índices-sintéticos
 razón-1
 porcentaje-1
 methods
@@ -16,4 +16,6 @@ applications
 example-one
 example-two
 final-words
-índices-sintéticos
+índice-en-la-economía
+índices-en-la-ciencia-social
+número-índice

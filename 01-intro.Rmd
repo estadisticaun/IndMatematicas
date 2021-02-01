@@ -4,21 +4,20 @@
 
 Los indicadores, es el plural del término “indicador” y precisamente, como dice su nombre lo dice, es un elemento que se utiliza para indicar o señalar algo. En el sentido más formal, un indicador es una herramienta cuantitativa o cualitativa que brinda una señal con una interpretación única y lógica. En efecto, debe comprenderse que los indicadores tienen un objetivo en concreto con la intención de poder monitorear, adaptar y controlar distintos procedimientos a seguir. De ahí, resulta necesario decir que un indicador debe representar la relación entre dos o más variables a fin de que sea más simple el análisis y la toma de decisiones respecto a la gestión de los resultados.
 
-Existen diferentes maneras de clasificar los indicadores, dependiendo de su función y contexto en donde este actúa. A continuación describiremos sólo tres tipos de indicadores con el fin de que el lector  pueda identificar su alcance frente a cualquier campo. Para empezar, mencionamos en qué consisten los indicadores de eficacia. Estos tienen como propósito medir el grado de cumplimiento de una meta o un resultado propuesto. Asimismo, le sigue los indicadores de eficiencia que  miden el nivel de ejecución del proceso teniendo en cuenta la relación entre el logro del programa y los recursos utilizados para su cumplimiento mediante el tiempo, el esfuerzo o el costo. Por último, están los indicadores de calidad, como su nombre lo dice, consiste en medir el nivel de calidad de un proceso o servicio mediante diferentes perspectivas como el nivel de satisfacción o la precisión en la ejecución del proceso.
+Existen diferentes maneras de clasificar los indicadores, dependiendo de su función y contexto en donde este actúa. A continuación describiremos sólo tres tipos de indicadores con el fin de que el lector  pueda identificar su alcance frente a cualquier campo. Para empezar, mencionamos en qué consisten los *indicadores de eficacia*. Estos tienen como propósito medir el grado de cumplimiento de una meta o un resultado propuesto. Asimismo, le sigue los *indicadores de eficiencia* que  miden el nivel de ejecución del proceso teniendo en cuenta la relación entre el logro del programa y los recursos utilizados para su cumplimiento mediante el tiempo, el esfuerzo o el costo. Por último, están los *indicadores de calidad*, como su nombre lo dice, consiste en medir el nivel de calidad de un proceso o servicio mediante diferentes perspectivas como el nivel de satisfacción o la precisión en la ejecución del proceso.
 
 Para poder entender mejor lo anterior, daremos algunos ejemplos a grandes rasgos desde la perspectiva de la universidad y cómo actúan los indicadores a partir de un objetivo establecido.
 
 | Sección/Dependencia | Objetivo     | Indicadores |
 | ---------------------| ---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------| 
-|Bienestar universitario| Mantener la acreditación institucional y de alta calidad de sus programas académicos. | - Determinar el nivel de satisfacción en los usuarios de los servicios ofrecidos por Bienestar.  <br> - El porcentaje  de estudiantes que califica con satisfacción “alta” o muy “alta” los servicios ofrecidos por bienestar académico.|
-| Dirección académica | Contribuir a la internacionalización y bilingüismo como necesidad de la interacción con comunidades extranjeras.   | - Medir el crecimiento de estudiantes extranjeros activos en la universidad.<br> - Costo que vale para la universidad dar un acompañamiento y seguimiento a un estudiante extranjero.<br> - Número de cursos de diferentes  idiomas no remotos ofertados por la universidad.| 
-|Investigación| Fomentar el desarrollo de investigación formativa e investigación científica en cada programa académico.|- Porcentaje de grupos de investigación activos en la universidad. <br> - Número de eventos, seminarios o espacios de difusión para compartir resultados y experiencias de un tema en común. <br> - Número de horas semanales dedicadas por cada estudiante al grupo de investigación.|
-|Planeación institucional|Contribuir al desarrollo de políticas institucionales de buen gobierno que garanticen la estabilidad de cada programa académico.|- Determinar el nivel de participación entre cada ente que conforma la comunidad universitaria. <br> - Número de espacios asamblearios en cada programa académico de la universidad.|
+|Bienestar universitario| Mantener la acreditación institucional y de alta calidad de sus programas académicos. | * Determinar el nivel de satisfacción en los usuarios de los servicios ofrecidos por Bienestar.  <br> * El porcentaje  de estudiantes que califica con satisfacción “alta” o muy “alta” los servicios ofrecidos por bienestar académico.|
+| Dirección académica | Contribuir a la internacionalización y bilingüismo como necesidad de la interacción con comunidades extranjeras.   | * Medir el crecimiento de estudiantes extranjeros activos en la universidad.<br> * Costo que vale para la universidad dar un acompañamiento y seguimiento a un estudiante extranjero.<br> * Número de cursos de diferentes  idiomas no remotos ofertados por la universidad.| 
+|Investigación| Fomentar el desarrollo de investigación formativa e investigación científica en cada programa académico.|* Porcentaje de grupos de investigación activos en la universidad. <br> * Número de eventos, seminarios o espacios de difusión para compartir resultados y experiencias de un tema en común. <br> * Número de horas semanales dedicadas por cada estudiante al grupo de investigación.|
+|Planeación institucional|Contribuir al desarrollo de políticas institucionales de buen gobierno que garanticen la estabilidad de cada programa académico.|* Determinar el nivel de participación entre cada ente que conforma la comunidad universitaria. <br> * Número de espacios asamblearios en cada programa académico de la universidad.|
 
 
-Como bien  fue dicho, un indicador debe presentar la relación entre dos variables para ello es necesario definir un método de cálculo para el indicador. Por consiguiente, es preciso comprender la razón, la proporción, el  porcentaje, la tasa de variación y el número índice como métodos de cálculo más utilizados.  Para ello, haremos un estudio detallado desde la estructura y el comportamiento matemático de cada uno de estos métodos. 
+Como bien  fue dicho, un indicador debe presentar la relación entre dos variables para ello es necesario definir un método de cálculo para el indicador. Por consiguiente, es preciso comprender la razón, la proporción, el porcentaje, la tasa de variación y el índice como métodos de cálculo más utilizados.  Para ello, haremos un estudio detallado desde la estructura y el comportamiento matemático de cada uno de estos métodos. 
 
-Intentar identificar los conceptos de razón y proporción suele ser un poco trabajoso debido a la fuerte relación que comparten y que suele confundirse ya que desde su naturaleza matemática ambos conceptos se basan inherentemente en relaciones multiplicativas, lo cual enfatizamos bastante en esta lectura, de forma que se entienda que el éxito con las proporciones depende de una gran comprensión y fluidez con la multiplicación y división de números racionales.
 
 ## Razón
 
@@ -334,14 +333,75 @@ reciente en el campo de la epidemiología. Es común encontrar en la literatura 
 
 ## Índice
 
-Un índice (número índice) es una medida estadística diseñada para estudiar las variaciones de una magnitud o más de una en relación con el tiempo o el espacio. Particularmente, el número índice recoge la evolución relativa en el periodo $t$ de una magnitud económica (precios, producciones, …) de un conjunto de bienes o productos respecto de un periodo base ó de referencia $0$. También permite comparar una magnitud económica en una zona geográfica respecto de una zona de referencia. Ahora, por simplicidad, sólo se considerará el caso de magnitudes temporales.
+Un índice es una estadística compuesta, es decir, es basada en múltiples elementos de datos, en otras palabras, un índice es una medida compuesta que agrega múltiples indicadores. Los índices, también conocidos como *indicadores compuestos*, resumen y clasifican observaciones específicas, generalmente en la escala ordinal.
 
-Al período inicial se le denomina período base o referencia y se le asigna el valor $100$ y se compara con el periodo actual o también llamado corriente.  Así si definimos a $I_{0}^{t}$ como el número índice de un determinado valor en el período $t$, respecto al período base $0$.
+**La escala ordinal**
+tiene como caracteristica que sus categorías están ordenadas por rango; cada clase posee una misma relación posicional con la siguiente; es decir, la escala muestra situaciones escalonadas. Si se usan números, su única significación está en indicar la posición de las distintas categorías en la serie; sin embargo, no asumen que la distancia del primer escalón al segundo sea la misma que la del segundo al tercero.
 
-Si la comparación se realiza para valores de una sola magnitud, hablaremos  de *índices simples*, en caso contrario, cuando se trabaja con más de dos magnitudes a la vez, hablaremos de *índices compuestos*. 
+>***Puntaje Básico de Matrícula PBM***.
+>Es el indicador que utiliza la Universidad Nacional de Colombia para hacer la
+clasificación socioeconómica del estudiante y asignar la matrícula. El Puntaje Básico de Matrícula PBM, es calculado con la información de 7 variables, cuyo
+soporte documental es aportado por el estudiante. A cada variable se le asigna un puntaje, un peso ponderado y una función específica dentro de la fórmula, el cual es calculado mediante la siguiente fórmula 
+$$\begin{equation}
+PBM=(0,4A_1+0,3A_2+0,3A_3)\times B_1 \times B_2 \times B_3 \times B_4.
+\end{equation}$$
+donde las variables $A_2$ y $A_1$ constituyen al estrato  y el valor pensión escolar en el último año de secundaria respectivamente y son indicadores del nivel de gastos en el hogar, mientras $A_3$ representa el nivel de ingresos. Las variables $B_1$ es tipo de colegio, $B_2$ es el lugar de residencia, $B_3$ propiedad de la vivienda familiar y número de hijos dependientes del ingreso del hogar es $B_4$ y son igualmente, indicadores del nivel de gastos.
 
-### Índice simple
-Se denominada *índice simple* de la magnitud $X$ en el periodo $t$ respecto al perido $0$, a la razón, 
+|Ejemplo de escala ordinal usando la variable estrato $A_2$|
+|----|----|
+|**Estrato**|**Puntaje**|
+|$1$|$00$|
+|$2$|$13$|
+|$3$|$30$|
+|$4$|$55$|
+|$5$|$80$|
+|$6$|$100$|
+|NO INFORMA|$100$|
+
+> Para más información sobre la asignación del PBM consulte en siguiente documento. [PBMunal](http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298)
+
+La OCDE (Organización para la Cooperación y el Desarrollo Económicos) y el Centro Común de Investigación de la Comisión Europea publicaron conjuntamente un manual para la construcción de indicadores compuestos en 2008. El manual, respaldado oficialmente por el comité estadístico de alto nivel de la OCDE, describe diez pasos recurrentes para la elaboración de un índice: 
+
++ Paso 1: marco teórico
+
++ Paso 2: selección de datos
+
++ Paso 3: imputación de datos faltantes
+
++ Paso 4: análisis multivariado
+
++ Paso 5: normalización
+
++ Paso 6: ponderación
+
++ Paso 7: agregación de indicadores
+
++ Paso 8: análisis de sensibilidad
+
++ Paso 9: vincular a otras medidas
+
++ Paso 10: visualización
+
+Como sugiere la lista, es laborioso construir un indicador compuesto, lo que hace que su uso sea cuestionable. 
+
+En el funcionamiento, el índice presenta diferentes caracteristicas cuando va enfocado en las ciencias sociales o en la economía, por esta razón, haremos un comparativo por separado que nos permita identificar como actuan en estos dos campos. 
+
+### Índice en la economía
+
+>Es un indicador que tiene por objeto medir las variaciones de un fenómeno económico o de otro orden referido a un valor que se toma como base en un momento dado.
+
+Cuando el índice va referido a un valor de un producto será conveniente referirse al *número índice*.
+
+#### Número índice
+
+Es una cifra de datos económicos que refleja el precio o la cantidad en comparación con un valor estándar o base. Particularmente, el número índice recoge la evolución relativa en el periodo $t$ de una magnitud económica (precios, producciones, …) de un conjunto de bienes o productos respecto al período base ó de referencia $0$. Los números índice se utilizan especialmente para comparar la actividad empresarial, el costo de vida y el empleo.  
+
+Al período inicial se le denomina período base o referencia y se le asigna el valor $100$ y se compara con el período actual o también llamado corriente.  Así, definimos a $I_{0}^{t}$ como el número índice de un determinado valor en el período $t$, respecto al período base $0$.
+
+Si la comparación se realiza para valores de una sola magnitud, hablaremos  de *números índices simples*, en caso contrario, cuando se trabaja con más de dos magnitudes a la vez, hablaremos de *números índices compuestos*. Por simplicidad es muy común denominar al número índice simple (o complejo) por solo índice simple (o complejo) y aquí no será la excepción.
+
+##### Índice simple
+Se denominada *índice simple* de la magnitud $X$ en el período $t$ respecto al período $0$, a la razón, 
 
 $$\begin{equation}
 I_{0/t}=\frac{x_t}{x_0}\times 100
@@ -365,7 +425,7 @@ Sería deseable que todo numero índice satisfaciera las siguientes propiedades:
 |***1. Existencia:*** Un número índice debe ser un número determinado y no nulo. |
 |***2. Identidad:*** Cuando coincide el período base y el período actual, el indicador tomará un valor unitario (o 100 si se expresa en porcentaje).$$I_{t/t}=\frac{x_t}{x_t}=1$$|
 |***3. Homogeneidad:*** El valor del índice no se altera si se produce un cambio en las unidades de medida. |
-|***4. Inversión:*** Si permutamos el periodo base y el actual, el índice que se obtiene es el inverso del original.$$I_{t/0}=\frac{x_t}{x_0}=\frac{1}{\frac{x_0}{x_t}}=\frac{1}{I_{0/t}}\longrightarrow I_{t/0}I_{0/t}=I_{t/t}=1$$| 
+|***4. Inversión:***El índice con los periodos invertidos resulta la inversa del índice.$$I_{t/0}=\frac{x_t}{x_0}=\frac{1}{\frac{x_0}{x_t}}=\frac{1}{I_{0/t}}\Longrightarrow I_{t/0}I_{0/t}=I_{t/t}=1$$| 
 |***5. Proporcionalidad:*** Si se produce una variación proporcional en todas las magnitudes, el índice variará en la misma proporción. |
 
 Lo índices simples satisfacen estas cinco propiedades, pero no siempre se cumple para índices complejos. 
@@ -385,7 +445,7 @@ P_{t/0}=\frac{p_{t}}{p_{0}}\times 100
 |*Año* |2012|2013|2014|2015|
 |----------|--------|---------|-----------|----------|----------|
 |*Precio del arroz (pesos)*|700|850|910|1.050|
-|$I_{año/2012}$($\%$)|$\frac{700}{700}\times 100=100$|$\frac{850}{700}\times 100=121,4$|$\frac{910}{850}\times 100=107$|$\frac{1.050}{910}\times 100=115,3$|
+|$I_{año/2012}$($\%$)|$100$|$\frac{850}{700}\times 100=121,4$|$\frac{910}{850}\times 100=107$|$\frac{1.050}{910}\times 100=115,3$|
 
   * *Índice de precios al consumidor (IPC):* El IPC nos indica cómo va evolucionando con respecto del conjunto de precios de los bienes y servicios básicos que consume la población. La principal función del IPC es señalar la evolución del coste de la vida y resulta primordial para el conocimiento de la inflación.
   
@@ -425,7 +485,7 @@ y así, se obtiene el resto de valores.
 |----------|--------|---------|-----------|----------|----------|
 |$I_{año/2012}$($\%$)|100|123,2|110,7|108,7|
 
-### Índice complejo
+##### Índice complejo
 
 Hablaremos de *índices complejos* cuando se forman a partir de los índices simples. Su función principal será sintetizar o resumir la información que proporcionan los índices simples que entran en su composición.
 
@@ -503,56 +563,39 @@ Consideremos los datos del ejemplo anterior con las siguientes ponderaciones
 
 $$\overline{I}_{1018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118$$
 
-### Índices sintéticos
+### Índices en la ciencia social
  
-Los índices sintéticos representan una medida que se obtiene mediante la agregación adecuada de un conjunto de indicadores sociales. Su elaboración no es sencilla, ya que los indicadores son de distinta naturaleza y provienen de diferentes fuentes de datos. En este sentido, en la literatura se recomienda seguir distintas etapas para su elaboración: *selección de los indicadores*, *selección de la técnica de estandarización, ponderación* y *agregación*. 
-
-*1. Selección de los indicadores*: En esta primera etapa se deberá seleccionar los indicadores, los cuales llamaremos indicadores parciales, esto perimite marcar la ruta hacia lo que queremos medir. Estos indicadores pueden ser, a su vez, tasas, proporciones, razones o índices. 
-
-*2. Selección de la técnica de estandarización:* Los indices sociales se miden en distintas unidades de medida: años, personas, porcentajes, etc. La estandarización permite que un conjunto heterogéneo de indicadores pueda ser transformado a una unidad de medida común.
-
-*3. Técnica de ponderación*: No se puede dar la misma importancia a
-todos los indicadores y, por ende, es necesario ponderarlos.
-
-*4. Selección del método de agregación:* En esta etapa se busca unificar los indicadores en un índice sintético a través de algún procedimiento estadístico, matemático o lógico. Resulta deseable que el valor que arroje la medida final represente niveles factibles de ser interpretados en una escala  de alto, medio, bajo o nulo. Esto último dependerá de la técnica de estandarización utilizada y de que el procedimiento de agregación no haga perder esa propiedad. La agregación se puede efectuar como la media aritmética ponderada, o bien,
-como la media geométrica poderada. La primera es la más utilizada y sencilla en su elaboración.
+Estos índices representan una medida que se obtiene mediante la agregación adecuada de un conjunto de indicadores sociales. Gran parte de los datos están representados en varios índices como el índice de brecha de género , el índice de desarrollo humano 
+Según Earl Babbie, los elementos de los índices suelen ponderarse por igual, a menos que existan razones en contra (por ejemplo, si dos elementos reflejan esencialmente el mismo aspecto de una variable, podrían tener un peso de 0,5 cada uno). 
 
 Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y veremos como se calcula a grandes rasgos. El índice sintético de bienestar social (IBS) se mide con seis índices parciales: índice de salud, seguridad ciudadana, educacíon, trabajo, vivienda e ingresos relativos y estos a su vez, se subdividen en los siguientes índices simples.
 
-|Índice de salud $(A_1)$|
-|------------------------------------------------|
-|1.Índice de años potenciales de vida perdidos|
++ **Índice de salud $(A_1)$**
+  1. Índice de años potenciales de vida perdidos
 
-|Índice de Seguridad ciudadana $(A_2)$|
-|-----------------------------------------------------|
-|2. Índice de homicidios dolorosos|
-|3. Índice de homicidios culposos en accidentes de tránsito|
++ **Índice de Seguridad ciudadana $(A_2)$**
+  2. Índice de homicidios dolorosos
+  3. Índice de homicidios culposos en accidentes de tránsito
 
-|Índice de Educación $(A_3)$|
-|-----------------------------------------------------|
-|4. Índice de educación de 6 a 17 años|
-|5. Índice de educación de 18 a 24 años|
-|6. Índice de educación mayores de 25 años|
++ **Índice de Educación $(A_3)$**
+  4. Índice de educación de 6 a 17 años
+  5. Índice de educación de 18 a 24 años
+  6. Índice de educación mayores de 25 años
 
-|Índice de trabajo $(A_4)$|
-|------------------------------------------------|
-|7. Índice de trabajo decente |
++ **Índice de trabajo $(A_4)$**
+  7. Índice de trabajo decente 
 
-|Índice de vivienda $(A_5)$|
-|-----------------------------------------------------|
-|8. Índice de techo-piso|
-|9. Índice de de acceso al agua |
-|10. Índice sobre disposición de excretas y saneamiento|
-|11. Índice de personas por dormitorio|
-|12. Índice sobre seguridad jurídica en la tenencia|
++ **Índice de vivienda $(A_5)$**
+  8. Índice de techo-piso
+  9. Índice de de acceso al agua 
+  10. Índice sobre disposición de excretas y saneamiento
+  11. Índice de personas por dormitorio
+  12. Índice sobre seguridad jurídica en la tenencia
 
-|Índice de ingresos $(A_6)$|
-|------------------------------------------------|
-|13. Índice de ingresos relativos|
++ **Índice de ingresos $(A_6)$**
+  13. Índice de ingresos relativos
 
-Es decir, que para realizar la síntesis final partimos de una matriz de datos que contiene la valoración o el puntaje obtenido en cada uno de estos seis índices parciales. Porteriormente, a través de los  métodos de agregación como la media ponderada, generamos el
-número de rankings. En el caso hipotético, asignaremos a salud y
-seguridad un peso del $15\%$, a trabajo  un $30\%$, a vivienda un $20\%$ y a ingresos y educación le introducimos un $10\%$. 
+Es decir, que para realizar la síntesis final partimos de una matriz de datos que contiene la valoración o el puntaje obtenido en cada uno de estos seis índices parciales. Porteriormente, a través de los  métodos de agregación (como la media ponderada), generamos el número de rankings. En el caso hipotético, asignaremos a salud y seguridad un peso del $15\%$, a trabajo  un $30\%$, a vivienda un $20\%$ y a ingresos y educación le introducimos un $10\%$. Así la fórmula de cálculo es
 
 $$\begin{equation}
 IBS=0,15A_1+0,15A_2+0,1A_3+0,3A_4+0,2A_5+0,1A_6
@@ -562,20 +605,111 @@ IBS=0,15A_1+0,15A_2+0,1A_3+0,3A_4+0,2A_5+0,1A_6
 
 Es un índice, calculado por el Icfes, que mide cuatro
 aspectos de la calidad de la educación en todos los colegios
-del país: Progreso, Desempeño, Eficiencia y Ambiente Escolar. El ISCE está en una escala de 1 a 10, en donde Progreso y Desempeño pesan 40 por ciento, cada uno, y Eficiencia y Ambiente Escolar pesan 10 por ciento, cada uno. Para el caso de la Media, el componente Eficiencia pesa el 20 por ciento.
+del país: Progreso, Desempeño, Eficiencia y Ambiente Escolar. *El progreso* mide cambio porcentual de un año a otro en el porcentaje de estudiantes en el nivel de desempeño insuficiente y en el nivel de desempeño avanzado. *El desempeño* mide los resultados de las pruebas estandarizadas de matemáticas y lenguaje en cada nivel educativo. *La eficiencia* se mide como la tasa
+de aprobación al siguiente año escolar de cada nivel educativo. *El ambiente escolar* se mide con base en una encuesta a estudiantes.
 
-***Puntaje Básico de Matrícula PBM***
+El ISCE está en una escala de 1 a 10, en donde Progreso y Desempeño pesan 40 por ciento, cada uno, y Eficiencia y Ambiente Escolar pesan 10 por ciento, cada uno. Para el caso de la Media, el componente Eficiencia pesa el 20 por ciento.
 
-Es el indicador que utiliza la Universidad Nacional de Colombia para hacer la
-clasificación socioeconómica del estudiante y asignar la matrícula. El Puntaje Básico de Matrícula PBM, es calculado con la información de 7 variables, cuyo
-soporte documental es aportado por el estudiante. A cada variable se le asigna un puntaje, un peso ponderado y una función específica dentro de la fórmula, el cual es calculado mediante la siguiente fórmula 
+***Ejemplo. Índice sintético de calidad de la educación en el nivel educativo de primaria para un colegio*** 
 
-  $$\begin{equation}
-PBM=(0,4A_1+0,3A_2+0,3A_3)\times B_1 \times B_2 \times B_3 \times B_4.
+
+*Indicador 1: Porcentaje de estudiantes en nivel insuficiente*
+
+|Grado|Área|2015|2016|
+|:---------------:|:--------------:|:-------:|:-------:|
+|Tercero|Matemáticas|$18\%$|$20\%$|
+|Tercero|Lenguaje|$13\%$|$21\%$|
+|Quinto|Matemáticas|$15\%$|$19\%$|
+|Quinto|Lenguaje|$22\%$|$23\%$|
+
+*Indicador 2: Porcentaje de estudiantes en nivel avanzado*
+
+|Grado|Área|2015|2016|
+|:------------------:|:---------------:|:-------:|:------:|
+|Tercero|Matemáticas|$9\%$|$11\%$|
+|Tercero|Lenguaje|$18\%$|$19\%$|
+|Quinto|Matemáticas|$19\%$|$23\%$|
+|Quinto|Lenguaje|$26\%$|$30\%$|
+
+*Indicador 3: Promedio de los resultados obtenidos en las últimas pruebas*
+
+|Grado|Área|2016|
+|:------------:|:----------:|:-----:|
+|Tercero|Matemáticas|$220$|
+|Tercero|Lenguaje|$300$|
+|Quinto|Matemáticas|$270$|
+|Tercero|Lenguaje|$298$|
+
+*Indicador 4: Tasa de aprobación al año siguiente * $90\%$
+
+*Indicador 5: Ambiente escolar*
+
+|[]()|        |
+|----------|-----------|
+|Seguimiento al apredizaje|$47$|
+|Ambiente en el aula|$49$|
+
+
+Estimaremos cada indicador mediante las siguientes técnicas
+
++ Desempeño insuficiente (DI): Se estima calculando la suma de la [tasa de variación](https://estadisticaun.github.io/IndMatematicas/1-4-tasas.html#tasa-de-variaci%C3%B3n) con respecto al año anterior del porcentaje de estudiantes en el nivel insuficiente.
+
+ $$\begin{eqnarray}
+DI&=&\frac{20-18}{18}+\frac{21-13}{13}+\frac{19-15}{15}+\frac{23-22}{22}\\
+&=&0,11+0,61+0,26+0,04\\
+&=&1,02.
+\end{eqnarray}$$
+
++ Desempeño avanzado (DA): Se estima con el siguiente cálculo 
+$$\begin{eqnarray}
+DA&=&\frac{11-9}{100-9}+\frac{19-18}{100-18}+\frac{23-19}{100-19}+\frac{30-26}{100-26}\\
+&=&0,02+0,01+0,04+0,05\\&=&0,12.
+\end{eqnarray}$$
+
+
+
+El indicador progreso estará definido como
+$$\begin{equation}
+PROGRESO=  -0,75\times DI+0,25\times DA.
 \end{equation}$$
 
-donde las variables $A_2$ y $A_1$ constituyen al estrato  y el valor pensión escolar en el último año de secundaria respectivamente y son indicadores del nivel de gastos en el hogar, mientras $A_3$ representa el nivel de ingresos. Las variables $B_1$ es tipo de colegio, $B_2$ es el lugar de residencia, $B_3$ propiedad de la vivienda familiar y número de hijos dependientes del ingreso del hogar es $B_4$ y son igualmente, indicadores del nivel de gastos.
+Notesé que el peso de $DI$ es $-75\%$, es decir, $DI$ obtiene un valor negativo, y por tanto $DI$ toma el valor de cero, debido a que nunca se suman valores negativos, ya que el objetivo del índice no es restar. Luego el desempeño insuficiente se expresa como:
 
+$$\begin{equation}
+DI=0
+\end{equation}$$
+y el indicador de progreso sería 
+$$\begin{equation}
+PROGRESO=  0,03
+\end{equation}$$
 
-[documentopbm](https://planeacion.medellin.unal.edu.co/images/documentos/EvaluacionMatriculasUnalMed.pdf)
+Similarmente, teniendo en cuenta la misma ruta para elaborar el progreso, se obtiene el desempeño como 
+
+$$\begin{eqnarray}
+DESEMPEÑO&=&  \frac{220+300+270+298}{4}\times \frac{4}{500}\\
+&=& 2,37
+\end{eqnarray}$$
+el cual es un promedio de puntajes multiplicado por una ponderación. Ahora, como el componente desempeño pesa 40 por ciento del ISCE, es
+decir que el máximo puntaje posible de obtener es 4 y 500 es el máximo valor posible de obtener en la prueba. Por esta razón, se usa el fractor de $\frac{4}{500}$ en la fórmula.
+
+La eficiencia sería  la tasa de aprobación al siguiente año escolar de cada nivel educativo
+$$\begin{equation}
+EFICIENCIA= 0,9.
+\end{equation}$$
+
+Finalmente, el ambiente escolar 
+$$\begin{eqnarray}
+AMB.ESCOLAR= \frac{47+49+200}{400}
+&=& 0,74
+\end{eqnarray}$$
+tal fórmula proviene de un estudio de la entidad encargada, teniendo en cuenta los parámetros y escalas empleados para cálculo del puntaje.
+
+En denitiva, el índice sintético de calidad de la educación en el nivel educativo de primaria para ese colegio sería la suma de los anteriores subcomponentes:
+
+$$\begin{eqnarray}
+ISCE&=&PROGRESO+DESEMPEÑO+EFICIENCIA+AMB.ESCOLAR\\&=& 0,03+2,37+0,9+0,74\\&=&4,04.
+\end{eqnarray}$$
+
+Dado que el índice varía entre cero y diez, una puntuación de 4 muestra que el colegio se encuentra en un bajo nivel de calidad educativa.
+
 
