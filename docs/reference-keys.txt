@@ -19,3 +19,6 @@ final-words
 índice-en-la-economía
 índices-en-la-ciencia-social
 número-índice
+índices-en-las-ciencias-sociales
+índice-sintético-de-la-calidad-educativa-isce
+puntaje-básico-de-matrícula-pbm

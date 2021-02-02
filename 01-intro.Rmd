@@ -563,12 +563,13 @@ Consideremos los datos del ejemplo anterior con las siguientes ponderaciones
 
 $$\overline{I}_{1018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118$$
 
-### Índices en la ciencia social
+### Índices en las ciencias sociales
  
-Estos índices representan una medida que se obtiene mediante la agregación adecuada de un conjunto de indicadores sociales. Gran parte de los datos están representados en varios índices como el índice de brecha de género , el índice de desarrollo humano 
+>Estos índices representan una medida que se obtiene mediante la agregación adecuada de un conjunto de indicadores sociales. Gran parte de los datos están representados en varios índices como el índice de brecha de género, el índice de desarrollo humano, el índice de bienestar social, entre otros.
+
 Según Earl Babbie, los elementos de los índices suelen ponderarse por igual, a menos que existan razones en contra (por ejemplo, si dos elementos reflejan esencialmente el mismo aspecto de una variable, podrían tener un peso de 0,5 cada uno). 
 
-Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y veremos como se calcula a grandes rasgos. El índice sintético de bienestar social (IBS) se mide con seis índices parciales: índice de salud, seguridad ciudadana, educacíon, trabajo, vivienda e ingresos relativos y estos a su vez, se subdividen en los siguientes índices simples.
+Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y veremos como se calcula a grandes rasgos. El *índice sintético de bienestar social (IBS)* se mide con seis índices parciales: índice de salud, seguridad ciudadana, educacíon, trabajo, vivienda e ingresos relativos y estos a su vez, se subdividen en los siguientes índices parciales.
 
 + **Índice de salud $(A_1)$**
   1. Índice de años potenciales de vida perdidos
@@ -595,13 +596,13 @@ Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y
 + **Índice de ingresos $(A_6)$**
   13. Índice de ingresos relativos
 
-Es decir, que para realizar la síntesis final partimos de una matriz de datos que contiene la valoración o el puntaje obtenido en cada uno de estos seis índices parciales. Porteriormente, a través de los  métodos de agregación (como la media ponderada), generamos el número de rankings. En el caso hipotético, asignaremos a salud y seguridad un peso del $15\%$, a trabajo  un $30\%$, a vivienda un $20\%$ y a ingresos y educación le introducimos un $10\%$. Así la fórmula de cálculo es
+Es decir, que para realizar la síntesis final partimos de una matriz de datos que contiene la valoración o el puntaje obtenido en cada uno de estos seis índices parciales. Posteriormente, a través de los  métodos de agregación (como la media ponderada), generamos el número de rankings. Luego, analizamos el valor de importancia que tiene cada variable, en el caso hipotético, asignaremos a salud y seguridad un peso del $15\%$, a trabajo  un $30\%$, a vivienda un $20\%$ y a ingresos y educación le introducimos un $10\%$. Así la fórmula de cálculo es
 
 $$\begin{equation}
-IBS=0,15A_1+0,15A_2+0,1A_3+0,3A_4+0,2A_5+0,1A_6
+IBS=0,15A_1+0,15A_2+0,1A_3+0,3A_4+0,2A_5+0,1A_6.
 \end{equation}$$
 
-***Índice Sintético de la Calidad Educativa (ISCE)***
+#### Índice Sintético de la Calidad Educativa (ISCE)
 
 Es un índice, calculado por el Icfes, que mide cuatro
 aspectos de la calidad de la educación en todos los colegios
@@ -711,5 +712,42 @@ ISCE&=&PROGRESO+DESEMPEÑO+EFICIENCIA+AMB.ESCOLAR\\&=& 0,03+2,37+0,9+0,74\\&=&4,
 \end{eqnarray}$$
 
 Dado que el índice varía entre cero y diez, una puntuación de 4 muestra que el colegio se encuentra en un bajo nivel de calidad educativa.
+
+#### Puntaje Básico de Matrícula (PBM)
+En la parte inicial del capítulo explicamos en que consistía el [PBM](https://estadisticaun.github.io/IndMatematicas/1-6-%C3%ADndice.html). A continuación haremos el ejercicio de calcular dicho puntaje para un aspirante de pregrado de la universidad. Para ello, recolectamos los siguientes datos.
+
+|    |     |
+|----------------|------------------|
+|Valor de la pensión mensual pagada durante el último año de secundaria|0,03|
+|Estrato social| 3 |
+|Ingresos familiares mensuales|3,33|
+|Carácter del colegio| Público|
+|Lugar de residencia|Fuera del perímetro urbano|
+|Propiedad de la vivienda|Vivienda propia|
+|Número de hijos dependientes del ingreso familiar|2|
+
+Empezaremos determinando el indicador $A_1$ 
+
+ ![Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298](C:/Users/USUARIO/Pictures/pension.png){width=800px}
+ 
+de donde $A_1=500\times 0,03=15$. Para el indicador $A_2$ la [tabla estrato](https://estadisticaun.github.io/IndMatematicas/1-6-%C3%ADndice.html) nos indica que $A_2=30$. Siguiendo con el indicador $A_3$ se asigna mediante la  expresión 
+ $$ A_3=9\times ING=9\times 3,33=55$$
+donde $ING$ son los ingresos mensuales expresados como un múltiplo del salario mínimo legal mensual vigente en el año respectivo.
+
+![Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298](C:/Users/USUARIO/Pictures/b1.png){width=400px}
+![Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298](C:/Users/USUARIO/Pictures/b2n.png){width=400px}
+![Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298](C:/Users/USUARIO/Pictures/b3.png){width=400px}
+
+![Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298](C:/Users/USUARIO/Pictures/b4.png){width=400px}
+
+Como lo indica las tablas, se obtiene los puntajes $B_1=0,95$, $B_2=0,80$, $B_3=1$ y $B_4=1$ respectivamente. Utilizando a formúla 
+
+$$\begin{eqnarray}
+PBM&=&(0,4A_1+0,3A_2+0,3A_3)\times B_1 \times B_2 \times B_3 \times B_4\\
+&=& (0,4(15)+0,3(30)+0,3(55))\times 0,95 \times 0,80 \times 1 \times 1\\
+&=& 24
+\end{eqnarray}$$
+
+se llega a que la aspirante obtiene un puntaje de 24. 
 
 
