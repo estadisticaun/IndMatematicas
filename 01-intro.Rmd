@@ -8,33 +8,104 @@ Existen diferentes maneras de clasificar los indicadores, dependiendo de su func
 
 Para poder entender mejor lo anterior, daremos algunos ejemplos a grandes rasgos desde la perspectiva de la universidad y cómo actúan los indicadores a partir de un objetivo establecido.
 
-| Sección/Dependencia | Objetivo     | Indicadores |
-| ---------------------| ---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------| 
-|Bienestar universitario| Mantener la acreditación institucional y de alta calidad de sus programas académicos. | * Determinar el nivel de satisfacción en los usuarios de los servicios ofrecidos por Bienestar.  <br> * El porcentaje  de estudiantes que califica con satisfacción “alta” o muy “alta” los servicios ofrecidos por bienestar académico.|
-| Dirección académica | Contribuir a la internacionalización y bilingüismo como necesidad de la interacción con comunidades extranjeras.   | * Medir el crecimiento de estudiantes extranjeros activos en la universidad.<br> * Costo que vale para la universidad dar un acompañamiento y seguimiento a un estudiante extranjero.<br> * Número de cursos de diferentes  idiomas no remotos ofertados por la universidad.| 
-|Investigación| Fomentar el desarrollo de investigación formativa e investigación científica en cada programa académico.|* Porcentaje de grupos de investigación activos en la universidad. <br> * Número de eventos, seminarios o espacios de difusión para compartir resultados y experiencias de un tema en común. <br> * Número de horas semanales dedicadas por cada estudiante al grupo de investigación.|
-|Planeación institucional|Contribuir al desarrollo de políticas institucionales de buen gobierno que garanticen la estabilidad de cada programa académico.|* Determinar el nivel de participación entre cada ente que conforma la comunidad universitaria. <br> * Número de espacios asamblearios en cada programa académico de la universidad.|
+
+```{r, echo=FALSE}
+library(tidyr)
+intro <- tibble(`Dependencia` = c("Bienestar universitario","Dirección académica","Investigación","Planeación institucional"), `Objetivo` = c("Mantener la acreditación institucional y de alta calidad de sus programas académicos.","Contribuir a la internacionalización y bilingüismo como necesidad de la interacción con comunidades extranjeras. ","Fomentar el desarrollo de investigación formativa e investigación científica en cada programa académico.","Contribuir al desarrollo de políticas institucionales de buen gobierno que garanticen la estabilidad de cada programa académico."), `Indicadores` = c("* Determinar el nivel de satisfacción en los usuarios de los servicios ofrecidos por Bienestar. <br> * El porcentaje  de estudiantes que califica con satisfacción alta o muy alta los servicios ofrecidos por bienestar académico.","* Medir el crecimiento de estudiantes extranjeros activos en la universidad.<br> * Costo que vale para la universidad dar un acompañamiento y seguimiento a un estudiante extranjero.<br> * Número de cursos de diferentes  idiomas no remotos ofertados por la universidad.","* Porcentaje de grupos de investigación activos en la universidad. <br> * Número de eventos, seminarios o espacios de difusión para compartir resultados y experiencias de un tema en común. <br> * Número de horas semanales dedicadas por cada estudiante al grupo de investigación.","* Determinar el nivel de participación entre cada ente que conforma la comunidad universitaria. <br> * Número de espacios asamblearios en cada programa académico de la universidad."))
+knitr::kable(intro, caption = 'Ejemplos de indicadores')
+
+```
+
+Como bien  fue dicho, un indicador debe presentar la relación entre dos variables para ello es necesario definir un método de cálculo para el indicador. Por consiguiente, es preciso comprender la proporción, el porcentaje, la razón, la tasa de variación y el índice como métodos de cálculo más utilizados.  Para ello, haremos un estudio detallado desde la estructura y el comportamiento matemático de cada uno de estos métodos. 
 
 
-Como bien  fue dicho, un indicador debe presentar la relación entre dos variables para ello es necesario definir un método de cálculo para el indicador. Por consiguiente, es preciso comprender la razón, la proporción, el porcentaje, la tasa de variación y el índice como métodos de cálculo más utilizados.  Para ello, haremos un estudio detallado desde la estructura y el comportamiento matemático de cada uno de estos métodos. 
+## Proporción {#proporción}
+Matematicamente, la proporción es un cociente donde el numerador está incluido en el denominador cuyo objetivo es establecer la relación entre una parte con respecto al todo, en otras palabras es la relación que se establece entre un subconjunto $n$ de un conjunto universo $N$ y se define como
+$$\begin{equation}
+\text{Proporción de}\hspace{2mm}n=\frac{\text{Número de elementos de}\hspace{2mm}n}{\text{Total de elementos en el universo de}\hspace{2mm} N}
+\end{equation}$$
+donde $n$ es un subconjunto de $N$.Observe que el numerador siempre está incluido en el denorminador. Veamos el siguiente ejemplo.
 
+|Ejemplo. *Proporción de mujeres y hombres en una empresa* |
+|--------------------------------------------------------------------|
+|En una empresa trabajan  27 mujeres y 18 hombres. Entonces podemos deducir que el total de trabajadores es $27+18=45$ y por tanto la proporción de mujeres es <br> $$\frac{\text{Número de mujeres}}{\text{Total de trabajadores}}=\frac{27}{45}=\frac{3}{5}$$.<br> Similarmente, la proporción de hombres es <br>$$\frac{\text{Número de hombres}}{\text{Total de trabajadores}}=\frac{18}{45}=\frac{2}{5}$$.  <br> En la empresa existen tres mujeres por cinco trabajadores y dos hombres por cada cinco trabajadores.|
+
+Notemos que al ser el numerador una parte del denominador, el primero
+nunca será más grande que el segundo. Esta es la razón por la que el resultado no puede ser mayor que la unidad y oscila siempre entre cero y uno. 
+
+```{r, echo=FALSE}
+library(tidyr)
+ind5 <- tibble(`Nombre del indicador` = c("Porporción de matriculados extranjeros de pregrado en la universidad en el período $2020-I$","Proporción de matriculados de pregrado en el área de ciencias sociales y humanas de la universidad en el periodo $2020-I$.","Proporción de aspirantes para pregrado por estrato socioeconómico 2 o menos de la universidad en el período $2019-I$."), `Método de cálculo` = c("Número de  matriculados extranjeros de pregrado en la universidad en el periodo $2020-I$ /Total de estudiantes matriculados de pregrado en el periodo $2020-I$","Número total matriculados de pregrado en el área de ciencias sociales y humanas en el período $2020-I$/Total de estudiantes matriculados de pregrado en el período $2020-I$","Número total de aspirantes para pregrado por estrato socioeconómico 2 o menos en el período $2019-I$/Total de aspirantes para pregrado en el período $2019-I$"), `Procedimiento` = c("${300}/{36.358}=0,008$","${5.946}/{36.358}=0,16$","${48.639}/{82.854}=0,58$ "))
+knitr::kable(ind5, caption = 'Ejemplo de proporciones en la Universidad Nacional' )
+```
+
+Las proporciones son muy utilizadas en los cálculos estadísticos, sin embargo por simplicidad se acostumbre multiplicar por 100 el resultado final. Cuando esto pasa llamaremos a la proporción como [*porcentaje*](#porcentaje). Veamos más ejemplos de proporciones.
+
+En epidemiología, las proporciones permiten expresar la frecuencia de los eventos de salud, la enfermedad y las lesiones, en términos de su incidencia o prevalencia; es decir entre los casos nuevos o los casos existentes ocurridos. También permite mostrar en qué medida una población está expuesta a un
+determinado factor de riesgo.
+
+|Ejemplo. *Proporción anual de muertes en una población* |
+|--------------------------------------------------------------------|
+|Si en un año en una población de 450 habitantes se presentaron 10 muertes. Entonces <br> $$\text{Proporción anual de muertes}=\frac{\text{Número de personas fallecidas en el año}}{\text{Población total}}=\frac{10}{450}=0,02$$ |
+
+En otros casos, las proporciones cuando se tratan de mediciones de peso, talla, espacio, volumen, etcétera; suelen llamarse fracciones. Por ejemplo, la masa de una parte de un cuerpo puede expresarse como una fracción de su masa total. 
+
+
+## Porcentaje {#porcentaje}
+Un porcentaje es la forma de expresar un número como partes de cada cien.Como ya se dijo,  Los porcentajes son proporciones multiplicado por $100$. De manera más clara, podemos construir indicadores de porcentaje aplicando la operación 
+
+$$\begin{equation}
+\text{Porcentaje de}\hspace{2mm}n=\frac{\text{Número de elementos de}\hspace{2mm}n}{\text{Total de elementos en el universo de}\hspace{2mm} N}\times 100.
+\end{equation}$$.
+
+El porcentaje se representa con el símbolo $\%$, donde el conjunto $N$ representa el $100$ por ciento, y cada una de las relaciones obtenidas al dividir entre el total (elementos de $N$) y multiplicarlo por cien representa un tanto de cien, y es definido como tanto por ciento. 
+
+Algunos ejemplos son los siguientes 
+
+```{r, echo=FALSE}
+library(tidyr)
+ind5 <- tibble(`Nombre del indicador` = c("Porcentaje de estudiantes vinculados a actividades de extensión en la universidad en el periodo $2019-II$.","Porcentaje de tesis meritorias por estudiantes graduados en la universidad en el periodo $2020-I$.","Porcentaje de funcionarias administrativas en la universidad en el periodo $2020-I$."), `Método de cálculo` = c("Número de estudiantes vinculados a actividades de extensión en la universidad en el periodo $2019-II /$ Total de estudiantes matriculados en el periodo $2019-II × 100$","Número total de tesis meritorias por estudiantes graduados en el universidad en el periodo $2020-I /$ Total de estudiantes graduados en el período $2020-I × 100$","Número de administrativos mujeres en el período $2020-I/$ Total de administrativos en el periodo $2020-I × 100$"), `Procedimiento` = c("${3.600}/{54.284} × 100=11,61$%","${195}/{4.926} × 100=3,95$%","${1.460}/{2.850} × 100=51,2$%")  )
+knitr::kable(ind5, caption = 'Ambiente Escolar' )
+```
+
+Adicional a esto, es importante mencionar los procedimientos en el cálculo de porcentajes: Por aplicación directa o por proporciones, los cuales sirven como ruta para determinar otros hallazgos del indicador. 
+
+* Por aplicación directa,  para el cálculo del $t\%$ de una cantidad $N$ y es hallado mediante la expresión :
+
+$$\begin{equation}
+\frac{t}{100}\times N.
+\end{equation}$$
+
+|Ejemplo. Descuento de un artículo|
+|-----------------------------|
+|Un almacén tiene el $30\%$ de descuento en artículos de cocina. Para calcular el precio final de una licuadora que vale $\$80.000$ debemos $\frac{30}{100}\times 80.000=24.000.$ Es decir, $\$24.000$ equivale al $30\%$ de la licuadora y como es un $30\%$ menos, entonces $\$80.000-\$24.000=\$56.000$ es el precio final.|
+
+* Por  proporciones, es utilizado cuando se plantea una proporción asignando el $100\%$ al total y se calcula mediante la expresión:
+
+$$\begin{equation}
+\frac{t\%}{x}=\frac{100\%}{N}
+\end{equation}$$
+
+|Ejemplo|
+|----------------------------------|
+|La cantidad de mujeres socias de una cadena de supermercados es $1.455$ de $9.700$, cifra que podemos obtener mediante $\frac{t\%}{1.455}=\frac{100\%}{9.700}$ y haciendo el debido despeje resulta el $15\%$. Tambien son equivalentes las expresiones: 1,5 de cada 10, 12 de cada 80, 15 de cada 100 ó 0,15 de 1.|
+ 
+Hemos visto, un porcentaje expresa una [proporción](#proporción), es decir, una parte de un total. 
 
 ## Razón
-
-
 
 Una razón es una comparación multiplicativa de dos o más cantidades o medida.
 
 >La razón entre $a$ y $b$ cuando $b$ es una cantidad distinta de cero, se escribe: 
 $\frac{a}{b}$ o $a:b$ y se lee $a$ es a $b$.
 
-Esta relación nos da cuántas veces una cantidad es igual a la otra cantidad, como 6 estudiantes por 1 profesor o 2 tazas de azúcar para 5 tazas de harina. Independientemente de la situación, las comparaciones de razones siempre se relacionan de forma multiplicativa. Por ejemplo, la razón de 6 estudiantes por 2 adultos es que hay 3 veces más estudiantes que adultos.  También se  puede describir esta relación de varias formas, tales como:
+Esta relación nos da cuántas veces una cantidad es igual a la otra cantidad, como 6 estudiantes por 1 profesor o 2 tazas de azúcar para 5 tazas de harina. Independientemente de la situación, las comparaciones de razones siempre se relacionan de forma multiplicativa. Por ejemplo, la razón de 6 estudiantes por 2 profesores es que hay 3 veces más estudiantes que profesores.  También se  puede describir esta relación de varias formas, tales como:
 
-* 3 estudiantes por cada adulto.
-* Un adulto por cada 3 estudiantes. 
-* El número de adultos es $\frac{1}{3}$ del número de estudiantes. 
+* 3 estudiantes por cada profesor.
+* Un profesor por cada 3 estudiantes. 
+* El número de profesores es $\frac{1}{3}$ del número de estudiantes. 
 
-Independientemente de la forma en que se comunique esta relación, debe ser claro que hay 3 veces más estudiantes que adultos.
+Independientemente de la forma en que se comunique esta relación, debe ser claro que hay 3 veces más estudiantes que profesores.
 
 Cabe mencionar que la razón puede tener dos interpretaciones. La primera es por
 unir o componer dos cantidades de una manera que "conserva una relación multiplicativa", es decir, un cierto número de una cantidad junto con un cierto número de otra cantidad crea un compuesto unidad (Beckmann, 2014). Por ejemplo,
@@ -44,12 +115,15 @@ unir o componer dos cantidades de una manera que "conserva una relación multipl
 1. La relación de cuadros blancos a cuadros negros es $\frac{1}{3}$ ó $1:3$.
 
 
-![Sin titulo](https://cdn.pixabay.com/photo/2018/04/09/11/14/silhouette-3303818_960_720.png){width=30px} ![Sin titulo](https://cdn.pixabay.com/photo/2018/04/09/11/14/silhouette-3303818_960_720.png){width=30px} ![Sin titulo](https://cdn.pixabay.com/photo/2018/04/09/11/14/silhouette-3303818_960_720.png){width=30px} ![Sin titulo](https://cdn.pixabay.com/photo/2018/04/09/11/14/silhouette-3303818_960_720.png){width=30px} ![Sin titulo](https://cdn.pixabay.com/photo/2018/04/09/11/14/silhouette-3303818_960_720.png){width=30px} ![Sin titulo](https://cdn.pixabay.com/photo/2018/04/09/11/14/silhouette-3303818_960_720.png){width=30px} ![Sin titulo](https://cdn.pixabay.com/photo/2018/04/09/11/14/silhouette-3303818_960_720.png){width=30px}![Sin titulo](https://cdn.pixabay.com/photo/2018/04/09/11/14/silhouette-3303818_960_720.png){width=30px} ![Sin titulo](https://cdn.pixabay.com/photo/2018/04/09/11/14/silhouette-3303818_960_720.png){width=30px} ![Sin titulo](https://cdn.pixabay.com/photo/2018/04/09/11/14/silhouette-3303818_960_720.png){width=30px}
+```{r, echo=FALSE, out.width='5%'}
+knitr::include_graphics(rep('ProtectoR/estumate.png',7))
+knitr::include_graphics(rep('ProtectoR/estuesta.png',3))
+```
 
 2. La relación de estudiantes de matemáticas a estudiantes de estadística es   $\frac{7}{3}$ ó $7:3$.
 
 
-![Sin titulo](C:/Users/USUARIO/Pictures/arroz.png){width=50px} ![Sin titulo](C:/Users/USUARIO/Pictures/harina.png){width=40px}
+![Sin titulo](ProtectoR/arroz.png){width=50px} ![Sin titulo](ProtectoR/harina.png){width=40px}![Sin titulo](ProtectoR/harina.png){width=40px}
 
 3. La relación entre libras de arroz a kilos de harina es $\frac{1}{2}$ ó $1:2$.
 
@@ -62,7 +136,7 @@ Precisamos advertir que la razón no es una fracción en el sentido matemático,
 En el primer parcial, Ana acierta en $3$ preguntas de $10$ preguntas. Después en el segundo parcial responde bien $5$ de $7$ preguntas . ¿Cuál es la razón de las preguntas acertadas en los dos parciales? 
 
 Número de preguntas acertadas: 
-$\frac{6 \hspace{2mm} aciertos}{10 \hspace{2mm} preguntas}+\frac{4\hspace{2mm} aciertos}{7\hspace{2mm} preguntas}=\frac{10 \hspace{2mm} aciertos}{17 \hspace{2mm} preguntas}$.
+$\frac{6 \hspace{2mm} aciertos}{10 \hspace{2mm} desaciertos}+\frac{4\hspace{2mm} aciertos}{7\hspace{2mm} desaciertos}=\frac{10 \hspace{2mm} aciertos}{17 \hspace{2mm} desaciertos}$.
 
 Con lo que Ana de 17 preguntas acertó en 10 en los dos parciales.
 
@@ -77,77 +151,9 @@ Por otro lado, cuando nos referimos a $10 km/h$ realmente estamos comparando dos
 $$\begin{equation}
 \frac{10}{1}, \hspace{5mm} 10:1
 \end{equation}$$
-lo que nos dice es una razón. Estos tipos de razones que involucran un periodo de tiempo los llamaremos *tasas*.
+lo que nos dice es una razón. Estos tipos de razones que involucran un periodo de tiempo los llamaremos [*tasas*](#tasas).
 
-## Proporción
-Matematicamente, una proporción es la igualdad de dos razones cuyo objetivo es establecer la relación entre una parte con respecto al todo, en otras palabras es la relación que se establece entre un subconjunto $n$ de un conjunto universo $N$ y se define como
-$$\begin{equation}
-\text{Proporción de}\hspace{2mm}n=\frac{\text{Número de elementos de}\hspace{2mm}n}{\text{Total de elementos en el universo de}\hspace{2mm} N}
-\end{equation}$$
-donde $n$ es un subconjunto de $N$.Observe que el numerador siempre está incluido en el denorminador. Veamos el siguiente ejemplo.
-
-|Ejemplo. *Proporción de mujeres y hombres en una empresa* |
-|--------------------------------------------------------------------|
-|En una empresa trabajan  27 mujeres y 18 hombres. Entonces podemos deducir que el total de trabajadores es $27+18=45$ y por tanto la proporción de mujeres es <br> $$\frac{\text{Número de mujeres}}{\text{Total de trabajadores}}=\frac{27}{45}=\frac{3}{5}$$.<br> Similarmente, la proporción de hombres es <br>$$\frac{\text{Número de hombres}}{\text{Total de trabajadores}}=\frac{18}{45}=\frac{2}{5}$$.  <br> En la empresa existen tres mujeres por cinco trabajadores y dos hombres por cada cinco trabajadores. |
-
-Notemos que al ser el numerador una parte del denominador, el primero
-nunca será más grande que el segundo. Esta es la razón por la que el resultado no puede ser mayor que la unidad y oscila siempre entre cero y uno. 
-
-|Nombre del indicador | Método de cálculo| Procedimiento |
-| ---------------------------------|-------------------------------------------|------------------------|
-|Porporción de matriculados extranjeros de pregrado en la universidad en el periodo $2020-1$ | Número de  matriculados extranjeros de pregrado en la universidad en el periodo $2020-1$ /Total de estudiantes matriculados de pregrado en el periodo $2020-1$ | $\frac{300}{36358}=0,008$ |
-|Proporción de matriculados de pregrado en el área de ciencias sociales y humanas de la universidad en el periodo $2020-1$. |Número total matriculados de pregrado en el área de ciencias sociales y humanas en el periodo 2020-I/Total de estudiantes matriculados de pregrado en el periodo $2020-1$ | $\frac{5946}{36358}=0,16$
-| Proporción de matriculados de pregrado en el área de matemáticas y ciencias naturales de la universidad en el periodo $2020-1$. |Número total matriculados de pregrado en el área de ciencias sociales y humanas en el periodo 2020-I/Total de estudiantes matriculados de pregrado en el periodo $2020-1$ | $\frac{3863}{36358}=0,10$ |
-
-Las proporciones son muy utilizadas en los cálculos estadísticos, sin embargo por simplicidad se acostumbre multiplicar por 100 el resultado final. Cuando esto pasa llamaremos a la proporción como *porcentaje*. Veamos más ejemplos de proporciones.
-
-En epidemiología, las proporciones permiten expresar la frecuencia de los eventos de salud, la enfermedad y las lesiones, en términos de su incidencia o prevalencia; es decir entre los casos nuevos o los casos existentes ocurridos. También permite mostrar en qué medida una población está expuesta a un
-determinado factor de riesgo.
-
-|Ejemplo. *Proporción anual de muertes en una población* |
-|--------------------------------------------------------------------|
-|Si en un año en una población de 450 habitantes se presentaron 10 muertes en un año.Entonces <br> $$\text{Proporción de anual de muertes}=\frac{\text{Número de personas fallecidas en el año}}{\text{Población total}}=\frac{10}{450}=0,02$$ |
-
-En otros casos, las proporciones cuando se tratan de mediciones de peso, talla, espacio, volumen, etcétera; suelen llamarse fracciones. Por ejemplo, la masa de una parte de un cuerpo puede expresarse como una fracción de su masa total. 
-
-
-## Porcentaje
-Un porcentaje es la forma de expresar un número como partes de cada cien.Como ya se dijo,  Los porcentajes son proporciones multiplicado por $100$. De manera más clara, podemos construir indicadores de porcentaje aplicando la operación 
-
-$$\begin{equation}
-\text{Porcentaje de}\hspace{2mm}n=\frac{\text{Número de elementos de}\hspace{2mm}n}{\text{Total de elementos en el universo de}\hspace{2mm} N}\times 100.
-\end{equation}$$.
-
-El porcentaje se representa con el símbolo $\%$, donde el conjunto $N$ representa el $100$ por ciento, y cada una de las relaciones obtenidas al dividir entre el total (elementos de $N$) y multiplicarlo por cien representa un tanto de cien, y es definido como tanto por ciento. 
-
-Algunos ejemplos son los siguientes 
-
-|Nombre del indicador | Método de cálculo| Procedimiento |
-| ---------------------------------|-------------------------------------------|------------------------|
-| Porcentaje de estudiantes vinculados a actividades de extensión en la universidad en el periodo 2019-II. | (Número de estudiantes vinculados a actividades de extensión en la universidad en el periodo 2019-II /Total de estudiantes matriculados en el periodo 2019-II)$\times 100$ | $\frac{3600}{54284}\times 100=11,61\%$ |
-| Porcentaje de tesis meritorias por estudiantes graduados en la universidad en el periodo 2020-I. |(Número total de tesis meritorias por estudiantes graduados en el universidad en el periodo 2020-I/Total de estudiantes graduados en el periodo 2020-I)$\times 100$ | $\frac{195}{4926}\times 100=3,95\%$ |
-| Porcentaje de funcionarias administrativas en la universidad en el periodo 2020-I.|(Número de administrativos mujeres en el periodo 2020-I/Total de administrativos en el periodo 2020-I)$\times 100$ | $\frac{1460}{2850}\times 100=51,2\%$ |
-
-Adicional a esto, es importante mencionar los procedimientos en el cálculo de porcentajes: Por aplicación directa o por proporciones, los cuales sirven como ruta para determinar otros hallazgos del indicador. 
-
-* Por aplicación directa,  para el cálculo del $t\%$ de una cantidad $N$ y es hallado mediante la expresión :
-
-$$\begin{equation}
-\frac{t}{100}\times N.
-\end{equation}$$
-
-
-Un claro ejemplo, es cuando se quiere comprar un artículo en descuento, este simple cálculo nos ayuda a determinar el precio final del artículo. 
-
-* Por  proporciones, es utilizado cuando se plantea una proporción asignando el $100\%$ al total y se calcula mediante la expresión:
-
-$$\begin{equation}
-\frac{t\%}{x}=\frac{100\%}{N}
-\end{equation}$$
-
-En definitiva, un porcentaje es un ejemplo de proporcionalidad. 
-
-## Tasas 
+## Tasas {#tasas}
 Una tasa es una razón entre dos cantidades con unidades distintas y expresan la dinámica de un suceso en una población a lo largo del tiempo. Si la tasa o la cantidad frente a la cual algo está cambiando no está especificada, usualmente la tasa es por unidad de tiempo.  Sin embargo, una tasa  puede ser especificada por unidad de tiempo, por unidad de medida o masa o cualquier otra cantidad. Naturalmente para describir las unidades de una tasa, la palabra "por" se utiliza para poder separar las unidades de dos medidas utilizadas para calcular la tasa como por ejemplo, pesos por libra, metros por segundo, millas por hora, y días enfermo por año. De aquí es conveniente clasificar algunas tasas cuando *el denominador es una variable temporal, un “stock” poblacional* ó *una variable monetaria*.
 
 ***1. Cuando el denominador es un “stock” poblacional***. Haciendo referencia a un “stock” poblacional como las poblaciones en un punto exacto de tiempo y tienen como fuentes los censos, padrones, estimaciones de población o encuestas. Para el cálculo, el numerador expresa el número de eventos ocurridos en una población durante un período. A diferencia de las proporciones, el denominador  no expresa el número de sujetos en observación sino el tiempo durante el cual tales sujetos estuvieron en riesgo de sufrir el evento. Así que, la tasa se calcula mediante la siguiente fórmula<br>
@@ -208,7 +214,7 @@ En efecto, magnitudes vectoriales como la velocidad  que describe el cambio de p
 * *Tasa de cambio:* La tasa de cambio muestra la relación que existe entre dos monedas. Dicha tasa es un indicador que expresa cuántas unidades de una divisa se necesitan para obtener una unidad de la otra. En el caso de Colombia, tenemos la siguiente relación
 
 $$\begin{equation}
-\frac{\text{Cantidad de pesos colombianos}}{\text{Una unidad de la moneda extrajera}}\times 10^{n}
+\frac{\text{Cantidad o peso de la moneda local}}{\text{Una unidad de la moneda extrajera}}\times 10^{n}
 \end{equation}$$
 
 |Ejemplo. *Tasa de cambio entre el euro y el dolar*|
@@ -223,7 +229,7 @@ $$\begin{equation}
 
 
 
-### Tasa de Variación
+### Tasa de Variación {#tasavariación}
 
 Representa la razón  de dos observaciones de una misma variable pero en dos diferentes puntos del tiempo (pasado y presente), por lo que expresa un cambio porcentual en el tiempo. La observación más reciente se coloca en el numerador mientras que la menos reciente se coloca en el denominador. Es decir para t,k números enteros, la tasa de variación se expresa como,
 
@@ -244,11 +250,11 @@ $$\begin{equation}
 \end{equation}$$
 Con lo anterior, tenemos que la tasa de variación es un ejemplo de razón que puede ser expresado en porcentaje. Ahora es conveniente mencionar algunos ejemplos en donde se calcula la tasa de variación dado un indicador.
 
-|Nombre del indicador | Método de cálculo| Procedimiento |
-| ---------------------------------|-------------------------------------------|------------------------|
-| Tasa de variación del total de libros publicados en la universidad con o sin sello editorial entre los años 2019-2020. | [(Total del libros publicados en el año 2020 / Total de libros publicados en el año 2019) -1]$\times 100$ | $\left[\frac{410}{400}-1\right]\times 100=2,5\%$ |
-|Tasa de variación del total de docentes en la universidad entre los semestres 2008-II y 2020-I. |[(Total de docentes  en el semestre 2020-I / Total de docentes en el semestre 2008-II) -1]$\times 100$ | $\left[\frac{3113}{2940}-1\right]\times 100=5,8\%$ |
-|Tasa de variación del total de estudiantes matriculados en la universidad entre los semestres 2009-II y 2020-I.|[(Total de estudiantes matriculados en el semestre 2020-I / Total de estudiantes matriculados en el semestre 2009-II) -1]$\times 100$ | $\left[\frac{54284}{45200}-1\right]\times 100=20\%$ |
+```{r, echo=FALSE}
+library(tidyr)
+ind5 <- tibble(`Nombre del indicador` = c("Tasa de variación del total de libros publicados en la universidad con o sin sello editorial entre los años $2019-2020$.","Tasa de variación del total de docentes en la universidad entre los semestres $2008-II$ y $2020-I$.","Tasa de variación del total de estudiantes matriculados en la universidad entre los semestres $2009-II$ y $2020-I$."), `Método de cálculo` = c("[(Total del libros publicados en el año $2020 /$ Total de libros publicados en el año $2019$)$-1$]$×100$ ", "[(Total de docentes  en el semestre $2020-I /$ Total de docentes en el semestre $2008-II$)$-1$]$×100$", "[(Total de estudiantes matriculados en el semestre $2020-I /$ Total de estudiantes matriculados en el semestre $2009-II$)$-1$]$×100$"), `Procedimiento` = c("[${410}/{400}-1$]$×100=2,5$%", "[${3.113}/{2.940}-1$]$×100=5,8$%","[${54.284}/{45.200}-1$]$×100=20$%"))
+knitr::kable(ind5, caption = 'Tasas de variaciones de la Universidad Nacional' )
+```
 
 En la economia, encontramos otros ejemplos de tasa de variación,
 
@@ -266,11 +272,11 @@ $$\begin{equation}
 
 ## Diferencia entre proporción y tasa
 
-El concepto de tasa es similar al de una proporción, como bien se dijo, con la diferencia de que las tasas llevan incorporado el concepto de tiempo haciendo referencia a la unidad de medida empleada tiempo-persona. Para comprender mejor como actua dicha diferencia, consideremos la proporción de incidencia vs. la tasa de incidencia de una determinada población.
+El concepto de tasa es similar al de una [proporción](#proporción), como bien se dijo, con la diferencia de que las [tasas](#tasas) llevan incorporado el concepto de tiempo haciendo referencia a la unidad de medida empleada tiempo-persona. Para comprender mejor como actua dicha diferencia, consideremos la proporción de incidencia vs. la tasa de incidencia de una determinada población.
 
 Antes de empezar, tengamos en cuenta que incidencia se refiere a los nuevos casos de una enfermedad en una determinada población, en un lugar dado y en un período específico. Con lo anterior, la *proporción de incidencia* relaciona el numero de casos nuevos (numerador) con el total de individuos (denominador)
 
-|Ejemplo. *Porporción de incidencia de covid-19 en una población*|
+|Ejemplo. *Proporción de incidencia de covid-19 en una población*|
 |--------------------------------------------------------------------|
 |Una población de 10.000 habitantes, registró 1.800 nuevos casos del covid en tres meses. <br> Proporción de incidencia $\times 1.000=\frac{1.800}{10.000}\times 1.000=180$ por mil.|
 
@@ -283,20 +289,22 @@ Indica que por cada 1.000 meses-persona de seguimiento durante 3 meses, se prese
 
 Tras haber leído el ejemplo anterior, es conveniente preguntarnos como se calculó el valor de 13.450 meses-persona y con que variables se relaciona. A manera de ilustración, consideraremos la siguiente tabla con el fin de tratar de explicar las tasas de incidencia dentro de un período de seguimiento de 3 meses.
 
-|*1). Período mensual*|Mes 1|Mes 2|Mes 3|Total 3 meses|
-|----------------------|----------|------------|-----------|-----------|
-|*2). Casos nuevos de Covid-19*| 200 |600 | 1.000|1.800|
-|*3). Nuevas entradas a la cohorte*[^1]|100| 500| 1.100|1.700|
-|*4). Pérdidas en el seguimiento*|100|300|800|1.200|
-|*5). Movimiento en el período* $=+3)-2)-4)$|-200|-900|-700|-1.300|
-|*6). Persona al principio del período*|10.000|9.800|8.900|10.000|
-|*7). Personas al final del período* $=6)+5)$|9.800|8.900|8.200|8.700|
-|*8). Tiempo-persona en meses-persona* $=7)/2)$|4.900|4.450|4.100|13.450|
-|*9). Tasa por 1.000* $=2)/8)\times 1.000$|40,8|134,8|243,9|133,8|
+
+```{r covid, echo=FALSE}
+library(tidyr)
+periodo <- c("*1). Período mensual*","*2). Casos nuevos de Covid-19*","*3). Nuevas entradas a la cohorte*","|*4). Pérdidas en el seguimiento* $=+3)-2)-4)$","*5). Movimiento en el período*","*6). Persona al principio del período*","*7). Personas al final del período* $=6)+5)$","*8). Tiempo-persona en meses-persona*  $=7) / 2)$","*9). Tasa por 1.000* $=2) / 8)×1000$")
+mes1 <- c("",200,100,100,-200,10.000,9.800,4.900,"40,8")
+mes2 <- c("",600,500,300,-900,9.800,8.900,4.450,"134,8")
+mes3 <- c("",1.000,1.100,800,-700,8.900,8.200,4.100,"243,9")
+total <- c("",1.800,1.700,1.200,1.300,10.000,8.700,13.450,"133,8")
+
+ind5 <- tibble(`Variables` = periodo, `Mes 1`= mes1, `Mes 2`= mes2, `Mes 3`= mes3, `Total en los tres meses `= total)
+knitr::kable(ind5, caption = 'Tasa de incidencia del Covid-19' )
+```
 
 >*2). Casos nuevos de Covid-19*: Constituye al numerador de la tasa en cada período y en el período total se suman los nuevos casos de Covid-19 de cada mes.
 
->*3). Nuevas entradas a la cohorte*: Consta de las nuevas entradas a la
+>*3). Nuevas entradas a la cohorte*[^1]: Consta de las nuevas entradas a la
 cohorte hasta la fecha de cierre. Para el período total se suman las entradas de cadauno de los períodos anuales.
 
 >*4). Pérdidas en el seguimiento*: Son los retiros que se presentan por abandono debido a causas diferentes al evento de estudio (falta de cooperación, migración, muertes, etc.). Para el período total se suman las pérdidas de los tres meses.
@@ -321,6 +329,8 @@ En definitiva,  aunque la proporción y la tasa comparten el mismo numerador, qu
 
 Para terminar, establezcamos el compartivo entre tasa y proproción con base al mismo ejemplo. 
 
+
+
 |Período en meses|Tasa de incidencia por mil|Proporción de incidencia por mil|
 |------------|------------------------|-------------------------|
 |Mes 1|$\frac{200}{4.900}\times 1.000=40,8$|$\frac{200}{10.000}\times 1.000=20$|
@@ -338,7 +348,7 @@ Un índice es una estadística compuesta, es decir, es basada en múltiples elem
 **La escala ordinal**
 tiene como caracteristica que sus categorías están ordenadas por rango; cada clase posee una misma relación posicional con la siguiente; es decir, la escala muestra situaciones escalonadas. Si se usan números, su única significación está en indicar la posición de las distintas categorías en la serie; sin embargo, no asumen que la distancia del primer escalón al segundo sea la misma que la del segundo al tercero.
 
->***Puntaje Básico de Matrícula PBM***.
+>***Puntaje Básico de Matrícula PBM***. {#pbm}
 >Es el indicador que utiliza la Universidad Nacional de Colombia para hacer la
 clasificación socioeconómica del estudiante y asignar la matrícula. El Puntaje Básico de Matrícula PBM, es calculado con la información de 7 variables, cuyo
 soporte documental es aportado por el estudiante. A cada variable se le asigna un puntaje, un peso ponderado y una función específica dentro de la fórmula, el cual es calculado mediante la siguiente fórmula 
@@ -347,16 +357,12 @@ PBM=(0,4A_1+0,3A_2+0,3A_3)\times B_1 \times B_2 \times B_3 \times B_4.
 \end{equation}$$
 donde las variables $A_2$ y $A_1$ constituyen al estrato  y el valor pensión escolar en el último año de secundaria respectivamente y son indicadores del nivel de gastos en el hogar, mientras $A_3$ representa el nivel de ingresos. Las variables $B_1$ es tipo de colegio, $B_2$ es el lugar de residencia, $B_3$ propiedad de la vivienda familiar y número de hijos dependientes del ingreso del hogar es $B_4$ y son igualmente, indicadores del nivel de gastos.
 
-|Ejemplo de escala ordinal usando la variable estrato $A_2$|
-|----|----|
-|**Estrato**|**Puntaje**|
-|$1$|$00$|
-|$2$|$13$|
-|$3$|$30$|
-|$4$|$55$|
-|$5$|$80$|
-|$6$|$100$|
-|NO INFORMA|$100$|
+
+
+```{r estrato, echo=FALSE}
+ind5 <- data.frame(`Estrato` = c(1,2,3,4,5,6,"NO INFORMA"), `Puntaje`=c(00,13,30,55,80,100,100))
+knitr::kable(ind5, caption = 'Ejemplo de escala ordinal usando la variable estrato $A_2$' )
+```
 
 > Para más información sobre la asignación del PBM consulte en siguiente documento. [PBMunal](http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298)
 
@@ -390,17 +396,17 @@ En el funcionamiento, el índice presenta diferentes caracteristicas cuando va e
 
 >Es un indicador que tiene por objeto medir las variaciones de un fenómeno económico o de otro orden referido a un valor que se toma como base en un momento dado.
 
-Cuando el índice va referido a un valor de un producto será conveniente referirse al *número índice*.
+Cuando el índice va referido a un valor de un producto será conveniente referirse al [*número índice*](#numeroindice).
 
-#### Número índice
+#### Número índice {#numeroindice}
 
 Es una cifra de datos económicos que refleja el precio o la cantidad en comparación con un valor estándar o base. Particularmente, el número índice recoge la evolución relativa en el periodo $t$ de una magnitud económica (precios, producciones, …) de un conjunto de bienes o productos respecto al período base ó de referencia $0$. Los números índice se utilizan especialmente para comparar la actividad empresarial, el costo de vida y el empleo.  
 
 Al período inicial se le denomina período base o referencia y se le asigna el valor $100$ y se compara con el período actual o también llamado corriente.  Así, definimos a $I_{0}^{t}$ como el número índice de un determinado valor en el período $t$, respecto al período base $0$.
 
-Si la comparación se realiza para valores de una sola magnitud, hablaremos  de *números índices simples*, en caso contrario, cuando se trabaja con más de dos magnitudes a la vez, hablaremos de *números índices compuestos*. Por simplicidad es muy común denominar al número índice simple (o complejo) por solo índice simple (o complejo) y aquí no será la excepción.
+Si la comparación se realiza para valores de una sola magnitud, hablaremos  de *números índices simples*, en caso contrario, cuando se trabaja con más de dos magnitudes a la vez, hablaremos de *números índices compuestos*. Por simplicidad es muy común denominar al número índice simple (o complejo) por solo [índice simple](#indicesimple)  (o [complejo](#indicecomplejo)) y aquí no será la excepción.
 
-##### Índice simple
+##### Índice simple {#indicesimple}
 Se denominada *índice simple* de la magnitud $X$ en el período $t$ respecto al período $0$, a la razón, 
 
 $$\begin{equation}
@@ -485,7 +491,7 @@ y así, se obtiene el resto de valores.
 |----------|--------|---------|-----------|----------|----------|
 |$I_{año/2012}$($\%$)|100|123,2|110,7|108,7|
 
-##### Índice complejo
+##### Índice complejo {#indicecomplejo}
 
 Hablaremos de *índices complejos* cuando se forman a partir de los índices simples. Su función principal será sintetizar o resumir la información que proporcionan los índices simples que entran en su composición.
 
@@ -535,13 +541,14 @@ Ilustraremos ahora los dos tipos de índices mediante la media aritmética o pro
 $$ \overline{I}_{t/0}=\frac{1}{N}\sum^{N}_{i=1}I_{t0}^{i} $$
 donde $N$ es el número de elementos de cada índice simple.
 
+
 **Ejemplo:**
 
-|Artículo|Precio en 2017|Precio en 2018|Índice simple 2017|Índice simple 2018|
-|----------|------|-----|-----------|----------|
-|Huevos|300|350|100|116,6|
-|Leche|1.000|1.100|100|110|
-|Harina|800|1.000|100|125|
+```{r, echo=FALSE}
+library(tidyr)
+ind5 <- tibble(`Artículo` = c("Huevos","Leche","Harina"), `Precio en 2017` = c(300,"1.000",800), `Precio en 2018` = c(350,"1.100","1.000"), `Índice simple 2017` = c(100,100,100), `Índice simple 2018` = c("116,6","110","125"))
+knitr::kable(ind5, caption = 'Ejemplo' )
+```
 
 Teniendo en cuenta que $N=3$ y el periodo base es 2017,  encontramos que el índice no ponderado es
 
@@ -557,9 +564,13 @@ $$ \overline{I}_{t/0}=\frac{\sum^{N}_{i=1}w_iI_{t0}^{i}}{\sum^{N}_{i=1}w_i} $$.
 
 Consideremos los datos del ejemplo anterior con las siguientes ponderaciones
 
-|Huevos|Leche|Harina|
-|--------|--------|---------|
-|$w_1=40$|$w_2=55$|$w_3=71$|
+```{r, echo=FALSE}
+library(tidyr)
+ind5 <- tibble(`Huevos` = c("$w_1=40$"), `Leche` = c("$w_2=55$"), `Harina` = c("$w_3=71$"))
+knitr::kable(ind5, caption = 'Ejemplo' )
+```
+
+
 
 $$\overline{I}_{1018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118$$
 
@@ -613,47 +624,36 @@ El ISCE está en una escala de 1 a 10, en donde Progreso y Desempeño pesan 40 p
 
 ***Ejemplo. Índice sintético de calidad de la educación en el nivel educativo de primaria para un colegio*** 
 
+```{r, echo=FALSE}
+library(tidyr)
+ind5 <- tibble(`Grado` = c("Tercero","Tercero","Quinto","Quinto"), `Área de conocimiento`= c("Matemáticas","Lenguaje","Matemáticas","Lenguaje"), `Año 2015`= c("18%","13%","15%","22%"), `Año 2016`= c("20%","21%","19%","23%"))
+knitr::kable(ind5, caption = '*Indicador 1: Porcentaje de estudiantes en nivel insuficiente*' )
+```
 
-*Indicador 1: Porcentaje de estudiantes en nivel insuficiente*
+```{r, echo=FALSE}
+library(tidyr)
+ind5 <- tibble(`Grado` = c("Tercero","Tercero","Quinto","Quinto"), `Área de conocimiento`= c("Matemáticas","Lenguaje","Matemáticas","Lenguaje"), `Año 2015`= c("9%","18%","19%","26%"), `Año 2016`= c("11%","19%","23%","30%"))
+knitr::kable(ind5, caption = '*Indicador 2: Porcentaje de estudiantes en nivel avanzado*' )
+```
 
-|Grado|Área|2015|2016|
-|:---------------:|:--------------:|:-------:|:-------:|
-|Tercero|Matemáticas|$18\%$|$20\%$|
-|Tercero|Lenguaje|$13\%$|$21\%$|
-|Quinto|Matemáticas|$15\%$|$19\%$|
-|Quinto|Lenguaje|$22\%$|$23\%$|
+```{r, echo=FALSE}
+library(tidyr)
+ind5 <- tibble(`Grado` = c("Tercero","Tercero","Quinto","Quinto"), `Área de conocimiento`= c("Matemáticas","Lenguaje","Matemáticas","Lenguaje"), `Año 2016`= c(220,300,270,298))
+knitr::kable(ind5, caption = '*Indicador 3: Promedio de los resultados obtenidos en las últimas pruebas*' )
+```
 
-*Indicador 2: Porcentaje de estudiantes en nivel avanzado*
-
-|Grado|Área|2015|2016|
-|:------------------:|:---------------:|:-------:|:------:|
-|Tercero|Matemáticas|$9\%$|$11\%$|
-|Tercero|Lenguaje|$18\%$|$19\%$|
-|Quinto|Matemáticas|$19\%$|$23\%$|
-|Quinto|Lenguaje|$26\%$|$30\%$|
-
-*Indicador 3: Promedio de los resultados obtenidos en las últimas pruebas*
-
-|Grado|Área|2016|
-|:------------:|:----------:|:-----:|
-|Tercero|Matemáticas|$220$|
-|Tercero|Lenguaje|$300$|
-|Quinto|Matemáticas|$270$|
-|Tercero|Lenguaje|$298$|
 
 *Indicador 4: Tasa de aprobación al año siguiente * $90\%$
 
-*Indicador 5: Ambiente escolar*
 
-|[]()|        |
-|----------|-----------|
-|Seguimiento al apredizaje|$47$|
-|Ambiente en el aula|$49$|
-
+```{r, echo=FALSE}
+ind5 <- data.frame(`Parámetros` = c("Seguimiento al apredizaje","Ambiente en el aula"), `Puntaje`= c(47,49))
+knitr::kable(ind5, caption = '*Indicador 5: Ambiente escolar*' )
+```
 
 Estimaremos cada indicador mediante las siguientes técnicas
 
-+ Desempeño insuficiente (DI): Se estima calculando la suma de la [tasa de variación](https://estadisticaun.github.io/IndMatematicas/1-4-tasas.html#tasa-de-variaci%C3%B3n) con respecto al año anterior del porcentaje de estudiantes en el nivel insuficiente.
++ Desempeño insuficiente (DI): Se estima calculando la suma de la [tasa de variación](#tasavariación) con respecto al año anterior del porcentaje de estudiantes en el nivel insuficiente.
 
  $$\begin{eqnarray}
 DI&=&\frac{20-18}{18}+\frac{21-13}{13}+\frac{19-15}{15}+\frac{23-22}{22}\\
@@ -714,33 +714,40 @@ ISCE&=&PROGRESO+DESEMPEÑO+EFICIENCIA+AMB.ESCOLAR\\&=& 0,03+2,37+0,9+0,74\\&=&4,
 Dado que el índice varía entre cero y diez, una puntuación de 4 muestra que el colegio se encuentra en un bajo nivel de calidad educativa.
 
 #### Puntaje Básico de Matrícula (PBM)
-En la parte inicial del capítulo explicamos en que consistía el [PBM](https://estadisticaun.github.io/IndMatematicas/1-6-%C3%ADndice.html). A continuación haremos el ejercicio de calcular dicho puntaje para un aspirante de pregrado de la universidad. Para ello, recolectamos los siguientes datos.
+En la parte inicial del capítulo explicamos en que consistía el [PBM](#pbm). A continuación haremos el ejercicio de calcular dicho puntaje para un aspirante de pregrado de la universidad. Para ello, recolectamos los siguientes datos.
 
-|    |     |
-|----------------|------------------|
-|Valor de la pensión mensual pagada durante el último año de secundaria|0,03|
-|Estrato social| 3 |
-|Ingresos familiares mensuales|3,33|
-|Carácter del colegio| Público|
-|Lugar de residencia|Fuera del perímetro urbano|
-|Propiedad de la vivienda|Vivienda propia|
-|Número de hijos dependientes del ingreso familiar|2|
+```{r, echo=FALSE}
+parametros <- c("Valor de la pensión mensual pagada durante el último año de secundaria","Estrato social","Ingresos familiares mensuales","Carácter del colegio","Lugar de residencia","Propiedad de la vivienda","Número de hijos dependientes del ingreso familiar")
+puntaje <- c("0,03",3,"3,33","Público","Fuera del perímetro urbano","Vivienda propia", 2)
+ind5 <- data.frame(`Parámetros` = parametros, `Puntaje`= puntaje)
+knitr::kable(ind5, caption = '*PBM de un estudiante*' )
+```
 
-Empezaremos determinando el indicador $A_1$ 
+Empezaremos determinando el indicador pensión $A_1$ 
 
- ![Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298](C:/Users/USUARIO/Pictures/pension.png){width=800px}
- 
-de donde $A_1=500\times 0,03=15$. Para el indicador $A_2$ la [tabla estrato](https://estadisticaun.github.io/IndMatematicas/1-6-%C3%ADndice.html) nos indica que $A_2=30$. Siguiendo con el indicador $A_3$ se asigna mediante la  expresión 
+ ```{r, echo=FALSE, out.width='100%', fig.align='center', fig.cap='Pensión. Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298'}
+knitr::include_graphics('ProtectoR/pension.png')
+```
+     
+ de donde $A_1=500\times 0,03=15$. Para el indicador estrato $A_2$ la tabla \@ref(tab:estrato) nos indica que $A_2=30$. Siguiendo con el indicador $A_3$ se asigna mediante la  expresión 
  $$ A_3=9\times ING=9\times 3,33=55$$
 donde $ING$ son los ingresos mensuales expresados como un múltiplo del salario mínimo legal mensual vigente en el año respectivo.
 
-![Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298](C:/Users/USUARIO/Pictures/b1.png){width=400px}
-![Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298](C:/Users/USUARIO/Pictures/b2n.png){width=400px}
-![Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298](C:/Users/USUARIO/Pictures/b3.png){width=400px}
+ ```{r, echo=FALSE, out.width='50%', fig.align='center', fig.cap='$B_1$ Carácter del colegio. Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298'}
+knitr::include_graphics('ProtectoR/b1.png')
+```
+ ```{r, echo=FALSE, out.width='50%', fig.align='center', fig.cap='$B_2$ Lugar de residencia. Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298'}
+knitr::include_graphics('ProtectoR/b2n.png')
+```
+```{r, echo=FALSE, out.width='50%', fig.align='center', fig.cap='$B_3$ Propiedad de la vivienda familiar. Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298'}
+knitr::include_graphics('ProtectoR/b3.png')
+```
 
-![Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298](C:/Users/USUARIO/Pictures/b4.png){width=400px}
+```{r, echo=FALSE, out.width='50%', fig.align='center', fig.cap='$B_4$ Número de hijos dependientes del ingreso del hogar. Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298'}
+knitr::include_graphics('ProtectoR/b4.png')
+```
 
-Como lo indica las tablas, se obtiene los puntajes $B_1=0,95$, $B_2=0,80$, $B_3=1$ y $B_4=1$ respectivamente. Utilizando a formúla 
+Como lo indica las tablas, se obtiene los puntajes $B_1=0,95$, $B_2=0,80$, $B_3=1$ y $B_4=1$ respectivamente. Utilizando la fórmula 
 
 $$\begin{eqnarray}
 PBM&=&(0,4A_1+0,3A_2+0,3A_3)\times B_1 \times B_2 \times B_3 \times B_4\\
@@ -749,5 +756,6 @@ PBM&=&(0,4A_1+0,3A_2+0,3A_3)\times B_1 \times B_2 \times B_3 \times B_4\\
 \end{eqnarray}$$
 
 se llega a que la aspirante obtiene un puntaje de 24. 
+
 
 

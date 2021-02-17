@@ -24,15 +24,15 @@
 <meta name="author" content="Valentina Londoño Ramirez" />
 
 
-<meta name="date" content="2021-01-06" />
+<meta name="date" content="2021-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="1-1-razón.html"/>
-<link rel="next" href="1-3-tasas.html"/>
+<link rel="prev" href="1-1-proporción.html"/>
+<link rel="next" href="1-3-razón.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -73,16 +73,17 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Portada</a></li>
 <li class="chapter" data-level="1" data-path="1-intro.html"><a href="1-intro.html"><i class="fa fa-check"></i><b>1</b> Indicadores</a><ul>
-<li class="chapter" data-level="1.1" data-path="1-1-razón.html"><a href="1-1-razón.html"><i class="fa fa-check"></i><b>1.1</b> Razón</a></li>
+<li class="chapter" data-level="1.1" data-path="1-1-proporción.html"><a href="1-1-proporción.html"><i class="fa fa-check"></i><b>1.1</b> Proporción</a></li>
 <li class="chapter" data-level="1.2" data-path="1-2-porcentaje.html"><a href="1-2-porcentaje.html"><i class="fa fa-check"></i><b>1.2</b> Porcentaje</a></li>
-<li class="chapter" data-level="1.3" data-path="1-3-tasas.html"><a href="1-3-tasas.html"><i class="fa fa-check"></i><b>1.3</b> Tasas</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="1-3-tasas.html"><a href="1-3-tasas.html#tasa-de-variación"><i class="fa fa-check"></i><b>1.3.1</b> Tasa de Variación</a></li>
+<li class="chapter" data-level="1.3" data-path="1-3-razón.html"><a href="1-3-razón.html"><i class="fa fa-check"></i><b>1.3</b> Razón</a></li>
+<li class="chapter" data-level="1.4" data-path="1-4-tasas.html"><a href="1-4-tasas.html"><i class="fa fa-check"></i><b>1.4</b> Tasas</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="1-4-tasas.html"><a href="1-4-tasas.html#tasavariación"><i class="fa fa-check"></i><b>1.4.1</b> Tasa de Variación</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="1-4-índice.html"><a href="1-4-índice.html"><i class="fa fa-check"></i><b>1.4</b> Índice</a><ul>
-<li class="chapter" data-level="1.4.1" data-path="1-4-índice.html"><a href="1-4-índice.html#índice-simple"><i class="fa fa-check"></i><b>1.4.1</b> Índice simple</a></li>
-<li class="chapter" data-level="1.4.2" data-path="1-4-índice.html"><a href="1-4-índice.html#índice-complejo"><i class="fa fa-check"></i><b>1.4.2</b> Índice complejo</a></li>
+<li class="chapter" data-level="1.5" data-path="1-5-diferencia-entre-proporción-y-tasa.html"><a href="1-5-diferencia-entre-proporción-y-tasa.html"><i class="fa fa-check"></i><b>1.5</b> Diferencia entre proporción y tasa</a></li>
+<li class="chapter" data-level="1.6" data-path="1-6-índice.html"><a href="1-6-índice.html"><i class="fa fa-check"></i><b>1.6</b> Índice</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="1-6-índice.html"><a href="1-6-índice.html#índice-en-la-economía"><i class="fa fa-check"></i><b>1.6.1</b> Índice en la economía</a></li>
+<li class="chapter" data-level="1.6.2" data-path="1-6-índice.html"><a href="1-6-índice.html#índices-en-las-ciencias-sociales"><i class="fa fa-check"></i><b>1.6.2</b> Índices en las ciencias sociales</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="1-5-otros-indicadores.html"><a href="1-5-otros-indicadores.html"><i class="fa fa-check"></i><b>1.5</b> Otros indicadores</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-razón-1.html"><a href="2-razón-1.html"><i class="fa fa-check"></i><b>2</b> Razón</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-1-porcentaje-1.html"><a href="2-1-porcentaje-1.html"><i class="fa fa-check"></i><b>2.1</b> Porcentaje</a></li>
@@ -113,65 +114,96 @@
             <section class="normal" id="section-">
 <div id="porcentaje" class="section level2">
 <h2><span class="header-section-number">1.2</span> Porcentaje</h2>
-<p>Un porcentaje es la forma de expresar un número como partes de cada cien. Los porcentajes son el cociente o razón entre dos variables con una misma unidad de medida en el mismo periodo. De manera más clara, podemos construir indicadores de porcentaje aplicando la operación</p>
+<p>Un porcentaje es la forma de expresar un número como partes de cada cien.Como ya se dijo, Los porcentajes son proporciones multiplicado por <span class="math inline">\(100\)</span>. De manera más clara, podemos construir indicadores de porcentaje aplicando la operación</p>
 <p><span class="math display">\[\begin{equation}
-\frac{Numerador}{Denominador}\times 100.
-\end{equation}\]</span></p>
+\text{Porcentaje de}\hspace{2mm}n=\frac{\text{Número de elementos de}\hspace{2mm}n}{\text{Total de elementos en el universo de}\hspace{2mm} N}\times 100.
+\end{equation}\]</span>.</p>
+<p>El porcentaje se representa con el símbolo <span class="math inline">\(\%\)</span>, donde el conjunto <span class="math inline">\(N\)</span> representa el <span class="math inline">\(100\)</span> por ciento, y cada una de las relaciones obtenidas al dividir entre el total (elementos de <span class="math inline">\(N\)</span>) y multiplicarlo por cien representa un tanto de cien, y es definido como tanto por ciento.</p>
 <p>Algunos ejemplos son los siguientes</p>
 <table>
+<caption><span id="tab:unnamed-chunk-3">Tabla 1.3: </span>Ambiente Escolar</caption>
 <colgroup>
-<col width="33%" />
-<col width="43%" />
-<col width="24%" />
+<col width="34%" />
+<col width="54%" />
+<col width="10%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Nombre del indicador</th>
-<th>Método de cálculo</th>
-<th>Procedimiento</th>
+<th align="left">Nombre del indicador</th>
+<th align="left">Método de cálculo</th>
+<th align="left">Procedimiento</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Porcentaje de estudiantes vinculados a actividades de extensión en la universidad en el periodo 2019-II.</td>
-<td>(Número de estudiantes vinculados a actividades de extensión en la universidad en el periodo 2019-II /Total de estudiantes matriculados en el periodo 2019-II)<span class="math inline">\(\times 100\)</span></td>
-<td><span class="math inline">\(\frac{3600}{54284}\times 100=11,61\%\)</span></td>
+<td align="left">Porcentaje de estudiantes vinculados a actividades de extensión en la universidad en el periodo <span class="math inline">\(2019-II\)</span>.</td>
+<td align="left">Número de estudiantes vinculados a actividades de extensión en la universidad en el periodo <span class="math inline">\(2019-II /\)</span> Total de estudiantes matriculados en el periodo <span class="math inline">\(2019-II × 100\)</span></td>
+<td align="left"><span class="math inline">\({3.600}/{54.284} × 100=11,61\)</span>%</td>
 </tr>
 <tr class="even">
-<td>Porcentaje de tesis meritorias por estudiantes graduados en la universidad en el periodo 2020-I.</td>
-<td>(Número total de tesis meritorias por estudiantes graduados en el universidad en el periodo 2020-I/Total de estudiantes graduados en el periodo 2020-I)<span class="math inline">\(\times 100\)</span></td>
-<td><span class="math inline">\(\frac{195}{4926}\times 100=3,95\%\)</span></td>
+<td align="left">Porcentaje de tesis meritorias por estudiantes graduados en la universidad en el periodo <span class="math inline">\(2020-I\)</span>.</td>
+<td align="left">Número total de tesis meritorias por estudiantes graduados en el universidad en el periodo <span class="math inline">\(2020-I /\)</span> Total de estudiantes graduados en el período <span class="math inline">\(2020-I × 100\)</span></td>
+<td align="left"><span class="math inline">\({195}/{4.926} × 100=3,95\)</span>%</td>
 </tr>
 <tr class="odd">
-<td>Porcentaje de funcionarias administrativas en la universidad en el periodo 2020-I.</td>
-<td>(Número de administrativos mujeres en el periodo 2020-I/Total de administrativos en el periodo 2020-I)<span class="math inline">\(\times 100\)</span></td>
-<td><span class="math inline">\(\frac{1460}{2850}\times 100=51,2\%\)</span></td>
+<td align="left">Porcentaje de funcionarias administrativas en la universidad en el periodo <span class="math inline">\(2020-I\)</span>.</td>
+<td align="left">Número de administrativos mujeres en el período <span class="math inline">\(2020-I/\)</span> Total de administrativos en el periodo <span class="math inline">\(2020-I × 100\)</span></td>
+<td align="left"><span class="math inline">\({1.460}/{2.850} × 100=51,2\)</span>%</td>
 </tr>
 </tbody>
 </table>
-<p>Adicional a esto, es importante mencionar los procedimientos en el cálculo de porcentajes: Por aplicación directa o por proporciones, los cuales sirven como ruta para determinar otros hallazgos del indicador.
-- Por aplicación directa, para el cálculo del <span class="math inline">\(t\%\)</span> de una cantidad <span class="math inline">\(N\)</span> y es hallado mediante la expresión :</p>
+<p>Adicional a esto, es importante mencionar los procedimientos en el cálculo de porcentajes: Por aplicación directa o por proporciones, los cuales sirven como ruta para determinar otros hallazgos del indicador.</p>
+<ul>
+<li>Por aplicación directa, para el cálculo del <span class="math inline">\(t\%\)</span> de una cantidad <span class="math inline">\(N\)</span> y es hallado mediante la expresión :</li>
+</ul>
 <p><span class="math display">\[\begin{equation}
 \frac{t}{100}\times N.
 \end{equation}\]</span></p>
-<p>Un claro ejemplo, es cuando se quiere comprar un artículo en descuento, este simple cálculo nos ayuda a determinar el precio final del artículo.
-- Por proporciones, es utilizado cuando se plantea una proporción asignando el <span class="math inline">\(100\%\)</span> al total y se calcula mediante la expresión:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ejemplo. Descuento de un artículo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Un almacén tiene el <span class="math inline">\(30\%\)</span> de descuento en artículos de cocina. Para calcular el precio final de una licuadora que vale <span class="math inline">\(\$80.000\)</span> debemos <span class="math inline">\(\frac{30}{100}\times 80.000=24.000.\)</span> Es decir, <span class="math inline">\(\$24.000\)</span> equivale al <span class="math inline">\(30\%\)</span> de la licuadora y como es un <span class="math inline">\(30\%\)</span> menos, entonces <span class="math inline">\(\$80.000-\$24.000=\$56.000\)</span> es el precio final.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Por proporciones, es utilizado cuando se plantea una proporción asignando el <span class="math inline">\(100\%\)</span> al total y se calcula mediante la expresión:</li>
+</ul>
 <p><span class="math display">\[\begin{equation}
 \frac{t\%}{x}=\frac{100\%}{N}
 \end{equation}\]</span></p>
-<p>En definitiva, un porcentaje es un ejemplo de proporcionalidad. Además note que</p>
-<p><span class="math display">\[\begin{equation}
-\frac{t\%}{x}=\frac{100\%}{N}=k \Longleftrightarrow \frac{t\%}{x}=k \Longleftrightarrow t\%=kx
-\end{equation}\]</span></p>
-<p>es decir, es proporcionalmente directo.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>La cantidad de mujeres socias de una cadena de supermercados es <span class="math inline">\(1.455\)</span> de <span class="math inline">\(9.700\)</span>, cifra que podemos obtener mediante <span class="math inline">\(\frac{t\%}{1.455}=\frac{100\%}{9.700}\)</span> y haciendo el debido despeje resulta el <span class="math inline">\(15\%\)</span>. Tambien son equivalentes las expresiones: 1,5 de cada 10, 12 de cada 80, 15 de cada 100 ó 0,15 de 1.</td>
+</tr>
+</tbody>
+</table>
+<p>Hemos visto, un porcentaje expresa una <a href="1-1-proporción.html#proporción">proporción</a>, es decir, una parte de un total.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="1-1-razón.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="1-3-tasas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="1-1-proporción.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="1-3-razón.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
