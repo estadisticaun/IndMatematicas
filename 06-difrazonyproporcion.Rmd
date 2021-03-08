@@ -1,0 +1,70 @@
+# Diferencia entre proporción y tasa
+
+Según [@colimon1990fundamentos], el concepto de tasa es similar al de una [proporción](#proporción), como bien se dijo, con la diferencia de que las [tasas](#tasas) llevan incorporado el concepto de tiempo haciendo referencia a la unidad de medida empleada tiempo-persona. Para comprender mejor como actua dicha diferencia, consideremos la proporción de incidencia vs. la tasa de incidencia de una determinada población.
+
+Antes de empezar, tengamos en cuenta que incidencia se refiere a los nuevos casos de una enfermedad en una determinada población, en un lugar dado y en un período específico. Con lo anterior, la *proporción de incidencia* relaciona el numero de casos nuevos (numerador) con el total de individuos (denominador)
+
+|Ejemplo. *Proporción de incidencia de covid-19 en una población*|
+|--------------------------------------------------------------------|
+|Una población de 10.000 habitantes, registró 1.800 nuevos casos del covid en tres meses. <br> Proporción de incidencia $\times 1.000=\frac{1.800}{10.000}\times 1.000=180$ por mil.|
+
+Ahora, cuando hablamos de *tasa de incidencia* estamos midiendo la velocidad de presentación de una enfermedad durante un período. Notemos que una tasa consta de un numerador, que al igual que en la proporción, es el número de casos nuevos del evento, y de un denominador que es el número de unidades de tiempo-persona durante el cual pudo presentarse el evento.
+
+|Ejemplo. *Tasa de incidencia de covid en una población*|
+|--------------------------------------------------------------------|
+|Una población de 10.000 habitantes, en un periodo de 3 meses registró 1.800 nuevos casos del covid-19 en el mes de diciembre y con un total de 13.450 meses-persona de seguimiento. <br> Tasa de incidencia $\times 1.000=\frac{1.800}{4.850}\times 1.000=133,8$ por mil meses-persona.<br>
+Indica que por cada 1.000 meses-persona de seguimiento durante 3 meses, se presentaron aproximadamente 134 nuevos casos de covid-19.|
+
+Tras haber leído el ejemplo anterior, es conveniente preguntarnos como se calculó el valor de 13.450 meses-persona y con que variables se relaciona. A manera de ilustración, consideraremos la siguiente tabla con el fin de tratar de explicar las tasas de incidencia dentro de un período de seguimiento de 3 meses.
+
+
+```{r covid, echo=FALSE}
+library(tidyr)
+periodo <- c("*1). Período mensual*","*2). Casos nuevos de Covid-19*","*3). Nuevas entradas a la cohorte*","|*4). Pérdidas en el seguimiento* $=+3)-2)-4)$","*5). Movimiento en el período*","*6). Persona al principio del período*","*7). Personas al final del período* $=6)+5)$","*8). Tiempo-persona en meses-persona*  $=7) / 2)$","*9). Tasa por 1.000* $=2) / 8)×1000$")
+mes1 <- c("",200,100,100,-200,10.000,9.800,4.900,"40,8")
+mes2 <- c("",600,500,300,-900,9.800,8.900,4.450,"134,8")
+mes3 <- c("",1.000,1.100,800,-700,8.900,8.200,4.100,"243,9")
+total <- c("",1.800,1.700,1.200,1.300,10.000,8.700,13.450,"133,8")
+
+ind5 <- tibble(`Variables` = periodo, `Mes 1`= mes1, `Mes 2`= mes2, `Mes 3`= mes3, `Total en los tres meses `= total)
+knitr::kable(ind5, caption = 'Tasa de incidencia del Covid-19' )
+```
+
+>*2). Casos nuevos de Covid-19*: Constituye al numerador de la tasa en cada período y en el período total se suman los nuevos casos de Covid-19 de cada mes.
+
+>*3). Nuevas entradas a la cohorte*[^1]: Consta de las nuevas entradas a la
+cohorte hasta la fecha de cierre. Para el período total se suman las entradas de cadauno de los períodos anuales.
+
+>*4). Pérdidas en el seguimiento*: Son los retiros que se presentan por abandono debido a causas diferentes al evento de estudio (falta de cooperación, migración, muertes, etc.). Para el período total se suman las pérdidas de los tres meses.
+
+>*5). Movimiento en el período*: Es el balance final de entradas y salidas de
+la cohorte. Este balance es positivo si hay más entradas que salidas y es negativo en el caso contrario. En la columna total, se suman los balances de los tres meses.
+
+>*6). Persona al principio del período*: Son las personas que pasan del
+período anterior. Al principio del primer período mensual éstos son los
+mismos individuos de la cohorte inicial (10.000). Los individuos que hay al principio del segundo período, son los que comenzaron la cohorte del período inicial más el balance positivo o negativo de este mismo período (Movimiento en el período), por ejemplo, para el mes 2: $10.000-200=9.800$ y para el mes 3: $9.800-900=8.900$. Los que inician el período total son los mismos que inician la cohorte en el primer mes (10.000).
+
+>*7). Personas al final del período*: Se calcula sumando las filas 6) y 5). Tenga en cuenta si las personas al final del período se incrementan si el balance de la fila (5) es positivo y disminuyen si por el contrario el balance es negativo. 
+
+>*8). Tiempo-persona en meses-persona*: En este ejemplo, la unidad se contará en meses-persona. Para el período total, sería la suma de todos los meses-persona de los diferentes períodos, en nuestro caso, sería: 13.450 meses-persona. Esta fila constituye el denominador de la tasa en cada período. 
+
+>*9). Tasa por k*: En nuestro caso $k=1.000$. Constituye al valor de la tasa de incidencia en los diferentes periodos por cada 1.000 habitantes, siendo en el período total, el valor de la tasa en los tres meses de estudio.
+
+
+[^1]:*cohorte*, es un tipo de investigación observacional y analítica en la que se hace una comparación de la frecuencia de aparición de un evento entre dos grupos, uno de los cuales está expuesto a un factor que no está presente en el otro grupo. En un cohorte dinámico,  se presenta la entrada y salida de nuevos sujetos de estudio durante la fase de seguimiento, por lo que el número de miembros puede variar a través del tiempo.
+
+En definitiva,  aunque la proporción y la tasa comparten el mismo numerador, que es en nuestro ejemplo, los enfermos nuevos por Covid-19 que se presentaron en tres meses, en el denominador reside la diferencia fundamental, como bien se dijo, la tasa de incidencia es una unidad de tiempo llamada tiempo-persona, mientras la proporción no tiene en cuenta variables como el tiempo de observación, ni desde luego el tiempo perdido en el seguimiento por adquisición del evento y las salidas por abandono u otra causa.
+
+Para terminar, establezcamos el compartivo entre tasa y proproción con base al mismo ejemplo. 
+
+
+
+|Período en meses|Tasa de incidencia por mil|Proporción de incidencia por mil|
+|------------|------------------------|-------------------------|
+|Mes 1|$\frac{200}{4.900}\times 1.000=40,8$|$\frac{200}{10.000}\times 1.000=20$|
+|Mes 2|$\frac{600}{4.450}\times 1.000=134,8$|$\frac{600}{10.000}\times 1.000=60$|
+|Mes 3|$\frac{1.000}{4.100}\times 1.000=243,9$|$\frac{1.000}{10.000}\times 1.000=100$|
+|Período total|$\frac{1.800}{13.450}\times 1.000=133,8$|$\frac{1.800}{10.000}\times 1.000=180$|
+
+NOTA: La distinción entre tasa y proporción que se ha hecho es relativamente
+reciente en el campo de la epidemiología. Es común encontrar en la literatura del campo de la salud los términos tasa y proporción utilizados como sinónimos.

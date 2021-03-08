@@ -1,0 +1,33 @@
+# Proporción {#proporción}
+
+Matematicamente, la proporción es un cociente donde el numerador está incluido en el denominador cuyo objetivo es establecer la relación entre una parte con respecto al todo, en otras palabras es la relación que se establece entre un subconjunto $n$ de un conjunto universo $N$ y se define como
+$$\begin{equation}
+\text{Proporción de}\hspace{2mm}n=\frac{\text{Número de elementos de}\hspace{2mm}n}{\text{Total de elementos en el universo de}\hspace{2mm} N}
+\end{equation}$$
+donde $n$ es un subconjunto de $N$.Observe que el numerador siempre está incluido en el denorminador. Veamos el siguiente ejemplo.
+
+|Ejemplo. *Proporción de mujeres y hombres en una empresa* |
+|--------------------------------------------------------------------|
+|En una empresa trabajan  27 mujeres y 18 hombres. Entonces podemos deducir que el total de trabajadores es $27+18=45$ y por tanto la proporción de mujeres es <br> $$\frac{\text{Número de mujeres}}{\text{Total de trabajadores}}=\frac{27}{45}=\frac{3}{5}$$.<br> Similarmente, la proporción de hombres es <br>$$\frac{\text{Número de hombres}}{\text{Total de trabajadores}}=\frac{18}{45}=\frac{2}{5}$$.  <br> En la empresa existen tres mujeres por cinco trabajadores y dos hombres por cada cinco trabajadores.|
+
+Notemos que al ser el numerador una parte del denominador, el primero
+nunca será más grande que el segundo. Esta es la razón por la que el resultado no puede ser mayor que la unidad y oscila siempre entre cero y uno. 
+
+```{r, echo=FALSE}
+library(tidyr)
+ind5 <- tibble(`Nombre del indicador` = c("Porporción de matriculados extranjeros de pregrado en la universidad en el período $2020-I$","Proporción de matriculados de pregrado en el área de ciencias sociales y humanas de la universidad en el periodo $2020-I$.","Proporción de aspirantes para pregrado por estrato socioeconómico 2 o menos de la universidad en el período $2019-I$."), `Método de cálculo` = c("Número de  matriculados extranjeros de pregrado en la universidad en el periodo $2020-I$ /Total de estudiantes matriculados de pregrado en el periodo $2020-I$","Número total matriculados de pregrado en el área de ciencias sociales y humanas en el período $2020-I$/Total de estudiantes matriculados de pregrado en el período $2020-I$","Número total de aspirantes para pregrado por estrato socioeconómico 2 o menos en el período $2019-I$/Total de aspirantes para pregrado en el período $2019-I$"), `Procedimiento` = c("${300}/{36.358}=0,008$","${5.946}/{36.358}=0,16$","${48.639}/{82.854}=0,58$ "))
+knitr::kable(ind5, caption = 'Ejemplo de proporciones en la Universidad Nacional' )
+```
+Tomado de [@BibEntry244021Mar]
+
+Las proporciones son muy utilizadas en los cálculos estadísticos, sin embargo por simplicidad se acostumbre multiplicar por 100 el resultado final. Cuando esto pasa llamaremos a la proporción como [*porcentaje*](#porcentaje). Veamos más ejemplos de proporciones.
+
+Como lo hace notar @franco2016estadistica en epidemiología, las proporciones permiten expresar la frecuencia de los eventos de salud, la enfermedad y las lesiones, en términos de su incidencia o prevalencia; es decir entre los casos nuevos o los casos existentes ocurridos. También permite mostrar en qué medida una población está expuesta a un
+determinado factor de riesgo.
+
+|Ejemplo. *Proporción anual de muertes en una población* |
+|--------------------------------------------------------------------|
+|Si en un año en una población de 450 habitantes se presentaron 10 muertes. Entonces <br> $$\text{Proporción anual de muertes}=\frac{\text{Número de personas fallecidas en el año}}{\text{Población total}}=\frac{10}{450}=0,02$$ |
+
+En otros casos, las proporciones cuando se tratan de mediciones de peso, talla, espacio, volumen, etcétera; suelen llamarse fracciones. Por ejemplo, la masa de una parte de un cuerpo puede expresarse como una fracción de su masa total. 
+

@@ -1,0 +1,41 @@
+# Porcentaje {#porcentaje}
+Un porcentaje es la forma de expresar un número como partes de cada cien.Como ya se dijo,  Los porcentajes son proporciones multiplicado por $100$. De manera más clara, podemos construir indicadores de porcentaje aplicando la operación 
+
+$$\begin{equation}
+\text{Porcentaje de}\hspace{2mm}n=\frac{\text{Número de elementos de}\hspace{2mm}n}{\text{Total de elementos en el universo de}\hspace{2mm} N}\times 100.
+\end{equation}$$.
+
+El porcentaje se representa con el símbolo $\%$, donde el conjunto $N$ representa el $100$ por ciento, y cada una de las relaciones obtenidas al dividir entre el total (elementos de $N$) y multiplicarlo por cien representa un tanto de cien, y es definido como tanto por ciento. 
+
+Algunos ejemplos son los siguientes
+
+```{r, echo=FALSE}
+library(tidyr)
+ind5 <- tibble(`Nombre del indicador` = c("Porcentaje de estudiantes vinculados a actividades de extensión en la universidad en el periodo $2019-II$.","Porcentaje de tesis meritorias por estudiantes graduados en la universidad en el periodo $2020-I$.","Porcentaje de funcionarias administrativas en la universidad en el periodo $2020-I$."), `Método de cálculo` = c("Número de estudiantes vinculados a actividades de extensión en la universidad en el periodo $2019-II /$ Total de estudiantes matriculados en el periodo $2019-II × 100$","Número total de tesis meritorias por estudiantes graduados en el universidad en el periodo $2020-I /$ Total de estudiantes graduados en el período $2020-I × 100$","Número de administrativos mujeres en el período $2020-I/$ Total de administrativos en el periodo $2020-I × 100$"), `Procedimiento` = c("${3.600}/{54.284} × 100=11,61$%","${195}/{4.926} × 100=3,95$%","${1.460}/{2.850} × 100=51,2$%")  )
+knitr::kable(ind5, caption = 'Ambiente Escolar' )
+```
+Tomado de [@BibEntry244021Mar]
+
+Adicional a esto, es importante mencionar los procedimientos en el cálculo de porcentajes: Por aplicación directa o por proporciones, los cuales sirven como ruta para determinar otros hallazgos del indicador. 
+
+* Por aplicación directa,  para el cálculo del $t\%$ de una cantidad $N$ y es hallado mediante la expresión :
+
+$$\begin{equation}
+\frac{t}{100}\times N.
+\end{equation}$$
+
+|Ejemplo. Descuento de un artículo|
+|-----------------------------|
+|Un almacén tiene el $30\%$ de descuento en artículos de cocina. Para calcular el precio final de una licuadora que vale $\$80.000$ debemos $\frac{30}{100}\times 80.000=24.000.$ Es decir, $\$24.000$ equivale al $30\%$ de la licuadora y como es un $30\%$ menos, entonces $\$80.000-\$24.000=\$56.000$ es el precio final.|
+
+* Por  proporciones, es utilizado cuando se plantea una proporción asignando el $100\%$ al total y se calcula mediante la expresión:
+
+$$\begin{equation}
+\frac{t\%}{x}=\frac{100\%}{N}
+\end{equation}$$
+
+|Ejemplo|
+|----------------------------------|
+|La cantidad de mujeres socias de una cadena de supermercados es $1.455$ de $9.700$, cifra que podemos obtener mediante $\frac{t\%}{1.455}=\frac{100\%}{9.700}$ y haciendo el debido despeje resulta el $15\%$. Tambien son equivalentes las expresiones: 1,5 de cada 10, 12 de cada 80, 15 de cada 100 ó 0,15 de 1.|
+ 
+Hemos visto, un porcentaje expresa una [proporción](#proporción), es decir, una parte de un total. 

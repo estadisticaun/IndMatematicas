@@ -1,0 +1,50 @@
+`r if (knitr::is_html_output()) '
+# Referencias  {-}
+'`
+
+
+
+<!-- --- -->
+<!-- bibliography: biblio.bib -->
+<!-- csl: apa1.csl -->
+<!-- --- -->
+
+
+
+
+
+
+
+
+<!-- * Petit, M., Laird, R., Wyneken, M., Huntoon, F., Abele-Austin, M. and Sequeira, J., 2020. *A focus on ratios and proportions*. 1st ed. Routledge. -->
+<!-- * Montero Lorenzo, J., 2007. *Estadística descriptiva*. Madrid, España: Paraninfo. -->
+<!-- * Huican, M., Carmona, K.,(2013). *Razones y proporciones*. Chile. Ministerio de Educación. -->
+<!-- * Oller Marcén, A. M., & Gairín Sallán, J. M. (2013). *La génesis histórica de los conceptos de razón y proporción y su posterior aritmetización*. Revista latinoamericana de investigación en matemática educativa. -->
+<!-- * Colimon K.,(1990). *Fundamentos de epidemiología*. Medellín, Colombia. Díaz de Santos, S. A.  -->
+<!-- * Elandt-Johnson, R. C. (1997). *La definición de tasas: Algunas precisiones acerca de su correcta e incorrecta utilización*. Salud Pública Méx. -->
+<!-- * Moreno A., Lopez S., Corcho A.,(2000). *Principales medidas en epidemiología*. México. Salud publica de Mexico. -->
+<!-- * Perez R. (1986). *Nociones básicas de estadística*.  -->
+
+<!-- ## Monografías en internet  -->
+
+<!-- * Apuntes de demografía. (2014). Stocks y flujos demográficos.  Recuperado de https://apuntesdedemografia.com/2010/08/17/estocs-y-flujos-demograficos -->
+<!-- * Enciclopedia Banrepcultural. (2017) Tasa de cambio. Recuperdado de https://enciclopedia.banrepcultural.org/index.php/Tasa_de_cambio -->
+<!-- * Banco de la República de Colombia. (2019, Junio 13). Tasa Representativa del Mercado (TRM - Peso por dólar). Recuperado de https://www.banrep.gov.co/es/estadisticas/trm. -->
+<!-- * Wikipedia. (2021). Proportionality (mathematics). Recuperado de https://en.wikipedia.org/wiki/Proportionality_(mathematics) -->
+<!-- * Estadística Porcentajes, proporciones, razones. (2021, Febrero 23). Recuperado de https://es.slideshare.net/carc1975/210-3486ydg -->
+<!-- * Universidad Autónoma de Madrid. Números índices. Recuperado de https://www.fuenterrebollo.com/Economicas2013/indices-teoria.pdf -->
+<!-- * Wikipedia. (2021). Número índice. Recuperado de https://es.wikipedia.org/wiki/N%C3%BAmero_%C3%ADndice -->
+<!-- * Universidad Nacional de Colombia. UNAL en un vistazo. Recuperado de http://estadisticas.unal.edu.co/home/ -->
+<!-- * Wikipedia. (2020). Index (statistics). Recuperado de https://en.wikipedia.org/wiki/Index_(statistics)#:~:text=In%20statistics%20and%20research%20design,summarize%20and%20rank%20specific%20observations -->
+
+<!-- @Book{xie2015, -->
+<!--   title = {Dynamic Documents with {R} and knitr}, -->
+<!--   author = {Yihui Xie}, -->
+<!--   publisher = {Chapman and Hall/CRC}, -->
+<!--   address = {Boca Raton, Florida}, -->
+<!--   year = {2015}, -->
+<!--   edition = {2nd}, -->
+<!--   note = {ISBN 978-1498716963}, -->
+<!--   url = {http://yihui.name/knitr/}, -->
+<!-- } -->
+

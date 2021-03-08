@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Naturaleza matemática de los indicadores</title>
-  <meta name="description" content="Naturaleza matemática de los indicadores" />
+  <title>5.1 Tasa de Variación | Naturaleza matemática de los indicadores</title>
+  <meta name="description" content="5.1 Tasa de Variación | Naturaleza matemática de los indicadores" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Naturaleza matemática de los indicadores" />
+  <meta property="og:title" content="5.1 Tasa de Variación | Naturaleza matemática de los indicadores" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Naturaleza matemática de los indicadores" />
+  <meta name="twitter:title" content="5.1 Tasa de Variación | Naturaleza matemática de los indicadores" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="1-intro.html"/>
+<link rel="prev" href="5-tasas.html"/>
+<link rel="next" href="6-diferencia-entre-proporción-y-tasa.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -107,23 +107,82 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Naturaleza matemática de los indicadores</h1>
-<p class="author"><em>Valentina Londoño Ramirez</em></p>
-<p class="date"><em>2021-03-07</em></p>
-</div>
-<div id="portada" class="section level1 unnumbered">
-<h1>Portada</h1>
-<p>Espacio para la portada ….</p>
+<div id="tasavariación" class="section level2">
+<h2><span class="header-section-number">5.1</span> Tasa de Variación</h2>
+<p>Representa la razón de dos observaciones de una misma variable pero en dos diferentes puntos del tiempo (pasado y presente), por lo que expresa un cambio porcentual en el tiempo. La observación más reciente se coloca en el numerador mientras que la menos reciente se coloca en el denominador. Es decir para t,k números enteros, la tasa de variación se expresa como,</p>
+<p><span class="math display">\[\begin{equation}
+\frac{\text{(Variable en el periodo}\hspace{2mm} t)-(\text{Variable en el periodo} \hspace{2mm} t-k)}{\text{Variable en el periodo} \hspace{2mm} t-k} \hspace{8mm} \text{(1)}
+\end{equation}\]</span></p>
+<p>donde el numerador indica el cambio de la variable en relación a dichos períodos. En otras palabras, al ser una razón, se está comparando el cambio de la variable en dos periodos con la variable en el periodo menos reciente. Es equivalente de (1) expresarlo</p>
+<p><span class="math display">\[\begin{equation}
+\frac{\text{Variable en el periodo}\hspace{2mm} t}{\text{Variable en el periodo} \hspace{2mm} t-k}-1
+\end{equation}\]</span></p>
+<p>finalmente se multiplica por <span class="math inline">\(10^{n}\)</span> para expresar la tasa como una potencia de <span class="math inline">\(10\)</span>.</p>
+<p><span class="math display">\[\begin{equation}
+\left[\frac{\text{Variable en el periodo}\hspace{2mm} t}{\text{Variable en el periodo} \hspace{2mm} t-k}-1 \right] \times 10^{n}
+\end{equation}\]</span>
+Con lo anterior, tenemos que la tasa de variación es un ejemplo de razón que puede ser expresado en porcentaje. Ahora es conveniente mencionar algunos ejemplos en donde se calcula la tasa de variación dado un indicador.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-5">Tabla 5.1: </span>Tasas de variaciones de la Universidad Nacional</caption>
+<colgroup>
+<col width="42%" />
+<col width="46%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Nombre del indicador</th>
+<th align="left">Método de cálculo</th>
+<th align="left">Procedimiento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Tasa de variación del total de libros publicados en la universidad con o sin sello editorial entre los años <span class="math inline">\(2019-2020\)</span>.</td>
+<td align="left">[(Total del libros publicados en el año <span class="math inline">\(2020 /\)</span> Total de libros publicados en el año <span class="math inline">\(2019\)</span>)<span class="math inline">\(-1\)</span>]<span class="math inline">\(×100\)</span></td>
+<td align="left">[<span class="math inline">\({410}/{400}-1\)</span>]<span class="math inline">\(×100=2,5\)</span>%</td>
+</tr>
+<tr class="even">
+<td align="left">Tasa de variación del total de docentes en la universidad entre los semestres <span class="math inline">\(2008-II\)</span> y <span class="math inline">\(2020-I\)</span>.</td>
+<td align="left">[(Total de docentes en el semestre <span class="math inline">\(2020-I /\)</span> Total de docentes en el semestre <span class="math inline">\(2008-II\)</span>)<span class="math inline">\(-1\)</span>]<span class="math inline">\(×100\)</span></td>
+<td align="left">[<span class="math inline">\({3.113}/{2.940}-1\)</span>]<span class="math inline">\(×100=5,8\)</span>%</td>
+</tr>
+<tr class="odd">
+<td align="left">Tasa de variación del total de estudiantes matriculados en la universidad entre los semestres <span class="math inline">\(2009-II\)</span> y <span class="math inline">\(2020-I\)</span>.</td>
+<td align="left">[(Total de estudiantes matriculados en el semestre <span class="math inline">\(2020-I /\)</span> Total de estudiantes matriculados en el semestre <span class="math inline">\(2009-II\)</span>)<span class="math inline">\(-1\)</span>]<span class="math inline">\(×100\)</span></td>
+<td align="left">[<span class="math inline">\({54.284}/{45.200}-1\)</span>]<span class="math inline">\(×100=20\)</span>%</td>
+</tr>
+</tbody>
+</table>
+<p>En la economia, encontramos otros ejemplos de tasa de variación,</p>
+<ul>
+<li><strong><em>Tasa de inflación:</em></strong> muestra la variación porcentual de los precios de un determinado territorio, durante un periodo determinado y con esto, podemos saber como se han comportado los precios en un lugar determinado. El cálculo de esta tasa se determina en términos del <em>Índice de Precios al Consumidor</em> (IPC) el cual es el encargado de recoger el cambio de los precios, mes a mes para evaluar el coste de la vida mediante artículos como alimentos, casa, transporte, cuidado de la salud, entretenimiento, ropa y otros gastos.</li>
+</ul>
+<p><span class="math display">\[\begin{equation}
+\left[\frac{\text{IPC actual}}{\text{IPC anterior}}-1\right]\times 10^{n}
+\end{equation}\]</span></p>
+<ul>
+<li><strong><em>Tasa de crecimiento económico:</em></strong> Es la variación porcentual del PIB (Producto Interno Bruto) real en un período de tiempo determinado en el que pemite calcular cual ha sido el aumento de la cantidad de bienes y servicios que produce una economía <span class="citation">(Prensa <a href="#ref-de2009producto">2009</a>)</span>.</li>
+</ul>
+<p><span class="math display">\[\begin{equation}
+\left[\frac{\text{PBI actual}}{\text{PBI anterior}}-1\right]\times 10^{n}
+\end{equation}\]</span></p>
 
+</div>
+<!-- </div> -->
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-de2009producto">
+<p>Prensa, DANE Boletı́n de. 2009. “Producto Interno Bruto.” <em>Primer Trimestre de</em>.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="1-intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="5-tasas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="6-diferencia-entre-proporción-y-tasa.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
