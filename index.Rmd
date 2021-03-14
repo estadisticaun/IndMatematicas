@@ -1,15 +1,23 @@
 --- 
-title: "Naturaleza matemática de los indicadores"
+title: "Una aproximación matemática a la fórmula de un indicador"
 author: "Valentina Londoño Ramirez"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: [biblio.bib, packages.bib]
+bibliography: [biblio.bib]
 biblio-style: apalike
 link-citations: yes
+colorlinks: yes
+graphics: yes
+lot: yes
+lof: yes
+fontsize: 11pt
+mainfont: Palatino
 ---
 
 # Portada{-}
 
-Espacio para la portada ....
+```{r fig.align='center', out.width='50%', fig.show='hold', echo=FALSE}
+knitr::include_graphics ('ProtectoR/portada.jpg')
+```

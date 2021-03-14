@@ -1,12 +1,12 @@
 # Tasas {#tasas}
 Una tasa es una razón entre dos cantidades con unidades distintas y expresan la dinámica de un suceso en una población a lo largo del tiempo. Si la tasa o la cantidad frente a la cual algo está cambiando no está especificada, usualmente la tasa es por unidad de tiempo.  Sin embargo, una tasa  puede ser especificada por unidad de tiempo, por unidad de medida o masa o cualquier otra cantidad. Naturalmente para describir las unidades de una tasa, la palabra "por" se utiliza para poder separar las unidades de dos medidas utilizadas para calcular la tasa como por ejemplo, pesos por libra, metros por segundo, millas por hora, y días enfermo por año. De aquí es conveniente clasificar algunas tasas cuando *el denominador es una variable temporal, un “stock” poblacional* ó *una variable monetaria*.
 
-***1. Cuando el denominador es un “stock” poblacional***. Haciendo referencia a un “stock” poblacional como las poblaciones en un punto exacto de tiempo y tienen como fuentes los censos, padrones, estimaciones de población o encuestas. Para el cálculo, el numerador expresa el número de eventos ocurridos en una población durante un período. Como afirma @moreno2000principales, a diferencia de las proporciones, el denominador  no expresa el número de sujetos en observación sino el tiempo durante el cual tales sujetos estuvieron en riesgo de sufrir el evento. Así que, la tasa se calcula mediante la siguiente fórmula<br>
+***1. Cuando el denominador es un “stock” poblacional***. Haciendo referencia a un “stock” poblacional como las poblaciones en un punto exacto de tiempo y tienen como fuentes los censos, padrones, estimaciones de población o encuestas. Para el cálculo, el numerador expresa el número de eventos ocurridos en una población durante un período. Como afirma @moreno2000principales, a diferencia de las [proporciones](#proporcion), el denominador  no expresa el número de sujetos en observación sino el tiempo durante el cual tales sujetos estuvieron en riesgo de sufrir el evento. Así que, la tasa se calcula mediante la siguiente fórmula<br>
 
 $\frac{\text{Número de eventos ocurridos en un población en el periodo t}}{\text{Sumatoria de los periodos donde los individuos de la población libres del evento estuvieron expuestos al riesgo en el periodo t}}\times 10^n$
 
 
-La unidad de medida empleada se conoce como *tiempo-persona* de seguimiento. Por ejemplo, la observación de 100 individuos libres del evento durante un año corresponde a 100 años-persona de seguimiento; de manera similar, 10 sujetos observados durante diez años corresponden a 100 años-persona. Entonces, la población $n$ en observación durante un año corresponde a $n$ año-persona. Así que, esto explica el por qué los ejemplos clásicos sobre tasas (algunos se presentarán a continuación) que corresponden a estudios hechos durante un período de un año, por ende, la sumatoria de los períodos donde los individuos de la población libres del evento estuvieron expuestos al "riesgo" en el periodo de un año (año-persona) coindice con la población en observación.
+La unidad de medida empleada se conoce como *tiempo-persona* de seguimiento. Por ejemplo, la observación de 100 individuos libres del evento durante un año corresponde a 100 años-persona de seguimiento; de manera similar, 10 sujetos observados durante diez años corresponden a 100 años-persona. Entonces, la población $n$ en observación durante un año corresponde a $n$ año-persona. Así que, esto explica el porque en los ejemplos clásicos sobre tasas en epidemiología (algunos se presentarán a continuación) que corresponden a estudios hechos durante un período de un año, la sumatoria de los períodos donde los individuos de la población libres del evento estuvieron expuestos al "riesgo" en el periodo de un año (el denominador de la tasa) coindice con la población en observación.
 
 
 * *Tasa de natalidad:* Es el número de nacimientos de una población por cada $10^n$ habitantes en un año. <br>
@@ -56,7 +56,7 @@ En efecto, magnitudes vectoriales como la velocidad  que describe el cambio de p
 
 ***3. Cuando el denominador es una variable monetaria *** 
 
-* *Tasa de cambio:* La tasa de cambio muestra la relación que existe entre dos monedas. Dicha tasa es un indicador que expresa cuántas unidades de una divisa se necesitan para obtener una unidad de la otra. En el caso de Colombia, tenemos la siguiente relación o también véase [@BibEntry2019Jun].
+* *Tasa de cambio:* La tasa de cambio muestra la relación que existe entre dos monedas. Dicha tasa es un indicador que expresa cuántas unidades de una divisa se necesitan para obtener una unidad de la otra. En el caso de Colombia, tenemos la siguiente relación o también véase @BibEntry2019Jun.
 
 $$\begin{equation}
 \frac{\text{Cantidad o peso de la moneda local}}{\text{Una unidad de la moneda extrajera}}\times 10^{n}
@@ -76,13 +76,13 @@ $$\begin{equation}
 
 ## Tasa de Variación {#tasavariación}
 
-Representa la razón  de dos observaciones de una misma variable pero en dos diferentes puntos del tiempo (pasado y presente), por lo que expresa un cambio porcentual en el tiempo. La observación más reciente se coloca en el numerador mientras que la menos reciente se coloca en el denominador. Es decir para t,k números enteros, la tasa de variación se expresa como,
+Representa la razón  de dos observaciones de una misma variable pero en dos diferentes puntos del tiempo (pasado y presente), por lo que expresa un cambio porcentual en el tiempo. La observación más reciente se coloca en el numerador mientras que la menos reciente se coloca en el denominador. Es decir para $t,k$ números enteros, la tasa de variación se expresa como,
 
 $$\begin{equation}
 \frac{\text{(Variable en el periodo}\hspace{2mm} t)-(\text{Variable en el periodo} \hspace{2mm} t-k)}{\text{Variable en el periodo} \hspace{2mm} t-k} \hspace{8mm} \text{(1)}
 \end{equation}$$
 
-donde el numerador indica el cambio de la variable en relación a dichos períodos. En otras palabras, al ser una razón, se está comparando el cambio de la variable en dos periodos con la variable en el periodo menos reciente.  Es equivalente de (1) expresarlo
+donde el numerador indica el cambio de la variable en relación a dichos períodos. En otras palabras, al ser una razón, se está comparando el cambio de la variable en dos períodos con la variable en el período menos reciente.  Es equivalente de $(1)$ expresarlo
 
 $$\begin{equation}
 \frac{\text{Variable en el periodo}\hspace{2mm} t}{\text{Variable en el periodo} \hspace{2mm} t-k}-1
@@ -91,9 +91,10 @@ $$\begin{equation}
 finalmente se multiplica por $10^{n}$ para expresar la tasa como una potencia de $10$.
 
 $$\begin{equation}
-\left[\frac{\text{Variable en el periodo}\hspace{2mm} t}{\text{Variable en el periodo} \hspace{2mm} t-k}-1 \right] \times 10^{n}
+\left[\frac{\text{Variable en el periodo}\hspace{2mm} t}{\text{Variable en el periodo} \hspace{2mm} t-k}-1 \right] \times 10^{n}.
 \end{equation}$$
-Con lo anterior, tenemos que la tasa de variación es un ejemplo de razón que puede ser expresado en porcentaje. Ahora es conveniente mencionar algunos ejemplos en donde se calcula la tasa de variación dado un indicador.
+
+Ahora es conveniente mencionar algunos ejemplos en donde se calcula la tasa de variación dado un indicador.
 
 ```{r, echo=FALSE}
 library(tidyr)
@@ -101,9 +102,9 @@ ind5 <- tibble(`Nombre del indicador` = c("Tasa de variación del total de libro
 knitr::kable(ind5, caption = 'Tasas de variaciones de la Universidad Nacional' )
 ```
 
-En la economia, encontramos otros ejemplos de tasa de variación,
+En la economía, encontramos otros ejemplos de tasa de variación.
 
-* ***Tasa de inflación:*** muestra la variación porcentual de los precios de un determinado territorio, durante un periodo determinado y con esto, podemos saber como se han comportado los precios en un lugar determinado. El cálculo de esta tasa se determina  en términos del *Índice de Precios al Consumidor* (IPC) el cual es el encargado de recoger el cambio de los precios, mes a mes para evaluar el coste de la vida mediante artículos como alimentos, casa, transporte, cuidado de la salud, entretenimiento, ropa y otros gastos. 
+* ***Tasa de inflación:*** Muestra la variación porcentual de los precios de un determinado territorio, durante un período determinado y con esto, podemos saber como se han comportado los precios en un lugar determinado. El cálculo de esta tasa se determina  en términos del *Índice de Precios al Consumidor* (IPC) el cual es el encargado de recoger el cambio de los precios, mes a mes para evaluar el coste de la vida mediante artículos como alimentos, casa, transporte, cuidado de la salud, entretenimiento, ropa y otros gastos. 
 
 $$\begin{equation}
 \left[\frac{\text{IPC actual}}{\text{IPC anterior}}-1\right]\times 10^{n}

@@ -5,6 +5,13 @@ bookdown::gitbook:
     toc:
       collapse: none
       before: |
-        <li><a href="./">Naturaleza matemática de los indicadores</a></li>
-    download: ["pdf", "epub"]
+        <li><a href="./">Una aproximación matemática a la fórmula de un indicador</a></li>
+    download: ["pdf", "epub", "mobi"]
+   # sharing:
+     # github: yes
+     # facebook: no
+     # twitter: no
+#bookdown::pdf_book:
+  
 bookdown::epub_book: default
+ 

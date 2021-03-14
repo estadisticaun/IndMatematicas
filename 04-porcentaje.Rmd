@@ -1,11 +1,11 @@
 # Porcentaje {#porcentaje}
-Un porcentaje es la forma de expresar un número como partes de cada cien.Como ya se dijo,  Los porcentajes son proporciones multiplicado por $100$. De manera más clara, podemos construir indicadores de porcentaje aplicando la operación 
+Un porcentaje es la forma de expresar un número como partes de cada cien. Como ya se dijo,  Los porcentajes son proporciones multiplicado por $100$. De manera más clara, podemos construir indicadores de porcentaje aplicando la operación 
 
 $$\begin{equation}
 \text{Porcentaje de}\hspace{2mm}n=\frac{\text{Número de elementos de}\hspace{2mm}n}{\text{Total de elementos en el universo de}\hspace{2mm} N}\times 100.
-\end{equation}$$.
+\end{equation}$$
 
-El porcentaje se representa con el símbolo $\%$, donde el conjunto $N$ representa el $100$ por ciento, y cada una de las relaciones obtenidas al dividir entre el total (elementos de $N$) y multiplicarlo por cien representa un tanto de cien, y es definido como tanto por ciento. 
+El porcentaje se representa con el símbolo $\%$, donde el conjunto $N$ representa el $100$ por ciento, y cada una de las relaciones obtenidas al dividir entre el total (elementos de $N$) y multiplicarlo por $100$ representa un tanto de cien, y es definido como tanto por ciento. 
 
 Algunos ejemplos son los siguientes
 

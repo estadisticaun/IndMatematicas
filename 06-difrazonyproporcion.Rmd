@@ -2,17 +2,17 @@
 
 Según [@colimon1990fundamentos], el concepto de tasa es similar al de una [proporción](#proporción), como bien se dijo, con la diferencia de que las [tasas](#tasas) llevan incorporado el concepto de tiempo haciendo referencia a la unidad de medida empleada tiempo-persona. Para comprender mejor como actua dicha diferencia, consideremos la proporción de incidencia vs. la tasa de incidencia de una determinada población.
 
-Antes de empezar, tengamos en cuenta que incidencia se refiere a los nuevos casos de una enfermedad en una determinada población, en un lugar dado y en un período específico. Con lo anterior, la *proporción de incidencia* relaciona el numero de casos nuevos (numerador) con el total de individuos (denominador)
+Antes de empezar, tengamos en cuenta que incidencia se refiere a los nuevos casos de una enfermedad en una determinada población, en un lugar dado y en un período específico. Con lo anterior, la *proporción de incidencia* relaciona el numero de casos nuevos (numerador) con el total de individuos (denominador).
 
-|Ejemplo. *Proporción de incidencia de covid-19 en una población*|
+|Ejemplo. *Proporción de incidencia de covid-19 en una población*.|
 |--------------------------------------------------------------------|
-|Una población de 10.000 habitantes, registró 1.800 nuevos casos del covid en tres meses. <br> Proporción de incidencia $\times 1.000=\frac{1.800}{10.000}\times 1.000=180$ por mil.|
+|Una población de 10.000 habitantes, registró 1.800 nuevos casos del Covid-19 en tres meses. <br> Proporción de incidencia $\times 1.000=\frac{1.800}{10.000}\times 1.000=180$ por mil.|
 
 Ahora, cuando hablamos de *tasa de incidencia* estamos midiendo la velocidad de presentación de una enfermedad durante un período. Notemos que una tasa consta de un numerador, que al igual que en la proporción, es el número de casos nuevos del evento, y de un denominador que es el número de unidades de tiempo-persona durante el cual pudo presentarse el evento.
 
 |Ejemplo. *Tasa de incidencia de covid en una población*|
 |--------------------------------------------------------------------|
-|Una población de 10.000 habitantes, en un periodo de 3 meses registró 1.800 nuevos casos del covid-19 en el mes de diciembre y con un total de 13.450 meses-persona de seguimiento. <br> Tasa de incidencia $\times 1.000=\frac{1.800}{4.850}\times 1.000=133,8$ por mil meses-persona.<br>
+|Una población de 10.000 habitantes, en un periodo de 3 meses registró 1.800 nuevos casos del Covid-19 en el mes de diciembre y con un total de 13.450 meses-persona de seguimiento. <br> Tasa de incidencia $\times 1.000=\frac{1.800}{4.850}\times 1.000=133,8$ por mil meses-persona.<br>
 Indica que por cada 1.000 meses-persona de seguimiento durante 3 meses, se presentaron aproximadamente 134 nuevos casos de covid-19.|
 
 Tras haber leído el ejemplo anterior, es conveniente preguntarnos como se calculó el valor de 13.450 meses-persona y con que variables se relaciona. A manera de ilustración, consideraremos la siguiente tabla con el fin de tratar de explicar las tasas de incidencia dentro de un período de seguimiento de 3 meses.
