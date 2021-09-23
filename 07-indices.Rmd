@@ -25,25 +25,25 @@ knitr::kable(ind5, caption = 'Ejemplo de escala ordinal usando la variable estra
 
 La OCDE, la Organización para la Cooperación y el Desarrollo Económicos [@BibEntry2020Dec] y el Centro Común de Investigación de la Comisión Europea [@BibEntry2015Jun] publicaron conjuntamente un manual para la construcción de indicadores compuestos en 2008. El manual, respaldado oficialmente por el comité estadístico de alto nivel de la OCDE, describe diez pasos recurrentes para la elaboración de un índice: 
 
-+ Paso 1: marco teórico
++ Paso 1: Marco teórico
 
-+ Paso 2: selección de datos
++ Paso 2: Selección de datos
 
-+ Paso 3: imputación de datos faltantes
++ Paso 3: Imputación de datos faltantes
 
-+ Paso 4: análisis multivariado
++ Paso 4: Análisis multivariado
 
-+ Paso 5: normalización
++ Paso 5: Normalización
 
-+ Paso 6: ponderación
++ Paso 6: Ponderación
 
-+ Paso 7: agregación de indicadores
++ Paso 7: Agregación de indicadores
 
-+ Paso 8: análisis de sensibilidad
++ Paso 8: Análisis de sensibilidad
 
-+ Paso 9: vincular a otras medidas
++ Paso 9: Vincular a otras medidas
 
-+ Paso 10: visualización
++ Paso 10: Visualización
 
 Como sugiere la lista, es laborioso construir un indicador compuesto, lo que hace que su uso sea cuestionable. 
 
@@ -57,7 +57,7 @@ Cuando el índice va referido a un valor de un producto será conveniente referi
 
 ### Número índice {#numeroindice}
 
-Es una cifra de datos económicos que refleja el precio o la cantidad en comparación con un valor estándar o base. Particularmente, el número índice recoge la evolución relativa en el período $t$ de una magnitud económica (precios, producciones, …) de un conjunto de bienes o productos respecto al período base ó de referencia $0$ [@fernandez2004introduccion]. Los números índices se utilizan especialmente para comparar la actividad empresarial, el costo de vida y el empleo.  
+Es una cifra de datos económicos que refleja el precio o la cantidad en comparación con un valor estándar o base. Particularmente, el número índice recoge la evolución relativa en el período $t$ de una magnitud económica (precios, producciones, …) de un conjunto de bienes o productos respecto al período base ó de referencia 0 [@fernandez2004introduccion]. Los números índices se utilizan especialmente para comparar la actividad empresarial, el costo de vida y el empleo.  
 
 Al período inicial se le denomina período base o referencia y se le asigna el valor $100$ y se compara con el período actual o también llamado corriente.  Así, definimos a $I_{0}^{t}$ como el número índice de un determinado valor en el período $t$, respecto al período base $0$.
 
@@ -110,11 +110,6 @@ P_{t/0}=\frac{p_{t}}{p_{0}}\times 100
 |*Precio del arroz (pesos)*|700|850|910|1.050|
 |$I_{año/2012}$($\%$)|$100$|$\frac{850}{700}\times 100=121,4$|$\frac{910}{850}\times 100=107$|$\frac{1.050}{910}\times 100=115,3$|
 
-  * *Índice de precios al consumidor (IPC):* El IPC nos indica cómo va evolucionando con respecto del conjunto de precios de los bienes y servicios básicos que consume la población. La principal función del IPC es señalar la evolución del coste de la vida y resulta primordial para el conocimiento de la inflación.
-  
-  $$\begin{equation}
-IPC=\frac{\text{Precio de la cesta de bienes y servicios en el año en cuestión}}{\text{Precio de la cesta en el año base}}\times 100.
-\end{equation}$$
 
 ***b). Índice de cantidad:*** Consiste en comparar las cantidades (o volúmenes) de producción, consumo o exportación. 
 De igual manera, si $q_{t}$ indica la cantidad de un articulo producido o vendido en el período $t$ dado y $q_{0}$ la cantidad en el periodo base, la fórmula general para el índice simple de cantidad es:
@@ -193,7 +188,9 @@ Por lo tanto, según @arroyo2006manual procede distinguir dos tipos de índices 
 
 Ilustraremos ahora los dos tipos de índices mediante la media aritmética o promedio, la cual es la más conocida y usada para el análisis de los datos.
 
-**Índice complejo no ponderado (Media aritmética de índices simples)** 
+**Índice complejo no ponderado** 
+
+***a. Media aritmética de índices simples:***
 
 $$ \overline{I}_{t/0}=\frac{1}{N}\sum^{N}_{i=1}I_{t0}^{i} $$
 donde $N$ es el número de elementos de cada índice simple.
@@ -201,7 +198,7 @@ donde $N$ es el número de elementos de cada índice simple.
 
 **Ejemplo:**
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(tidyr)
 ind5 <- tibble(`Artículo` = c("Huevos","Leche","Harina"), `Precio en 2017` = c(300,"1.000",800), `Precio en 2018` = c(350,"1.100","1.000"), `Índice simple 2017` = c(100,100,100), `Índice simple 2018` = c("116,6","110","125"))
 knitr::kable(ind5, caption = 'Ejemplo' )
@@ -211,7 +208,9 @@ Teniendo en cuenta que $N=3$ y el período base es 2017, encontramos que el índ
 
 $$ I_{2018/2017}=\frac{116,6+110+125}{3}=117,2$$.
 
-**Índice complejo ponderado (Media aritmética ponderada)** 
+**Índice complejo ponderado ** 
+
+***a. Media aritmética ponderada***
 
 Sea $w_i$ la ponderación asociada, luego se define el índice complejos ponderados por el método de media aritmética ponderada como,
 
@@ -221,7 +220,7 @@ $$ \overline{I}_{t/0}=\frac{\sum^{N}_{i=1}w_iI_{t0}^{i}}{\sum^{N}_{i=1}w_i}. $$
 
 Consideremos los datos del ejemplo anterior con las siguientes ponderaciones
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(tidyr)
 ind5 <- tibble(`Huevos` = c("$w_1=40$"), `Leche` = c("$w_2=55$"), `Harina` = c("$w_3=71$"))
 knitr::kable(ind5, caption = 'Ejemplo' )
@@ -229,7 +228,135 @@ knitr::kable(ind5, caption = 'Ejemplo' )
 
 
 
-$$\overline{I}_{1018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118$$
+$$\overline{I}_{2018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118$$
+
+***b. Índice de Laspeyres:***
+
+Es el más utilizado en los indicadores generales de precios. Usaremos la notación  $P_{t0}^{i}$ para especificar el índice de precios de la $i$-ésima variable correspondiente al año $t$ con base al año de referencia 0. Con lo anterior, la formula del índice de Laspeyres es 
+
+$$ {I}_{t/0}=\frac{\sum^{N}_{i=1}w_iP_{t0}^{i}}{\sum^{N}_{i=1}w_i}= \frac{\sum^{N}_{i=1}p_{i0}q_{i0}\frac{p_{it}}{p_{i0}}}{\sum^{N}_{i=1}p_{i0}q_{i0}}=\frac{\sum^{N}_{i=1}p_{it}q_{i0}}{\sum^{N}_{i=1}p_{i0}q_{i0}}$$.
+
+donde $p_{it}$ es el precio del bien o servicio $i$-ésimo en el periodo $t$ y $q_{i0}$ es la cantidad del  bien o servicio $i$-ésimo en el periodo 0. 
+
+Nótese, a medida que nos alejamos del periodo de referencia, este índice se vuelve cada vez menos representativo con lo que es necesario fijar un nuevo periodo de referencia. 
+
+
+### Índice de precios del consumidor en Colombia (IPC)
+
+Según el Dane, el Índice de Precios del Consumidor, IPC, es una medida del cambio en el precio de bienes y servicios representativos del consumo de los hogares del país conocido como canasta. Esta canasta se define a partir  de la Encuesta Nacional de Presupuesto de los Hogares –ENPH-, que el DANE realiza cada 10 años.
+
+El IPC nos indica cómo va evolucionando con respecto del conjunto de precios de los bienes y servicios básicos que consume la población. La principal función del IPC es señalar la evolución del coste de la vida y resulta primordial para el conocimiento de la inflación.
+  
+
+Entre los elementos que se incluyen para conocer el dato de IPC se incluyen 443 artículos que consumen las familias, clasificados en 12 grupos, cada uno de los cuales recibe una ponderación según el porcentaje del presupuesto familiar que se destina a su compra. Según su presencia porcentual de mayor a menor, estos grupos son:
+
+1. Alimentos y bebidas no alcohólicas
+2. Bebidas alcohólicas y tabaco
+3. Prendas de vestir y calzado
+4. Alojamiento, agua, electricidad, gas y otros combustibles
+5. Muebles, artículos para el hogar y conservación ordinaria de la vivienda
+6. Salud
+7. Transporte 
+8. Información y comunicación
+9. Recreación y cultura
+10. Educación
+11. Restaurantes y hoteles
+12. Bienes y servicios diversos
+
+
+```{r, echo=FALSE}
+nombre<- c("Alimentos y bebidas no alcohólicas", "Bebidas alcohólicas y tabaco", "Prendas de vestir y calzado", "Alojamiento, agua, electricidad, gas y otros combustibles", "Muebles, artículos para el hogar y para la conservación ordinaria del hogar", "Salud", "Transporte", "Información y comunicación", "Recreación y cultura", "Educación", "Restaurantes y hoteles", "Bienes y servicios diversos")
+vulnerables <- c(22.24,1.88,3.50,36.33,3.07,1.40,10.07,3.25,2.89,1.74,8.17,5.46)
+pobres <- c(23.78,1.82,3.30,40.17,2.97,1.51,7.08,2.66,2.61,1.64,7.23,5.23)
+media <- c(15.80,1.72,3.91,33.13,3.75,1.52,13.00,4.58,3.46,4.29,9.48,5.35)
+ingresos <- c(8.16,1.53,4.49,30.44,5.99,2.34,15.12,4.56,5.19,6.55,10.31,5.32)
+total <- c(15.05,1.70,3.98,33.12,4.19,1.71,12.93,4.33,3.79,4.41,9.43,5.36)
+ponderaciones <- tibble(`Nombre` = nombre, `Pobres`= pobres, `Vulnerables`= vulnerables, `Clase Media`= media, `Ingresos Altos`= ingresos, `Total`= total )
+knitr::kable(ponderaciones, caption = 'Ponderaciones IPC según divisiones' )
+```
+
+Un dato importante es, el IPC es un ejemplo de un índice de Laspeyres. Ahora veamos un ejemplo sobre como calcular el IPC de ciertas divisiones, siguiendo la tabla de ponderaciones en los años 2017 y 2018. 
+
+
+**Ejemplo:**
+
+```{r, echo=FALSE, warning=FALSE}
+exem <- tibble(`Alimentos ` = c("Alimentos","Calzado","Transporte"), `Ponderación` = c(15.05,3.98,12.93), `Indice de precios 2017` = c(175.4,179.7,161), `Índice de precios 2018` = c(181.1,188.4,166.5))
+knitr::kable(exem, caption = 'Ejemplo' )
+```
+
+usando la fórmula de índice de Laspeyres podemos encontrar el IPC de la siguiente manera. 
+
+|IPC |Procedimiento|
+|----------|--------|
+|$IPC_{2017}$|$\frac{15.05 \times 175.4+3.98 \times 179.7+ 12.93\times 161}{15.05+3.98+12.93}=\frac{5436.7}{31.93}=170.26$|
+|$IPC_{2018}$|$\frac{15.05 \times 181.1+3.98 \times 188.4+ 12.93\times 166.5}{15.05+3.98+12.93}=\frac{5628.23}{31.96}=176.10$|
+
+### Índice de pobreza multidimensional en Colombia (IPM)
+ 
+Según el Dane, la medición de la pobreza se hace tradicionalmente de forma directa e indirecta, siguiendo la clasificación de Amartya Sen (1981). El método directo evalúa los resultados de satisfacción (o no privación) que tiene un individuo respecto a ciertas características que se consideran vitales como salud, educación, empleo, entre otras. La medición indirecta evalúa la capacidad de adquisición de bienes y servicios que tienen los hogares. 
+
+El IPM está compuesto por cinco dimensiones: condiciones educativas del hogar, condiciones de la
+niñez y juventud, salud, trabajo, acceso a servicios públicos domiciliarios y condiciones de la
+vivienda y servicio público. Adicionalmente, el CONPES 150 de 2012 establece al DANE como el encargado oficial
+del cálculo de la pobreza multidimensional y divulgación de las cifras. 
+
+
+```{r, echo=FALSE}
+indicadores1<- c("Analfabetismo", "Bajo logro educativo")
+ponderacion1 <- c(0.1,0.1)
+
+ponderaciones1 <- tibble(`Indicadores ` = indicadores1, `Ponderaciones`= ponderacion1 )
+knitr::kable(ponderaciones1, caption = 'División de Condiciones educativas del hogar ' )
+```
+
+```{r, echo=FALSE}
+indicadores2<- c("Inasistencia escolar", "Rezago escolar", "Barreras de acceso a servicios de cuidado de la primera infancia", "Trabajo infantil ")
+ponderacion2 <- c(0.05,0.05,0.05,0.05)
+
+ponderaciones2 <- tibble(`Indicadores ` = indicadores2, `Ponderaciones`= ponderacion2 )
+knitr::kable(ponderaciones2, caption = 'División de Condiciones de la niñez y juventud ' )
+```
+
+
+```{r, echo=FALSE}
+indicadores3<- c("Trabajo informal", "Desempleo de larga duración")
+ponderacion3<- c(0.1,0.1)
+
+ponderaciones3 <- tibble(`Indicadores ` = indicadores3, `Ponderaciones`= ponderacion3 )
+knitr::kable(ponderaciones3, caption = 'División de Trabajo ' )
+```
+
+```{r, echo=FALSE}
+indicadores5<- c("Sin aseguramiento a salud ", "Barreras de acceso a salud de una necesidad")
+ponderacion5<- c(0.1,0.1)
+
+ponderaciones5 <- tibble(`Indicadores ` = indicadores5, `Ponderaciones`= ponderacion5 )
+knitr::kable(ponderaciones5, caption = 'División de Salud ' )
+```
+
+```{r, echo=FALSE}
+indicadores4<- c("Sin acceso a fuente de agua mejorada ", "Inadecuada eliminación de excrementos", "Material inadecuado de pisos", "Material inadecuado de paredes", "Hacinamiento crítico")
+ponderacion4 <- c(0.04,0.04,0.04,0.04,0.04)
+
+ponderaciones4 <- tibble(`Indicadores ` = indicadores4, `Ponderaciones`= ponderacion4 )
+knitr::kable(ponderaciones4, caption = 'División de Condiciones de la vivienda y servicios públicos' )
+```
+
+### Índice de transpariencia y acceso a la información (ITA)
+
+Según la Procuraduria General de la Nación, ITA, es un indicador sintético de pesos preestablecidos, se alimenta de un formulario de autodiligenciamiento compuesto de una serie de preguntas agrupadas en subcategorías, que a su vez se agrupan en categorías y éstas en dimensiones, las cuales describen el cumplimiento del sujeto
+frente a las obligaciones de Ley; por lo tanto, estas opciones establecen el nivel de observancia
+de cada pregunta agregada y que constituyen la Matriz de Cumplimiento de la Ley 1712, diseñada
+por la Procuraduría General de la Nación. Según lo anterior, el cálculo del indicador se genera a
+partir del porcentaje de cumplimiento que resulta del auto-diligenciamiento del formulario por
+parte de los sujetos obligados. Este indicador sintético se establece en una escala ordinal de 0 a
+100 puntos, donde a mayor valor se obtenga; mayor será el nivel de cumplimiento de la Ley.
+
+**Matriz de cumplimiento:** Consta de 182 preguntas con las cuales se busca validar la publicación de información en distintas temáticas tales como Presupuesto, Normatividad, Planeación, Contratación, Control y otras. 
+
+Esta matriz condensa lo que está en la ley en un formulario de 182 preguntas que están clasificadas en una jerarquía de 3 niveles de mayor a menor denominados respectivamente: Dimensión, Categoría, y Subcategoría. Por lo tanto, conviene presentar la estrutura de la matriz en las siguientes tablas. 
+
 
 ## Índices en las ciencias sociales
  
@@ -295,6 +422,7 @@ knitr::kable(ind5, caption = '*Indicador 2: Porcentaje de estudiantes en nivel a
 
 ```{r, echo=FALSE}
 library(tidyr)
+
 ind5 <- tibble(`Grado` = c("Tercero","Tercero","Quinto","Quinto"), `Área de conocimiento`= c("Matemáticas","Lenguaje","Matemáticas","Lenguaje"), `Año 2016`= c(220,300,270,298))
 knitr::kable(ind5, caption = '*Indicador 3: Promedio de los resultados obtenidos en las últimas pruebas*' )
 ```

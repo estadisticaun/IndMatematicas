@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 5 Tasas | Una aproximación matemática a la fórmula de un indicador</title>
   <meta name="description" content="Capítulo 5 Tasas | Una aproximación matemática a la fórmula de un indicador" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 5 Tasas | Una aproximación matemática a la fórmula de un indicador" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Valentina Londoño Ramirez" />
 
 
-<meta name="date" content="2021-03-13" />
+<meta name="date" content="2021-09-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="4-porcentaje.html"/>
 <link rel="next" href="5-1-tasavariación.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,10 +51,33 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -76,15 +100,22 @@
 <li class="chapter" data-level="2" data-path="2-proporción.html"><a href="2-proporción.html"><i class="fa fa-check"></i><b>2</b> Proporción</a></li>
 <li class="chapter" data-level="3" data-path="3-razón.html"><a href="3-razón.html"><i class="fa fa-check"></i><b>3</b> Razón</a></li>
 <li class="chapter" data-level="4" data-path="4-porcentaje.html"><a href="4-porcentaje.html"><i class="fa fa-check"></i><b>4</b> Porcentaje</a></li>
-<li class="chapter" data-level="5" data-path="5-tasas.html"><a href="5-tasas.html"><i class="fa fa-check"></i><b>5</b> Tasas</a><ul>
+<li class="chapter" data-level="5" data-path="5-tasas.html"><a href="5-tasas.html"><i class="fa fa-check"></i><b>5</b> Tasas</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="5-1-tasavariación.html"><a href="5-1-tasavariación.html"><i class="fa fa-check"></i><b>5.1</b> Tasa de Variación</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-diferencia-entre-proporción-y-tasa.html"><a href="6-diferencia-entre-proporción-y-tasa.html"><i class="fa fa-check"></i><b>6</b> Diferencia entre proporción y tasa</a></li>
-<li class="chapter" data-level="7" data-path="7-pbm.html"><a href="7-pbm.html"><i class="fa fa-check"></i><b>7</b> Índice</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html"><i class="fa fa-check"></i><b>7.1</b> Índice en la economía</a><ul>
+<li class="chapter" data-level="7" data-path="7-pbm.html"><a href="7-pbm.html"><i class="fa fa-check"></i><b>7</b> Índice</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html"><i class="fa fa-check"></i><b>7.1</b> Índice en la economía</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html#numeroindice"><i class="fa fa-check"></i><b>7.1.1</b> Número índice</a></li>
+<li class="chapter" data-level="7.1.2" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html#índice-de-precios-del-consumidor-en-colombia-ipc"><i class="fa fa-check"></i><b>7.1.2</b> Índice de precios del consumidor en Colombia (IPC)</a></li>
+<li class="chapter" data-level="7.1.3" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html#índice-de-pobreza-multidimensional-en-colombia-ipm"><i class="fa fa-check"></i><b>7.1.3</b> Índice de pobreza multidimensional en Colombia (IPM)</a></li>
+<li class="chapter" data-level="7.1.4" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html#índice-de-transpariencia-y-acceso-a-la-información-ita"><i class="fa fa-check"></i><b>7.1.4</b> Índice de transpariencia y acceso a la información (ITA)</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="7-2-índices-en-las-ciencias-sociales.html"><a href="7-2-índices-en-las-ciencias-sociales.html"><i class="fa fa-check"></i><b>7.2</b> Índices en las ciencias sociales</a><ul>
+<li class="chapter" data-level="7.2" data-path="7-2-índices-en-las-ciencias-sociales.html"><a href="7-2-índices-en-las-ciencias-sociales.html"><i class="fa fa-check"></i><b>7.2</b> Índices en las ciencias sociales</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-índices-en-las-ciencias-sociales.html"><a href="7-2-índices-en-las-ciencias-sociales.html#índice-sintético-de-la-calidad-educativa-isce"><i class="fa fa-check"></i><b>7.2.1</b> Índice Sintético de la Calidad Educativa (ISCE)</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-índices-en-las-ciencias-sociales.html"><a href="7-2-índices-en-las-ciencias-sociales.html#puntaje-básico-de-matrícula-pbm"><i class="fa fa-check"></i><b>7.2.2</b> Puntaje Básico de Matrícula (PBM)</a></li>
 </ul></li>
@@ -107,10 +138,10 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tasas" class="section level1">
+<div id="tasas" class="section level1" number="5">
 <h1><span class="header-section-number">Capítulo 5</span> Tasas</h1>
 <p>Una tasa es una razón entre dos cantidades con unidades distintas y expresan la dinámica de un suceso en una población a lo largo del tiempo. Si la tasa o la cantidad frente a la cual algo está cambiando no está especificada, usualmente la tasa es por unidad de tiempo. Sin embargo, una tasa puede ser especificada por unidad de tiempo, por unidad de medida o masa o cualquier otra cantidad. Naturalmente para describir las unidades de una tasa, la palabra “por” se utiliza para poder separar las unidades de dos medidas utilizadas para calcular la tasa como por ejemplo, pesos por libra, metros por segundo, millas por hora, y días enfermo por año. De aquí es conveniente clasificar algunas tasas cuando <em>el denominador es una variable temporal, un “stock” poblacional</em> ó <em>una variable monetaria</em>.</p>
-<p><strong><em>1. Cuando el denominador es un “stock” poblacional</em></strong>. Haciendo referencia a un “stock” poblacional como las poblaciones en un punto exacto de tiempo y tienen como fuentes los censos, padrones, estimaciones de población o encuestas. Para el cálculo, el numerador expresa el número de eventos ocurridos en una población durante un período. Como afirma <span class="citation">Moreno-Altamirano (<a href="#ref-moreno2000principales">2000</a>)</span>, a diferencia de las <a href="#proporcion">proporciones</a>, el denominador no expresa el número de sujetos en observación sino el tiempo durante el cual tales sujetos estuvieron en riesgo de sufrir el evento. Así que, la tasa se calcula mediante la siguiente fórmula<br></p>
+<p><strong><em>1. Cuando el denominador es un “stock” poblacional</em></strong>. Haciendo referencia a un “stock” poblacional como las poblaciones en un punto exacto de tiempo y tienen como fuentes los censos, padrones, estimaciones de población o encuestas. Para el cálculo, el numerador expresa el número de eventos ocurridos en una población durante un período. Como afirma <span class="citation"><a href="#ref-moreno2000principales" role="doc-biblioref">Moreno-Altamirano</a> (<a href="#ref-moreno2000principales" role="doc-biblioref">2000</a>)</span>, a diferencia de las <a href="#proporcion">proporciones</a>, el denominador no expresa el número de sujetos en observación sino el tiempo durante el cual tales sujetos estuvieron en riesgo de sufrir el evento. Así que, la tasa se calcula mediante la siguiente fórmula<br></p>
 <p><span class="math inline">\(\frac{\text{Número de eventos ocurridos en un población en el periodo t}}{\text{Sumatoria de los periodos donde los individuos de la población libres del evento estuvieron expuestos al riesgo en el periodo t}}\times 10^n\)</span></p>
 <p>La unidad de medida empleada se conoce como <em>tiempo-persona</em> de seguimiento. Por ejemplo, la observación de 100 individuos libres del evento durante un año corresponde a 100 años-persona de seguimiento; de manera similar, 10 sujetos observados durante diez años corresponden a 100 años-persona. Entonces, la población <span class="math inline">\(n\)</span> en observación durante un año corresponde a <span class="math inline">\(n\)</span> año-persona. Así que, esto explica el porque en los ejemplos clásicos sobre tasas en epidemiología (algunos se presentarán a continuación) que corresponden a estudios hechos durante un período de un año, la sumatoria de los períodos donde los individuos de la población libres del evento estuvieron expuestos al “riesgo” en el periodo de un año (el denominador de la tasa) coindice con la población en observación.</p>
 <ul>
@@ -176,7 +207,7 @@ en el momento}}\times 10^{n}
 <p>En efecto, magnitudes vectoriales como la velocidad que describe el cambio de posición con respecto al tiempo y la aceleración, el cambio de velocidad por unidad de tiempo son ejemplos de tasas muy comunes según esta clasificación. En otras áreas, también encontramos la tasa de flujo volumétrico, el cual relaciona el volumen de un líquido que pasa a través de un superfície dado por unidad temporal o la tasa de bits, en computación, que relaciona el número de bits enviados o procesados por un computador por unidad temporal.</p>
 <p><strong><em>3. Cuando el denominador es una variable monetaria </em></strong></p>
 <ul>
-<li><em>Tasa de cambio:</em> La tasa de cambio muestra la relación que existe entre dos monedas. Dicha tasa es un indicador que expresa cuántas unidades de una divisa se necesitan para obtener una unidad de la otra. En el caso de Colombia, tenemos la siguiente relación o también véase <span class="citation">(“Tasa Representativa del Mercado TRM - Peso por dólar” <a href="#ref-BibEntry2019Jun">2019</a>)</span>.</li>
+<li><em>Tasa de cambio:</em> La tasa de cambio muestra la relación que existe entre dos monedas. Dicha tasa es un indicador que expresa cuántas unidades de una divisa se necesitan para obtener una unidad de la otra. En el caso de Colombia, tenemos la siguiente relación o también véase <span class="citation"><a href="#ref-BibEntry2019Jun" role="doc-biblioref"><span>“<span class="nocase">Tasa Representativa del Mercado TRM - Peso por d<span class="nocase"><span></span><span></span>ó<span></span></span>lar</span>”</span></a> (<a href="#ref-BibEntry2019Jun" role="doc-biblioref">2019</a>)</span>.</li>
 </ul>
 <p><span class="math display">\[\begin{equation}
 \frac{\text{Cantidad o peso de la moneda local}}{\text{Una unidad de la moneda extrajera}}\times 10^{n}
@@ -204,12 +235,12 @@ en el momento}}\times 10^{n}
 \end{equation}\]</span></p>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-moreno2000principales">
-<p>Moreno-Altamirano, Sergio y Corcho-Berdugo, Alejandra y López-Moreno. 2000. “Principales Medidas En Epidemiologı́a.” <em>Salud Pública de México</em> 42: 337–48.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-moreno2000principales" class="csl-entry">
+Moreno-Altamirano, Sergio y Corcho-Berdugo, Alejandra y López-Moreno. 2000. <span>“Principales Medidas En Epidemiolog<span>ı́</span>a.”</span> <em>Salud p<span>ú</span>blica de M<span>é</span>xico</em> 42: 337–48.
 </div>
-<div id="ref-BibEntry2019Jun">
-<p>“Tasa Representativa del Mercado TRM - Peso por dólar.” 2019. <a href="https://www.banrep.gov.co/es/estadisticas/trm">https://www.banrep.gov.co/es/estadisticas/trm</a>.</p>
+<div id="ref-BibEntry2019Jun" class="csl-entry">
+<span>“<span class="nocase">Tasa Representativa del Mercado TRM - Peso por d<span class="nocase"><span></span><span></span>ó<span></span></span>lar</span>.”</span> 2019. <a href="https://www.banrep.gov.co/es/estadisticas/trm">https://www.banrep.gov.co/es/estadisticas/trm</a>.
 </div>
 </div>
             </section>
@@ -241,6 +272,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

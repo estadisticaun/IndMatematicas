@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5.1 Tasa de Variación | Una aproximación matemática a la fórmula de un indicador</title>
   <meta name="description" content="5.1 Tasa de Variación | Una aproximación matemática a la fórmula de un indicador" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5.1 Tasa de Variación | Una aproximación matemática a la fórmula de un indicador" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Valentina Londoño Ramirez" />
 
 
-<meta name="date" content="2021-03-13" />
+<meta name="date" content="2021-09-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="5-tasas.html"/>
 <link rel="next" href="6-diferencia-entre-proporción-y-tasa.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,10 +51,33 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -76,15 +100,22 @@
 <li class="chapter" data-level="2" data-path="2-proporción.html"><a href="2-proporción.html"><i class="fa fa-check"></i><b>2</b> Proporción</a></li>
 <li class="chapter" data-level="3" data-path="3-razón.html"><a href="3-razón.html"><i class="fa fa-check"></i><b>3</b> Razón</a></li>
 <li class="chapter" data-level="4" data-path="4-porcentaje.html"><a href="4-porcentaje.html"><i class="fa fa-check"></i><b>4</b> Porcentaje</a></li>
-<li class="chapter" data-level="5" data-path="5-tasas.html"><a href="5-tasas.html"><i class="fa fa-check"></i><b>5</b> Tasas</a><ul>
+<li class="chapter" data-level="5" data-path="5-tasas.html"><a href="5-tasas.html"><i class="fa fa-check"></i><b>5</b> Tasas</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="5-1-tasavariación.html"><a href="5-1-tasavariación.html"><i class="fa fa-check"></i><b>5.1</b> Tasa de Variación</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-diferencia-entre-proporción-y-tasa.html"><a href="6-diferencia-entre-proporción-y-tasa.html"><i class="fa fa-check"></i><b>6</b> Diferencia entre proporción y tasa</a></li>
-<li class="chapter" data-level="7" data-path="7-pbm.html"><a href="7-pbm.html"><i class="fa fa-check"></i><b>7</b> Índice</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html"><i class="fa fa-check"></i><b>7.1</b> Índice en la economía</a><ul>
+<li class="chapter" data-level="7" data-path="7-pbm.html"><a href="7-pbm.html"><i class="fa fa-check"></i><b>7</b> Índice</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html"><i class="fa fa-check"></i><b>7.1</b> Índice en la economía</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html#numeroindice"><i class="fa fa-check"></i><b>7.1.1</b> Número índice</a></li>
+<li class="chapter" data-level="7.1.2" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html#índice-de-precios-del-consumidor-en-colombia-ipc"><i class="fa fa-check"></i><b>7.1.2</b> Índice de precios del consumidor en Colombia (IPC)</a></li>
+<li class="chapter" data-level="7.1.3" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html#índice-de-pobreza-multidimensional-en-colombia-ipm"><i class="fa fa-check"></i><b>7.1.3</b> Índice de pobreza multidimensional en Colombia (IPM)</a></li>
+<li class="chapter" data-level="7.1.4" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html#índice-de-transpariencia-y-acceso-a-la-información-ita"><i class="fa fa-check"></i><b>7.1.4</b> Índice de transpariencia y acceso a la información (ITA)</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="7-2-índices-en-las-ciencias-sociales.html"><a href="7-2-índices-en-las-ciencias-sociales.html"><i class="fa fa-check"></i><b>7.2</b> Índices en las ciencias sociales</a><ul>
+<li class="chapter" data-level="7.2" data-path="7-2-índices-en-las-ciencias-sociales.html"><a href="7-2-índices-en-las-ciencias-sociales.html"><i class="fa fa-check"></i><b>7.2</b> Índices en las ciencias sociales</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-índices-en-las-ciencias-sociales.html"><a href="7-2-índices-en-las-ciencias-sociales.html#índice-sintético-de-la-calidad-educativa-isce"><i class="fa fa-check"></i><b>7.2.1</b> Índice Sintético de la Calidad Educativa (ISCE)</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-índices-en-las-ciencias-sociales.html"><a href="7-2-índices-en-las-ciencias-sociales.html#puntaje-básico-de-matrícula-pbm"><i class="fa fa-check"></i><b>7.2.2</b> Puntaje Básico de Matrícula (PBM)</a></li>
 </ul></li>
@@ -107,7 +138,7 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tasavariación" class="section level2">
+<div id="tasavariación" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Tasa de Variación</h2>
 <p>Representa la razón de dos observaciones de una misma variable pero en dos diferentes puntos del tiempo (pasado y presente), por lo que expresa un cambio porcentual en el tiempo. La observación más reciente se coloca en el numerador mientras que la menos reciente se coloca en el denominador. Es decir para <span class="math inline">\(t,k\)</span> números enteros, la tasa de variación se expresa como,</p>
 <p><span class="math display">\[\begin{equation}
@@ -162,7 +193,7 @@
 \left[\frac{\text{IPC actual}}{\text{IPC anterior}}-1\right]\times 10^{n}
 \end{equation}\]</span></p>
 <ul>
-<li><strong><em>Tasa de crecimiento económico:</em></strong> Es la variación porcentual del PIB (Producto Interno Bruto) real en un período de tiempo determinado en el que pemite calcular cual ha sido el aumento de la cantidad de bienes y servicios que produce una economía <span class="citation">(Prensa <a href="#ref-de2009producto">2009</a>)</span>.</li>
+<li><strong><em>Tasa de crecimiento económico:</em></strong> Es la variación porcentual del PIB (Producto Interno Bruto) real en un período de tiempo determinado en el que pemite calcular cual ha sido el aumento de la cantidad de bienes y servicios que produce una economía <span class="citation">(<a href="#ref-de2009producto" role="doc-biblioref">Prensa 2009</a>)</span>.</li>
 </ul>
 <p><span class="math display">\[\begin{equation}
 \left[\frac{\text{PBI actual}}{\text{PBI anterior}}-1\right]\times 10^{n}
@@ -171,9 +202,9 @@
 </div>
 <!-- </div> -->
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-de2009producto">
-<p>Prensa, DANE Boletı́n de. 2009. “Producto Interno Bruto.” <em>Primer Trimestre de</em>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-de2009producto" class="csl-entry">
+Prensa, DANE Boletı́n de. 2009. <span>“Producto Interno Bruto.”</span> <em>Primer Trimestre de</em>.
 </div>
 </div>
             </section>
@@ -205,6 +236,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

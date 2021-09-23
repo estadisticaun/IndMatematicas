@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 3 Razón | Una aproximación matemática a la fórmula de un indicador</title>
   <meta name="description" content="Capítulo 3 Razón | Una aproximación matemática a la fórmula de un indicador" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 3 Razón | Una aproximación matemática a la fórmula de un indicador" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Valentina Londoño Ramirez" />
 
 
-<meta name="date" content="2021-03-13" />
+<meta name="date" content="2021-09-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="2-proporción.html"/>
 <link rel="next" href="4-porcentaje.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,10 +51,33 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -76,15 +100,22 @@
 <li class="chapter" data-level="2" data-path="2-proporción.html"><a href="2-proporción.html"><i class="fa fa-check"></i><b>2</b> Proporción</a></li>
 <li class="chapter" data-level="3" data-path="3-razón.html"><a href="3-razón.html"><i class="fa fa-check"></i><b>3</b> Razón</a></li>
 <li class="chapter" data-level="4" data-path="4-porcentaje.html"><a href="4-porcentaje.html"><i class="fa fa-check"></i><b>4</b> Porcentaje</a></li>
-<li class="chapter" data-level="5" data-path="5-tasas.html"><a href="5-tasas.html"><i class="fa fa-check"></i><b>5</b> Tasas</a><ul>
+<li class="chapter" data-level="5" data-path="5-tasas.html"><a href="5-tasas.html"><i class="fa fa-check"></i><b>5</b> Tasas</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="5-1-tasavariación.html"><a href="5-1-tasavariación.html"><i class="fa fa-check"></i><b>5.1</b> Tasa de Variación</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-diferencia-entre-proporción-y-tasa.html"><a href="6-diferencia-entre-proporción-y-tasa.html"><i class="fa fa-check"></i><b>6</b> Diferencia entre proporción y tasa</a></li>
-<li class="chapter" data-level="7" data-path="7-pbm.html"><a href="7-pbm.html"><i class="fa fa-check"></i><b>7</b> Índice</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html"><i class="fa fa-check"></i><b>7.1</b> Índice en la economía</a><ul>
+<li class="chapter" data-level="7" data-path="7-pbm.html"><a href="7-pbm.html"><i class="fa fa-check"></i><b>7</b> Índice</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html"><i class="fa fa-check"></i><b>7.1</b> Índice en la economía</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html#numeroindice"><i class="fa fa-check"></i><b>7.1.1</b> Número índice</a></li>
+<li class="chapter" data-level="7.1.2" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html#índice-de-precios-del-consumidor-en-colombia-ipc"><i class="fa fa-check"></i><b>7.1.2</b> Índice de precios del consumidor en Colombia (IPC)</a></li>
+<li class="chapter" data-level="7.1.3" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html#índice-de-pobreza-multidimensional-en-colombia-ipm"><i class="fa fa-check"></i><b>7.1.3</b> Índice de pobreza multidimensional en Colombia (IPM)</a></li>
+<li class="chapter" data-level="7.1.4" data-path="7-1-índice-en-la-economía.html"><a href="7-1-índice-en-la-economía.html#índice-de-transpariencia-y-acceso-a-la-información-ita"><i class="fa fa-check"></i><b>7.1.4</b> Índice de transpariencia y acceso a la información (ITA)</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="7-2-índices-en-las-ciencias-sociales.html"><a href="7-2-índices-en-las-ciencias-sociales.html"><i class="fa fa-check"></i><b>7.2</b> Índices en las ciencias sociales</a><ul>
+<li class="chapter" data-level="7.2" data-path="7-2-índices-en-las-ciencias-sociales.html"><a href="7-2-índices-en-las-ciencias-sociales.html"><i class="fa fa-check"></i><b>7.2</b> Índices en las ciencias sociales</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-índices-en-las-ciencias-sociales.html"><a href="7-2-índices-en-las-ciencias-sociales.html#índice-sintético-de-la-calidad-educativa-isce"><i class="fa fa-check"></i><b>7.2.1</b> Índice Sintético de la Calidad Educativa (ISCE)</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-índices-en-las-ciencias-sociales.html"><a href="7-2-índices-en-las-ciencias-sociales.html#puntaje-básico-de-matrícula-pbm"><i class="fa fa-check"></i><b>7.2.2</b> Puntaje Básico de Matrícula (PBM)</a></li>
 </ul></li>
@@ -107,14 +138,14 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="razón" class="section level1">
+<div id="razón" class="section level1" number="3">
 <h1><span class="header-section-number">Capítulo 3</span> Razón</h1>
 <p>Una razón es una comparación multiplicativa de dos o más cantidades o medida.</p>
 <blockquote>
 <p>La razón entre <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> cuando <span class="math inline">\(b\)</span> es una cantidad distinta de cero, se escribe:
 <span class="math inline">\(\frac{a}{b}\)</span> o <span class="math inline">\(a:b\)</span> y se lee <span class="math inline">\(a\)</span> es a <span class="math inline">\(b\)</span>.</p>
 </blockquote>
-<p>Véase también <span class="citation">(Huircán Cabrera <a href="#ref-huircan2013guia">2013</a>)</span>.</p>
+<p>Véase también <span class="citation">(<a href="#ref-huircan2013guia" role="doc-biblioref">Huircán Cabrera 2013</a>)</span>.</p>
 <p>Esta relación nos da cuántas veces una cantidad es igual a la otra cantidad, como 6 estudiantes por 1 profesor o 2 tazas de azúcar para 5 tazas de harina. Independientemente de la situación, las comparaciones de razones siempre se relacionan de forma multiplicativa. Por ejemplo, la razón de 6 estudiantes por 2 profesores es que hay 3 veces más estudiantes que profesores. También se puede describir esta relación de varias formas, tales como:</p>
 <ul>
 <li>3 estudiantes por cada profesor.</li>
@@ -122,9 +153,9 @@
 <li>El número de profesores es <span class="math inline">\(\frac{1}{3}\)</span> del número de estudiantes.</li>
 </ul>
 <p>Independientemente de la forma en que se comunique esta relación, debe ser claro que hay 3 veces más estudiantes que profesores.</p>
-<p>Cabe mencionar que, como lo afiman <span class="citation">(Petit and Abele-Austin <a href="#ref-petit2020focus">2020</a>)</span> la razón puede tener dos interpretaciones. La primera es por
-unir o componer dos cantidades de una manera que “conserva una relación multiplicativa”, es decir, un cierto número de una cantidad junto con un cierto número de otra cantidad crea un compuesto unidad <span class="citation">(Beckmann <a href="#ref-beckmann2017mathematics">2017</a>)</span>. Por ejemplo,</p>
-<p><img src="https://static.vecteezy.com/system/resources/previews/001/209/957/non_2x/square-png.png" alt="Sin titulo" width="30" /> <img src="https://static.vecteezy.com/system/resources/previews/001/209/957/non_2x/square-png.png" alt="Sin titulo" width="30" /> <img src="https://static.vecteezy.com/system/resources/previews/001/209/957/non_2x/square-png.png" alt="Sin titulo" width="30" /> <img src="https://www.nicepng.com/png/detail/926-9260681_cuadro-cuadrados-borde-monochrome.png" alt="Sin titulo" width="28" /></p>
+<p>Cabe mencionar que, como lo afiman <span class="citation">(<a href="#ref-petit2020focus" role="doc-biblioref">Petit and Abele-Austin 2020</a>)</span> la razón puede tener dos interpretaciones. La primera es por
+unir o componer dos cantidades de una manera que “conserva una relación multiplicativa,” es decir, un cierto número de una cantidad junto con un cierto número de otra cantidad crea un compuesto unidad <span class="citation">(<a href="#ref-beckmann2017mathematics" role="doc-biblioref">Beckmann 2017</a>)</span>. Por ejemplo,</p>
+<p><img src="https://static.vecteezy.com/system/resources/previews/001/209/957/non_2x/square-png.png" width="30" alt="Sin titulo" /> <img src="https://static.vecteezy.com/system/resources/previews/001/209/957/non_2x/square-png.png" width="30" alt="Sin titulo" /> <img src="https://static.vecteezy.com/system/resources/previews/001/209/957/non_2x/square-png.png" width="30" alt="Sin titulo" /> <img src="https://www.nicepng.com/png/detail/926-9260681_cuadro-cuadrados-borde-monochrome.png" width="28" alt="Sin titulo" /></p>
 <ol style="list-style-type: decimal">
 <li>La relación de cuadros blancos a cuadros negros es <span class="math inline">\(\frac{1}{3}\)</span> ó <span class="math inline">\(1:3\)</span>.</li>
 </ol>
@@ -132,13 +163,13 @@ unir o componer dos cantidades de una manera que “conserva una relación multi
 <ol start="2" style="list-style-type: decimal">
 <li>La relación de estudiantes de matemáticas a estudiantes de estadística es <span class="math inline">\(\frac{7}{3}\)</span> ó <span class="math inline">\(7:3\)</span>.</li>
 </ol>
-<p><img src="ProtectoR/arroz.png" alt="Sin titulo" width="50" /> <img src="ProtectoR/harina.png" alt="Sin titulo" width="40" /><img src="ProtectoR/harina.png" alt="Sin titulo" width="40" /></p>
-<p>Imágenes tomadas de <span class="citation">(“El kilo, el medio kilo y el cuarto de kilo” <a href="#ref-BibEntry2021Marzo">2021</a>)</span> y <span class="citation">(“Un kilo de arroz” <a href="#ref-BibEntry2019Mar">2019</a>)</span>.</p>
+<p><img src="ProtectoR/arroz.png" width="50" alt="Sin titulo" /> <img src="ProtectoR/harina.png" width="40" alt="Sin titulo" /><img src="ProtectoR/harina.png" width="40" alt="Sin titulo" /></p>
+<p>Imágenes tomadas de <span class="citation"><a href="#ref-BibEntry2021Marzo" role="doc-biblioref"><span>“<span class="nocase">El kilo, el medio kilo y el cuarto de kilo</span>”</span></a> (<a href="#ref-BibEntry2021Marzo" role="doc-biblioref">2021</a>)</span> y <span class="citation"><a href="#ref-BibEntry2019Mar" role="doc-biblioref"><span>“<span class="nocase">Un kilo de arroz</span>”</span></a> (<a href="#ref-BibEntry2019Mar" role="doc-biblioref">2019</a>)</span>.</p>
 <ol start="3" style="list-style-type: decimal">
 <li>La relación entre libras de arroz a kilos de harina es <span class="math inline">\(\frac{1}{2}\)</span> ó <span class="math inline">\(1:2\)</span>.</li>
 </ol>
 <p>Observemos que libras de arroz y kilos de lentejas son cantidades de medidas diferentes mientras que en el anterior, las cantidades solo eran estudiantes. Esto nos dice que las cantidades que componen una unidad compuesta pueden ser las mismas o diferentes.</p>
-<p>La segunda interpretación consiste en comparar multiplicativamente dos cantidades. Por ejemplo, en una situación cotidiana en el que estamos comparando el precio de dos artículos, es conveniente notar cual es el artículo más costoso, de lo que lleva a decir: “el artículo 1 es <span class="math inline">\(n\)</span> veces más costoso que el artículo 2”, o también es válido decir: “el artículo 2 vale <span class="math inline">\(\$5000\)</span> más que el artículo 1. Sin embargo, la relación que ocurre es en términos multiplicativos contra aditivos. Por tanto, la primera expresión, la cual es dada en términos multiplicativos, es un ejemplo de razón como comparación multiplicativa.</p>
+<p>La segunda interpretación consiste en comparar multiplicativamente dos cantidades. Por ejemplo, en una situación cotidiana en el que estamos comparando el precio de dos artículos, es conveniente notar cual es el artículo más costoso, de lo que lleva a decir: “el artículo 1 es <span class="math inline">\(n\)</span> veces más costoso que el artículo 2,” o también es válido decir: “el artículo 2 vale <span class="math inline">\(\$5000\)</span> más que el artículo 1. Sin embargo, la relación que ocurre es en términos multiplicativos contra aditivos. Por tanto, la primera expresión, la cual es dada en términos multiplicativos, es un ejemplo de razón como comparación multiplicativa.</p>
 <p>Precisamos advertir que la razón no es una fracción en el sentido matemático, la confusión puede deberse al hecho de que una de las notaciones para la razón, <span class="math inline">\(\frac{a}{b}\)</span> donde <span class="math inline">\(b\neq 0\)</span>, comparte la misma forma con una fracción. Ilustremos mejor mediante el siguiente ejemplo:
 En el primer parcial, Ana acierta en <span class="math inline">\(3\)</span> preguntas y desacierta en <span class="math inline">\(10\)</span> preguntas. Después en el segundo parcial responde bien <span class="math inline">\(5\)</span> y desacierta en <span class="math inline">\(7\)</span> preguntas . ¿Cuál es la razón de las preguntas acertadas con las desaciertas en los dos parciales?</p>
 <p>Número de preguntas acertadas:
@@ -156,21 +187,21 @@ lo que nos dice es una razón. Estos tipos de razones que involucran un periodo 
 
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-beckmann2017mathematics">
-<p>Beckmann, Sybilla. 2017. <em>Mathematics for Elementary Teachers with Activities</em>. Pearson.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-beckmann2017mathematics" class="csl-entry">
+Beckmann, Sybilla. 2017. <em>Mathematics for Elementary Teachers with Activities</em>. Pearson.
 </div>
-<div id="ref-BibEntry2021Marzo">
-<p>“El kilo, el medio kilo y el cuarto de kilo.” 2021. <a href="http://rincondeunamaestra.blogspot.com/2014/02/el-kilo-el-medio-kilo-y-el-cuarto-de.html">http://rincondeunamaestra.blogspot.com/2014/02/el-kilo-el-medio-kilo-y-el-cuarto-de.html</a>.</p>
+<div id="ref-BibEntry2021Marzo" class="csl-entry">
+<span>“<span class="nocase">El kilo, el medio kilo y el cuarto de kilo</span>.”</span> 2021. <a href="http://rincondeunamaestra.blogspot.com/2014/02/el-kilo-el-medio-kilo-y-el-cuarto-de.html">http://rincondeunamaestra.blogspot.com/2014/02/el-kilo-el-medio-kilo-y-el-cuarto-de.html</a>.
 </div>
-<div id="ref-huircan2013guia">
-<p>Huircán Cabrera, Katherina, Mauricio y Carmona Valdés. 2013. “Guı́a de Aprendizaje N° 2: Razones Y Proporciones. Educación Matemática Primer Nivel O Ciclo Educación Media. Educación Para Personas Jóvenes Y Adultas.”</p>
+<div id="ref-huircan2013guia" class="csl-entry">
+Huircán Cabrera, Katherina, Mauricio y Carmona Valdés. 2013. <span>“Gu<span>ı́</span>a de Aprendizaje n° 2: Razones y Proporciones. Educaci<span>ó</span>n Matem<span>á</span>tica Primer Nivel o Ciclo Educaci<span>ó</span>n Media. Educaci<span>ó</span>n Para Personas j<span>ó</span>venes y Adultas.”</span>
 </div>
-<div id="ref-petit2020focus">
-<p>Petit, Robert E y Wyneken, Marjorie M y Laird, and Jean D Abele-Austin Mary D y Sequeira. 2020. <em>A Focus on Ratios and Proportions: Bringing Mathematics Education Research to the Classroom</em>. Routledge.</p>
+<div id="ref-petit2020focus" class="csl-entry">
+Petit, Robert E y Wyneken, Marjorie M y Laird, and Jean D Abele-Austin Mary D y Sequeira. 2020. <em>A Focus on Ratios and Proportions: Bringing Mathematics Education Research to the Classroom</em>. Routledge.
 </div>
-<div id="ref-BibEntry2019Mar">
-<p>“Un kilo de arroz.” 2019. <em>Sobre Todo, Matemticas</em>. <a href="https://matemelga.wordpress.com/2019/05/08/un-kilo-de-arroz">https://matemelga.wordpress.com/2019/05/08/un-kilo-de-arroz</a>.</p>
+<div id="ref-BibEntry2019Mar" class="csl-entry">
+<span>“<span class="nocase">Un kilo de arroz</span>.”</span> 2019. <em>Sobre Todo, Matem<span><span></span></span>ticas</em>. <a href="https://matemelga.wordpress.com/2019/05/08/un-kilo-de-arroz">https://matemelga.wordpress.com/2019/05/08/un-kilo-de-arroz</a>.
 </div>
 </div>
             </section>
@@ -202,6 +233,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
