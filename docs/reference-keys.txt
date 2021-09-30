@@ -28,6 +28,9 @@ proporción
 razón
 porcentaje
 tasas
+tasas-en-el-mercado-laboral
+tasa-de-desempleados-td
+tasa-de-ocupación-to
 tasavariación
 diferencia-entre-proporción-y-tasa
 pbm
@@ -35,9 +38,11 @@ pbm
 numeroindice
 indicesimple
 indicecomplejo
-índice-de-precios-del-consumidor-en-colombia-ipc
+ipc
 índice-de-pobreza-multidimensional-en-colombia-ipm
-índice-de-transpariencia-y-acceso-a-la-información-ita
+índice-de-transparencia-y-acceso-a-la-información-en-colombia-ita
+matriz-de-cumplimiento
 índices-en-las-ciencias-sociales
 índice-sintético-de-la-calidad-educativa-isce
 puntaje-básico-de-matrícula-pbm
+PIB

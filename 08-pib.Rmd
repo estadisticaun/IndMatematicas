@@ -1,0 +1,33 @@
+# Producto interno bruto (PIB) {#PIB}
+
+Según el @BibEntry2020Jul, el PIB representa el resultado final de la actividad productiva de las unidades de producción residentes. Se mide desde el punto de vista del valor agregado, de la demanda final o las utilizaciones finales de los bienes y servicios y de los ingresos primarios distribuidos por las unidades de producción residentes. En síntesis, el crecimiento del PIB refleja, la evolución económica de un país (el ritmo al que se incrementa su producción de bienes y servicios y, por tanto, su renta).
+
+Mencionaremos dos formas para calcular el PIB, las cuales son: 
+
+**1. Método del gasto:** Consiste en sumar el valor a precio de mercado de todas las compras realizadas de bienes y servicios finales. Esto incluye: el consumo de hogares e instituciones sin fines de lucro (A), la inversión de las empresas y familias (B), el gasto en consumo final del sector público (C) y el valor de las exportaciones netas (valor de las exportaciones (X) menos valor de las importaciones (Y)).
+
+$$\begin{equation}
+PIB= A+B+C+(X-Y)
+\end{equation}$$
+
+
+**2. Método del valor añadido :** Se basa en la ventas u ofertas de los productores. Sin embargo, esto podria causar que varias veces se sume el valor de un mismo producto, dado que los productos finales de un productor son, a menudo, un consumo intermedio de otro. Por ejemplo, si sumamos el valor de las ventas de una empresa de textiles y el valor de las ventas de un almacén de ropa, el valor de las telas se contaria dos veces.
+
+Por tanto, es suma el valor de las ventas de los productos de las empresas menos el valor de las materias primas y de otros bienes intermedios utilizados en la elaboración de dichos productos: con esto se obtiene el *Valor Añadido Bruto*.
+
+Los datos de valor añadido de las empresas se agrupan por sectores para dar lugar al *Valor Añadido Bruto Total* que es la suma del Valor Añadido Bruto de cada sector; a lo cual se le deben agregar los impuestos y restar las subvenciones sobre los productos para obtener el producto interno bruto.
+
+<center>PIB= Valor Añadido Bruto Total - (impuestos menos subvenciones a los productos).</center>
+
+
+En Colombia, la entidad encargada de calcularlo es el Departamento Administrativo Nacional de Estadística (DANE) y la recolección de los datos se realiza a través de encuestas, investigaciones especiales o se toma informaciones administrativas disponibles en el corto plazo. Paralelamente, se manejan indicadores y algunos se clasifican de la siguiente manera:
+
+- *Indices calculados con base en muestras representativas de un sector:* La muestra mensual manufacturera como guía del comportamiento de la industria, la encuesta de comercio al por menor y la de grandes cadenas del consumo de los hogares, la encuesta de hogares del ingreso de las familias.
+
+- *Unidades físicas:* Kilovatios generados, alumnos matriculados, pasajeros transportados, barriles producidos, etc..
+
+- *Variables generadas mediante cálculos especiales:* Como la producción y el valor agregado de las instituciones financieras. 
+
+Para más información puede consultar el documento de preguntas frecuentes del DANE, [Producto Interno Bruto](https://www.dane.gov.co/files/faqs/faq_pib.pdf).
+
+

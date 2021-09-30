@@ -4,7 +4,7 @@
 Un índice es una estadística compuesta, es decir, es basada en múltiples elementos de datos, en otras palabras, un índice es una medida compuesta que agrega múltiples indicadores. Según @ContributorstoWikimediaprojects2020Nov, los índices, también conocidos como *indicadores compuestos*, resumen y clasifican observaciones específicas, generalmente en la escala ordinal.
 
 **La escala ordinal**
-tiene como caracteristica que sus categorías están ordenadas por rango; cada clase posee una misma relación posicional con la siguiente; es decir, la escala muestra situaciones escalonadas. Si se usan números, su única significación está en indicar la posición de las distintas categorías en la serie; sin embargo, no asumen que la distancia del primer escalón al segundo sea la misma que la del segundo al tercero.
+tiene como característica que sus categorías están ordenadas por rango; cada clase posee una misma relación posicional con la siguiente; es decir, la escala muestra situaciones escalonadas. Si se usan números, su única significación está en indicar la posición de las distintas categorías en la serie; sin embargo, no asumen que la distancia del primer escalón al segundo sea la misma que la del segundo al tercero.
 
 >***Puntaje Básico de Matrícula PBM***.
 >Es el indicador que utiliza la Universidad Nacional de Colombia para hacer la
@@ -13,7 +13,7 @@ soporte documental es aportado por el estudiante. A cada variable se le asigna u
 $$\begin{equation}
 PBM=(0,4A_1+0,3A_2+0,3A_3)\times B_1 \times B_2 \times B_3 \times B_4.
 \end{equation}$$
-donde las variables $A_2$ y $A_1$ constituyen al estrato  y el valor pensión escolar en el último año de secundaria respectivamente y son indicadores del nivel de gastos en el hogar, mientras $A_3$ representa el nivel de ingresos. Las variables $B_1$ es tipo de colegio, $B_2$ es el lugar de residencia, $B_3$ propiedad de la vivienda familiar y número de hijos dependientes del ingreso del hogar es $B_4$ y son igualmente, indicadores del nivel de gastos.
+donde las variables $A_2$ y $A_1$ constituyen al estrato y el valor pensión escolar en el último año de secundaria respectivamente y son indicadores del nivel de gastos en el hogar, mientras $A_3$ representa el nivel de ingresos. Las variables $B_1$ es tipo de colegio, $B_2$ es el lugar de residencia, $B_3$ propiedad de la vivienda familiar y número de hijos dependientes del ingreso del hogar es $B_4$ y son igualmente, indicadores del nivel de gastos.
 
 
 
@@ -47,7 +47,7 @@ La OCDE, la Organización para la Cooperación y el Desarrollo Económicos [@Bib
 
 Como sugiere la lista, es laborioso construir un indicador compuesto, lo que hace que su uso sea cuestionable. 
 
-En el funcionamiento, el índice presenta diferentes caracteristicas cuando va enfocado en las ciencias sociales o en la economía, por esta razón, haremos un comparativo por separado que nos permita identificar como actúan en estos dos campos. 
+En el funcionamiento, el índice presenta diferentes características cuando va enfocado en las ciencias sociales o en la economía, por esta razón, haremos un comparativo por separado que nos permita identificar como actúan en estos dos campos. 
 
 ## Índice en la economía
 
@@ -61,7 +61,7 @@ Es una cifra de datos económicos que refleja el precio o la cantidad en compara
 
 Al período inicial se le denomina período base o referencia y se le asigna el valor $100$ y se compara con el período actual o también llamado corriente.  Así, definimos a $I_{0}^{t}$ como el número índice de un determinado valor en el período $t$, respecto al período base $0$.
 
-Si la comparación se realiza para valores de una sola magnitud, hablaremos  de *números índices simples*, en caso contrario, cuando se trabaja con más de dos magnitudes a la vez, hablaremos de *números índices compuestos*. Por simplicidad es muy común denominar al número índice simple (o complejo) por solo [índice simple](#indicesimple)  (o [complejo](#indicecomplejo)) y aquí no será la excepción.
+Si la comparación se realiza para valores de una sola magnitud, hablaremos de *números índices simples*, en caso contrario, cuando se trabaja con más de dos magnitudes a la vez, hablaremos de *números índices compuestos*. Por simplicidad es muy común denominar al número índice simple (o complejo) por solo [índice simple](#indicesimple)  (o [complejo](#indicecomplejo)) y aquí no será la excepción.
 
 #### Índice simple {#indicesimple}
 Se denominada *índice simple* de la magnitud $X$ en el período $t$ respecto al período $0$, a la razón, 
@@ -81,7 +81,7 @@ $I_{año/2008}$ | 100|106,28|104,89|97,27|107,24|106,85|
 
 $I_{2009/2008}=\frac{1.572.523}{1.479.526}\times 100=106,28$, lo que significa que el presupuesto de los ingresos totales en el año 2009 aumentó un $6,28\%$ con respecto al año 2008.
 
-Según @perez2010nociones, sería deseable que todo numero índice satisfaciera las siguientes propiedades:
+Según @perez2010nociones, sería deseable que todo numero índice satisficiera las siguientes propiedades:
 
 |Propiedades|
 |--------------------------------------------------------|
@@ -101,7 +101,7 @@ Por tanto, lo que nos interesa ahora, es encontrar una clasificación para ident
 P_{t/0}=\frac{p_{t}}{p_{0}}\times 100
 \end{equation}$$
 
- donde $p_{t}$ indica el valor del precio de un producto en un período $t$ y $p_{0}$ el precio del producto en el período base. 
+ donde $p_{t}$ indica el valor del precio de un producto en un periodo $t$ y $p_{0}$ el precio del producto en el periodo base. 
  
 **Ejemplo: Precio de una libra de arroz en una población desde el año 2012 a 2015.**
 
@@ -112,7 +112,7 @@ P_{t/0}=\frac{p_{t}}{p_{0}}\times 100
 
 
 ***b). Índice de cantidad:*** Consiste en comparar las cantidades (o volúmenes) de producción, consumo o exportación. 
-De igual manera, si $q_{t}$ indica la cantidad de un articulo producido o vendido en el período $t$ dado y $q_{0}$ la cantidad en el periodo base, la fórmula general para el índice simple de cantidad es:
+De igual manera, si $q_{t}$ indica la cantidad de un artículo producido o vendido en el período $t$ dado y $q_{0}$ la cantidad en el periodo base, la fórmula general para el índice simple de cantidad es:
 
  $$\begin{equation}
 Q_{t/0}=\frac{q_{t}}{q_{0}}\times 100.
@@ -178,7 +178,7 @@ $$
 
 donde $I_{t0}^{i}=\frac{x_{it}}{x_{i0}}$ es el índice simple de la $i$-ésima variable correspondiente al año $t$ con base el año 0.
 
-De lo anteriormente expuesto, debemos tener en cuenta si las magnitudes de cada uno de los índices simples que conforman los índices complejos tienen la misma importancia o de lo contrario, unas son más relevantes que otras. En otros términos, por ejemplo, para medir la evolución de los precios de los bienes de consumo en un país determinado, habrá que dar mas importancia a la evolución de los precios de la alimentación que los de las medicinas, ya que el gasto de alimentación es mayor que el gasto en medicinas. Otro ejemplo, en el sector industrial, el índice salarial se elabora a partir de los índices salariales de cada una de las empresas que integran el sector, resulta evidente que habrá que ponderar más los índices correspondientes a las empresas con más trabajadores. 
+De lo anteriormente expuesto, debemos tener en cuenta si las magnitudes de cada uno de los índices simples que conforman los índices complejos tienen la misma importancia o de lo contrario, unas son más relevantes que otras. En otros términos, por ejemplo, para medir la evolución de los precios de los bienes de consumo en un país determinado, habrá que dar más importancia a la evolución de los precios de la alimentación que los de las medicinas, ya que el gasto de alimentación es mayor que el gasto en medicinas. Otro ejemplo, en el sector industrial, el índice salarial se elabora a partir de los índices salariales de cada una de las empresas que integran el sector, resulta evidente que habrá que ponderar más los índices correspondientes a las empresas con más trabajadores. 
 
 Por lo tanto, según @arroyo2006manual procede distinguir dos tipos de índices complejos:
 
@@ -212,7 +212,7 @@ $$ I_{2018/2017}=\frac{116,6+110+125}{3}=117,2$$.
 
 ***a. Media aritmética ponderada***
 
-Sea $w_i$ la ponderación asociada, luego se define el índice complejos ponderados por el método de media aritmética ponderada como,
+Sea $w_i$ la ponderación asociada, luego se define el índice complejo ponderado por el método de media aritmética ponderada como,
 
 $$ \overline{I}_{t/0}=\frac{\sum^{N}_{i=1}w_iI_{t0}^{i}}{\sum^{N}_{i=1}w_i}. $$
 
@@ -232,7 +232,7 @@ $$\overline{I}_{2018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118$$
 
 ***b. Índice de Laspeyres:***
 
-Es el más utilizado en los indicadores generales de precios. Usaremos la notación  $P_{t0}^{i}$ para especificar el índice de precios de la $i$-ésima variable correspondiente al año $t$ con base al año de referencia 0. Con lo anterior, la formula del índice de Laspeyres es 
+Es el más utilizado en los indicadores generales de precios. Usaremos la notación  $P_{t0}^{i}$ para especificar el índice de precios de la $i$-ésima variable correspondiente al año $t$ con base al año de referencia 0. Con lo anterior, la fórmula del índice de Laspeyres es 
 
 $$ {I}_{t/0}=\frac{\sum^{N}_{i=1}w_iP_{t0}^{i}}{\sum^{N}_{i=1}w_i}= \frac{\sum^{N}_{i=1}p_{i0}q_{i0}\frac{p_{it}}{p_{i0}}}{\sum^{N}_{i=1}p_{i0}q_{i0}}=\frac{\sum^{N}_{i=1}p_{it}q_{i0}}{\sum^{N}_{i=1}p_{i0}q_{i0}}$$.
 
@@ -241,9 +241,9 @@ donde $p_{it}$ es el precio del bien o servicio $i$-ésimo en el periodo $t$ y $
 Nótese, a medida que nos alejamos del periodo de referencia, este índice se vuelve cada vez menos representativo con lo que es necesario fijar un nuevo periodo de referencia. 
 
 
-### Índice de precios del consumidor en Colombia (IPC)
+### Índice de precios del consumidor en Colombia (IPC){#ipc}
 
-Según el Dane, el Índice de Precios del Consumidor, IPC, es una medida del cambio en el precio de bienes y servicios representativos del consumo de los hogares del país conocido como canasta. Esta canasta se define a partir  de la Encuesta Nacional de Presupuesto de los Hogares –ENPH-, que el DANE realiza cada 10 años.
+Según el @DeCastroRamos2021Sep2, el Índice de Precios del Consumidor, IPC, es una medida del cambio en el precio de bienes y servicios representativos del consumo de los hogares del país conocido como canasta. Esta canasta se define a partir de la Encuesta Nacional de Presupuesto de los Hogares –ENPH-, que el DANE realiza cada 10 años.
 
 El IPC nos indica cómo va evolucionando con respecto del conjunto de precios de los bienes y servicios básicos que consume la población. La principal función del IPC es señalar la evolución del coste de la vida y resulta primordial para el conocimiento de la inflación.
   
@@ -275,6 +275,8 @@ ponderaciones <- tibble(`Nombre` = nombre, `Pobres`= pobres, `Vulnerables`= vuln
 knitr::kable(ponderaciones, caption = 'Ponderaciones IPC según divisiones' )
 ```
 
+Tomada de la página del DANE [Ponderaciones IPC según divisiones](https://www.dane.gov.co/index.php/estadisticas-por-tema/precios-y-costos/indice-de-precios-al-consumidor-ipc/ipc-actualizacion-metodologica-2019/ipc-ponderadores).
+
 Un dato importante es, el IPC es un ejemplo de un índice de Laspeyres. Ahora veamos un ejemplo sobre como calcular el IPC de ciertas divisiones, siguiendo la tabla de ponderaciones en los años 2017 y 2018. 
 
 
@@ -294,7 +296,7 @@ usando la fórmula de índice de Laspeyres podemos encontrar el IPC de la siguie
 
 ### Índice de pobreza multidimensional en Colombia (IPM)
  
-Según el Dane, la medición de la pobreza se hace tradicionalmente de forma directa e indirecta, siguiendo la clasificación de Amartya Sen (1981). El método directo evalúa los resultados de satisfacción (o no privación) que tiene un individuo respecto a ciertas características que se consideran vitales como salud, educación, empleo, entre otras. La medición indirecta evalúa la capacidad de adquisición de bienes y servicios que tienen los hogares. 
+Según el @paginadane, la medición de la pobreza se hace tradicionalmente de forma directa e indirecta, siguiendo la clasificación de @sen1981issues. El método directo evalúa los resultados de satisfacción (o no privación) que tiene un individuo respecto a ciertas características que se consideran vitales como salud, educación, empleo, entre otras. La medición indirecta evalúa la capacidad de adquisición de bienes y servicios que tienen los hogares. 
 
 El IPM está compuesto por cinco dimensiones: condiciones educativas del hogar, condiciones de la
 niñez y juventud, salud, trabajo, acceso a servicios públicos domiciliarios y condiciones de la
@@ -343,9 +345,24 @@ ponderaciones4 <- tibble(`Indicadores ` = indicadores4, `Ponderaciones`= pondera
 knitr::kable(ponderaciones4, caption = 'División de Condiciones de la vivienda y servicios públicos' )
 ```
 
-### Índice de transpariencia y acceso a la información (ITA)
+Tablas extraídas de @botello2017avances. Rediseño del IPM Colombia, https://www.cepal.org/sites/default/files/presentations/2017-05-silvia-botello-ipmcolombia.pdf
 
-Según la Procuraduria General de la Nación, ITA, es un indicador sintético de pesos preestablecidos, se alimenta de un formulario de autodiligenciamiento compuesto de una serie de preguntas agrupadas en subcategorías, que a su vez se agrupan en categorías y éstas en dimensiones, las cuales describen el cumplimiento del sujeto
+Cabe señalar, no hay criterios universalmente aceptados para definir las ponderaciones de las dimensiones, estos se construyen y se adaptan dependiendo al contexto de cada país. 
+
+Según @alkire2011counting, estos son algunas decisiones relevantes basado en el método de Alkire Foster para la construcción de una IPM son:
+
+1. Seleccionar las dimensiones e indicadores 
+2. Definir la unidad de análisis (personas, hogares)
+3. Definir los umbrales para cada dimensión 
+4. Ponderar las dimensiones e indicadores 
+5. Definir el procedimiento de identificación de los multidimensionalmente pobres (valor k)
+6. Definir el procedimiento de agregación  
+
+Para consultar más, puede visitar [cómo aplicar el método Alkire Foster en IPM](https://mppn.org/es/pobreza-multidimensional/como-se-calcula/).
+
+### Índice de transparencia y acceso a la información en Colombia (ITA)
+
+Según @Pgn2021Sep, ITA, es un indicador sintético de pesos preestablecidos, se alimenta de un formulario de autodiligenciamiento compuesto de una serie de preguntas agrupadas en subcategorías, que a su vez se agrupan en categorías y éstas en dimensiones, las cuales describen el cumplimiento del sujeto
 frente a las obligaciones de Ley; por lo tanto, estas opciones establecen el nivel de observancia
 de cada pregunta agregada y que constituyen la Matriz de Cumplimiento de la Ley 1712, diseñada
 por la Procuraduría General de la Nación. Según lo anterior, el cálculo del indicador se genera a
@@ -353,9 +370,11 @@ partir del porcentaje de cumplimiento que resulta del auto-diligenciamiento del 
 parte de los sujetos obligados. Este indicador sintético se establece en una escala ordinal de 0 a
 100 puntos, donde a mayor valor se obtenga; mayor será el nivel de cumplimiento de la Ley.
 
-**Matriz de cumplimiento:** Consta de 182 preguntas con las cuales se busca validar la publicación de información en distintas temáticas tales como Presupuesto, Normatividad, Planeación, Contratación, Control y otras. 
+#### Matriz de cumplimiento:
 
-Esta matriz condensa lo que está en la ley en un formulario de 182 preguntas que están clasificadas en una jerarquía de 3 niveles de mayor a menor denominados respectivamente: Dimensión, Categoría, y Subcategoría. Por lo tanto, conviene presentar la estrutura de la matriz en las siguientes tablas. 
+Consta de 182 preguntas con las cuales se busca validar la publicación de información en distintas temáticas tales como Presupuesto, Normatividad, Planeación, Contratación, Control y otras. 
+
+Esta matriz condensa lo que está en la ley en un formulario de 182 preguntas que están clasificadas en una jerarquía de 3 niveles de mayor a menor denominados respectivamente: Dimensión, Categoría, y Subcategoría. Para consultar la estructura de la matriz visite el siguiente documento en la página 10 [Informe medición del ITA 2019](https://www.procuraduria.gov.co/portal/media/file/Resultados%20Medicion%20ITA%202019.pdf).
 
 
 ## Índices en las ciencias sociales
@@ -364,7 +383,7 @@ Esta matriz condensa lo que está en la ley en un formulario de 182 preguntas qu
 
 Según @babbie2020practice, los elementos de los índices suelen ponderarse por igual, a menos que existan razones en contra (por ejemplo, si dos elementos reflejan esencialmente el mismo aspecto de una variable, podrían tener un peso de 0,5 cada uno). 
 
-Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y veremos como se calcula a grandes rasgos. El *índice sintético de bienestar social (IBS)* se mide con seis índices parciales: índice de salud, seguridad ciudadana, educacíon, trabajo, vivienda e ingresos relativos y estos a su vez, se subdividen en los siguientes índices parciales.
+Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y veremos cómo se calcula a grandes rasgos. El *índice sintético de bienestar social (IBS)* se mide con seis índices parciales: índice de salud, seguridad ciudadana, educación, trabajo, vivienda e ingresos relativos y estos a su vez, se subdividen en los siguientes índices parciales.
 
 + **Índice de salud $(A_1)$**
   1. Índice de años potenciales de vida perdidos
@@ -383,7 +402,7 @@ Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y
 
 + **Índice de vivienda $(A_5)$**
   8. Índice de techo-piso
-  9. Índice de de acceso al agua 
+  9. Índice de acceso al agua 
   10. Índice sobre disposición de excretas y saneamiento
   11. Índice de personas por dormitorio
   12. Índice sobre seguridad jurídica en la tenencia
@@ -391,7 +410,7 @@ Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y
 + **Índice de ingresos $(A_6)$**
   13. Índice de ingresos relativos
 
-Es decir, que para realizar la síntesis final partimos de una matriz de datos que contiene la valoración o el puntaje obtenido en cada uno de estos seis índices parciales. Posteriormente, a través de los  métodos de agregación (como la media ponderada), generamos el número de rankings. Luego, analizamos el valor de importancia que tiene cada variable, en el caso hipotético, asignaremos a salud y seguridad un peso del $15\%$, a trabajo  un $30\%$, a vivienda un $20\%$ y a ingresos y educación le introducimos un $10\%$. Así la fórmula de cálculo es
+Es decir, que para realizar la síntesis final partimos de una matriz de datos que contiene la valoración o el puntaje obtenido en cada uno de estos seis índices parciales. Posteriormente, a través de los métodos de agregación (como la media ponderada), generamos el número de rankings. Luego, analizamos el valor de importancia que tiene cada variable, en el caso hipotético, asignaremos a salud y seguridad un peso del $15\%$, a trabajo un $30\%$, a vivienda un $20\%$ y a ingresos y educación le introducimos un $10\%$. Así la fórmula de cálculo es
 
 $$\begin{equation}
 IBS=0,15A_1+0,15A_2+0,1A_3+0,3A_4+0,2A_5+0,1A_6.
@@ -432,7 +451,7 @@ knitr::kable(ind5, caption = '*Indicador 3: Promedio de los resultados obtenidos
 
 
 ```{r, echo=FALSE}
-ind5 <- data.frame(`Parámetros` = c("Seguimiento al apredizaje","Ambiente en el aula"), `Puntaje`= c(47,49))
+ind5 <- data.frame(`Parámetros` = c("Seguimiento al aprendizaje","Ambiente en el aula"), `Puntaje`= c(47,49))
 knitr::kable(ind5, caption = '*Indicador 5: Ambiente escolar*' )
 ```
 
@@ -459,7 +478,7 @@ $$\begin{equation}
 PROGRESO=  -0,75\times DI+0,25\times DA.
 \end{equation}$$
 
-Notesé que el peso de $DI$ es $-75\%$, es decir, $DI$ obtiene un valor negativo, y por tanto $DI$ toma el valor de cero, debido a que nunca se suman valores negativos, ya que el objetivo del índice no es restar. Luego el desempeño insuficiente se expresa como:
+Nótese que el peso de $DI$ es $-75\%$, es decir, $DI$ obtiene un valor negativo, y por tanto $DI$ toma el valor de cero, debido a que nunca se suman valores negativos, ya que el objetivo del índice no es restar. Luego el desempeño insuficiente se expresa como:
 
 $$\begin{equation}
 DI=0
@@ -476,9 +495,9 @@ DESEMPEÑO&=&  \frac{220+300+270+298}{4}\times \frac{4}{500}\\
 &=& 2,37
 \end{eqnarray}$$
 el cual es un promedio de puntajes multiplicado por una ponderación. Ahora, como el componente desempeño pesa 40 por ciento del ISCE, es
-decir que el máximo puntaje posible de obtener es 4 y 500 es el máximo valor posible de obtener en la prueba. Por esta razón, se usa el fractor de $\frac{4}{500}$ en la fórmula.
+decir que el máximo puntaje posible de obtener es 4 y 500 es el máximo valor posible de obtener en la prueba. Por esta razón, se usa el factor de $\frac{4}{500}$ en la fórmula.
 
-La eficiencia sería  la tasa de aprobación al siguiente año escolar de cada nivel educativo
+La eficiencia sería la tasa de aprobación al siguiente año escolar de cada nivel educativo
 $$\begin{equation}
 EFICIENCIA= 0,9.
 \end{equation}$$
@@ -490,7 +509,7 @@ AMB.ESCOLAR= \frac{47+49+200}{400}
 \end{eqnarray}$$
 tal fórmula proviene de un estudio de la entidad encargada, teniendo en cuenta los parámetros y escalas empleados para cálculo del puntaje.
 
-En denitiva, el índice sintético de calidad de la educación en el nivel educativo de primaria para ese colegio sería la suma de los anteriores subcomponentes:
+En definitiva, el índice sintético de calidad de la educación en el nivel educativo de primaria para ese colegio sería la suma de los anteriores subcomponentes:
 
 $$\begin{eqnarray}
 ISCE&=&PROGRESO+DESEMPEÑO+EFICIENCIA+AMB.ESCOLAR\\&=& 0,03+2,37+0,9+0,74\\&=&4,04.
@@ -502,7 +521,7 @@ Ejemplo tomado de @lora2008tecnicas.
 
 ### Puntaje Básico de Matrícula (PBM)
 
-En la parte inicial del capítulo explicamos en que consistía el [PBM](#pbm). A continuación haremos el ejercicio de calcular dicho puntaje para un aspirante de pregrado de la universidad. Para ello, recolectamos los siguientes datos.
+En la parte inicial del capítulo explicamos en qué consistía el [PBM](#pbm). A continuación, haremos el ejercicio de calcular dicho puntaje para un aspirante de pregrado de la Universidad. Para ello, recolectamos los siguientes datos.
 
 ```{r, echo=FALSE}
 parametros <- c("Valor de la pensión mensual pagada durante el último año de secundaria","Estrato social","Ingresos familiares mensuales","Carácter del colegio","Lugar de residencia","Propiedad de la vivienda","Número de hijos dependientes del ingreso familiar")
@@ -517,7 +536,7 @@ Empezaremos determinando el indicador pensión $A_1$ teniendo en cuenta la sigui
 knitr::include_graphics('ProtectoR/pension.png')
 ```
      
- de donde $A_1=500\times 0,03=15$. Para el indicador estrato $A_2$ la tabla \@ref(tab:estrato) nos indica que $A_2=30$. Siguiendo con el indicador $A_3$ se asigna mediante la  expresión 
+ de donde $A_1=500\times 0,03=15$. Para el indicador estrato $A_2$ la tabla \@ref(tab:estrato) nos indica que $A_2=30$. Siguiendo con el indicador $A_3$ se asigna mediante la expresión 
  $$ A_3=9\times ING=9\times 3,33=55$$
 donde $ING$ son los ingresos mensuales expresados como un múltiplo del salario mínimo legal mensual vigente en el año respectivo.
 
