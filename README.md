@@ -1,1 +1,3 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
+# Perspectiva Matemática de los Indicadores
+
+Este repositorio contiene algunos elementos generales sobre los distintos tipos de indicadores existentes y aplicables al ámbito de la gestión pública, así como algunas aproximaciones a la naturaleza matemática de estos.

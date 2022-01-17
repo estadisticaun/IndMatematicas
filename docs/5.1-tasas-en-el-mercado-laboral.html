@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 7 Índice | Una aproximación matemática a la fórmula de un indicador</title>
-  <meta name="description" content="Capítulo 7 Índice | Una aproximación matemática a la fórmula de un indicador" />
+  <title>5.1 Tasas en el mercado laboral | Una aproximación matemática a la fórmula de un indicador</title>
+  <meta name="description" content="5.1 Tasas en el mercado laboral | Una aproximación matemática a la fórmula de un indicador" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 7 Índice | Una aproximación matemática a la fórmula de un indicador" />
+  <meta property="og:title" content="5.1 Tasas en el mercado laboral | Una aproximación matemática a la fórmula de un indicador" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 7 Índice | Una aproximación matemática a la fórmula de un indicador" />
+  <meta name="twitter:title" content="5.1 Tasas en el mercado laboral | Una aproximación matemática a la fórmula de un indicador" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="6-diferencia-entre-proporción-y-tasa.html"/>
-<link rel="next" href="7.1-índice-en-la-economía.html"/>
+<link rel="prev" href="5-tasas.html"/>
+<link rel="next" href="5.2-tasavariación.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -144,89 +144,49 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="pbm" class="section level1" number="7">
-<h1><span class="header-section-number">Capítulo 7</span> Índice</h1>
-<p>Un índice es una estadística compuesta, es decir, es basada en múltiples elementos de datos, en otras palabras, un índice es una medida compuesta que agrega múltiples indicadores. Según <span class="citation"><a href="#ref-ContributorstoWikimediaprojects2020Nov" role="doc-biblioref">Wikimedia</a> (<a href="#ref-ContributorstoWikimediaprojects2020Nov" role="doc-biblioref">2020</a>)</span>, los índices, también conocidos como <em>indicadores compuestos</em>, resumen y clasifican observaciones específicas, generalmente en la escala ordinal.</p>
-<p><strong>La escala ordinal</strong>
-tiene como característica que sus categorías están ordenadas por rango; cada clase posee una misma relación posicional con la siguiente; es decir, la escala muestra situaciones escalonadas. Si se usan números, su única significación está en indicar la posición de las distintas categorías en la serie; sin embargo, no asumen que la distancia del primer escalón al segundo sea la misma que la del segundo al tercero.</p>
-<blockquote>
-<p><strong><em>Puntaje Básico de Matrícula PBM</em></strong>.
-Es el indicador que utiliza la Universidad Nacional de Colombia para hacer la
-clasificación socioeconómica del estudiante y asignar la matrícula. Según la Resolución 2146 DE 1993 <span class="citation">(<a href="#ref-BibEntry2021Maria" role="doc-biblioref"><span>“<span class="nocase">Secci<span class="nocase">ó</span>n Contenido - Universidad Nacional de Colombia</span>”</span> 2021</a>)</span>. El Puntaje Básico de Matrícula PBM, es calculado con la información de 7 variables, cuyo
-soporte documental es aportado por el estudiante. A cada variable se le asigna un puntaje, un peso ponderado y una función específica dentro de la fórmula, el cual es calculado mediante la siguiente fórmula
-<span class="math display">\[\begin{equation}
-PBM=(0,4A_1+0,3A_2+0,3A_3)\times B_1 \times B_2 \times B_3 \times B_4.
-\end{equation}\]</span>
-donde las variables <span class="math inline">\(A_2\)</span> y <span class="math inline">\(A_1\)</span> constituyen al estrato y el valor pensión escolar en el último año de secundaria respectivamente y son indicadores del nivel de gastos en el hogar, mientras <span class="math inline">\(A_3\)</span> representa el nivel de ingresos. Las variables <span class="math inline">\(B_1\)</span> es tipo de colegio, <span class="math inline">\(B_2\)</span> es el lugar de residencia, <span class="math inline">\(B_3\)</span> propiedad de la vivienda familiar y número de hijos dependientes del ingreso del hogar es <span class="math inline">\(B_4\)</span> y son igualmente, indicadores del nivel de gastos.</p>
-</blockquote>
-<table>
-<caption><span id="tab:estrato">Tabla 7.1: </span>Ejemplo de escala ordinal usando la variable estrato <span class="math inline">\(A_2\)</span></caption>
-<thead>
-<tr class="header">
-<th align="left">Estrato</th>
-<th align="right">Puntaje</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">1</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">2</td>
-<td align="right">13</td>
-</tr>
-<tr class="odd">
-<td align="left">3</td>
-<td align="right">30</td>
-</tr>
-<tr class="even">
-<td align="left">4</td>
-<td align="right">55</td>
-</tr>
-<tr class="odd">
-<td align="left">5</td>
-<td align="right">80</td>
-</tr>
-<tr class="even">
-<td align="left">6</td>
-<td align="right">100</td>
-</tr>
-<tr class="odd">
-<td align="left">NO INFORMA</td>
-<td align="right">100</td>
-</tr>
-</tbody>
-</table>
-<p>La OCDE, la Organización para la Cooperación y el Desarrollo Económicos <span class="citation">(<a href="#ref-BibEntry2020Dec" role="doc-biblioref"><span>“<span class="nocase">Acerca de la OCDE - OECD</span>”</span> 2020</a>)</span> y el Centro Común de Investigación de la Comisión Europea <span class="citation">(<a href="#ref-BibEntry2015Jun" role="doc-biblioref"><span>“<span class="nocase">Centro Com<span class="nocase">ú</span>n de Investigaci<span class="nocase">ó</span>n</span>”</span> 2015</a>)</span> publicaron conjuntamente un manual para la construcción de indicadores compuestos en 2008. El manual, respaldado oficialmente por el comité estadístico de alto nivel de la OCDE, describe diez pasos recurrentes para la elaboración de un índice:</p>
-<ul>
-<li><p>Paso 1: Marco teórico</p></li>
-<li><p>Paso 2: Selección de datos</p></li>
-<li><p>Paso 3: Imputación de datos faltantes</p></li>
-<li><p>Paso 4: Análisis multivariado</p></li>
-<li><p>Paso 5: Normalización</p></li>
-<li><p>Paso 6: Ponderación</p></li>
-<li><p>Paso 7: Agregación de indicadores</p></li>
-<li><p>Paso 8: Análisis de sensibilidad</p></li>
-<li><p>Paso 9: Vincular a otras medidas</p></li>
-<li><p>Paso 10: Visualización</p></li>
-</ul>
-<p>Como sugiere la lista, es laborioso construir un indicador compuesto, lo que hace que su uso sea cuestionable.</p>
-<p>En el funcionamiento, el índice presenta diferentes características cuando va enfocado en las ciencias sociales o en la economía, por esta razón, haremos un comparativo por separado que nos permita identificar como actúan en estos dos campos.</p>
+<div id="tasas-en-el-mercado-laboral" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Tasas en el mercado laboral</h2>
+<p>Las tasas en el mercado laboral proporciona información sobre el estado de la fuerza de trabajo (empleo, desempleo o inactividad) de la población del país.</p>
+<p>En Colombia, según <span class="citation"><a href="#ref-DeCastroRamos2021Sep" role="doc-biblioref">DANE</a> (<a href="#ref-DeCastroRamos2021Sep" role="doc-biblioref">2021a</a>)</span> se tiene en cuenta las siguientes razones y se consideran que son válidas de desempleo.</p>
+<ol style="list-style-type: lower-alpha">
+<li>No hay trabajo disponible en la ciudad.</li>
+<li>Está esperando que lo llamen.</li>
+<li>No sabe cómo buscar trabajo.</li>
+<li>Está cansado de buscar trabajo.</li>
+<li>No encuentra trabajo apropiado en su oficio o profesión.</li>
+<li>Está esperando la temporada alta.</li>
+<li>Carece de la experiencia necesaria.</li>
+<li>No tiene recursos para instalar un negocio.</li>
+<li>Los empleadores lo consideran muy joven o muy viejo</li>
+</ol>
+<p>Caso contrario, las que no se consideran válidas son:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Se considera muy joven o muy viejo.</li>
+<li>Actualmente no desea conseguir trabajo.</li>
+<li>Responsabilidades familiares.</li>
+<li>Problemas de salud.</li>
+<li>Está estudiando.</li>
+<li>Otra razón</li>
+</ol>
+<div id="tasa-de-desempleados-td" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Tasa de desempleados (TD):</h3>
+<p>Es la relación porcentual entre el número de personas que están
+buscando trabajo (DS), y el número de personas que integran la fuerza laboral (PEA) <br></p>
+<p><span class="math display">\[\frac{\text{DS}}{\text{PEA}}\times 100\]</span></p>
+<p>donde el PEA está constituida por las personas de 12 y más años en la parte urbana, y de 10 años y más en la parte rural.</p>
+</div>
+<div id="tasa-de-ocupación-to" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Tasa de ocupación (TO)</h3>
+<p>Es la relación porcentual entre la población ocupada (OC) y el
+número de personas que integran la población en edad de trabajar (PET).</p>
+<p><span class="math display">\[\frac{\text{OC}}{\text{PET}}\times 100\]</span></p>
+<p>donde PET también se llama fuerza laboral y son las personas en edad de trabajar, que trabajan o están buscando empleo.</p>
+</div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-BibEntry2020Dec" class="csl-entry">
-<span>“<span class="nocase">Acerca de la OCDE - OECD</span>.”</span> 2020. <a href="http://www.oecd.org/acerca">http://www.oecd.org/acerca</a>.
-</div>
-<div id="ref-BibEntry2015Jun" class="csl-entry">
-<span>“<span class="nocase">Centro Com<span class="nocase">ú</span>n de Investigaci<span class="nocase">ó</span>n</span>.”</span> 2015. <em>Comisi<span>ó</span>n Europea - European Commission</em>. <a href="https://ec.europa.eu/info/departments/joint-research-centre_es">https://ec.europa.eu/info/departments/joint-research-centre_es</a>.
-</div>
-<div id="ref-BibEntry2021Maria" class="csl-entry">
-<span>“<span class="nocase">Secci<span class="nocase">ó</span>n Contenido - Universidad Nacional de Colombia</span>.”</span> 2021. <a href="http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298">http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298</a>.
-</div>
-<div id="ref-ContributorstoWikimediaprojects2020Nov" class="csl-entry">
-Wikimedia. 2020. <span>“<span class="nocase">Index (statistics)</span>.”</span> <a href="https://en.wikipedia.org/w/index.php?title=Index_(statistics)&amp;oldid=989351965">https://en.wikipedia.org/w/index.php?title=Index_(statistics)&amp;oldid=989351965</a>.
+<div id="ref-DeCastroRamos2021Sep" class="csl-entry">
+DANE. 2021a. <span>“<span class="nocase">Empleo y desempleo</span>.”</span> <a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral/empleo-y-desempleo">https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral/empleo-y-desempleo</a>.
 </div>
 </div>
             </section>
@@ -234,8 +194,8 @@ Wikimedia. 2020. <span>“<span class="nocase">Index (statistics)</span>.”</sp
           </div>
         </div>
       </div>
-<a href="6-diferencia-entre-proporción-y-tasa.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="7.1-índice-en-la-economía.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="5-tasas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="5.2-tasavariación.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

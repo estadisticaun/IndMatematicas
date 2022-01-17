@@ -1,21 +1,29 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
+  11pt,
 ]{book}
+\title{Una aproximación matemática a la fórmula de un indicador}
+\author{Valentina Londoño Ramirez}
+\date{2022-01-17}
+
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{Palatino}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \IfFileExists{microtype.sty}{% use microtype if available
   \usepackage[]{microtype}
@@ -37,14 +45,24 @@
 \hypersetup{
   pdftitle={Una aproximación matemática a la fórmula de un indicador},
   pdfauthor={Valentina Londoño Ramirez},
-  pdfborder={0 0 0},
-  breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
-\usepackage{longtable,booktabs}
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -53,39 +71,59 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-  \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-  \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
-\usepackage[]{natbib}
-\bibliographystyle{apalike}
-
-\title{Una aproximación matemática a la fórmula de un indicador}
-\author{Valentina Londoño Ramirez}
-\date{2021-03-13}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 
 \begin{document}
 \maketitle
 
 {
+\hypersetup{linkcolor=}
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\listoffigures
+\listoftables
 \hypertarget{portada}{%
 \chapter*{Portada}\label{portada}}
 \addcontentsline{toc}{chapter}{Portada}
@@ -99,7 +137,7 @@ Los indicadores, es el plural del término ``indicador'' y precisamente, como di
 
 Existen diferentes maneras de clasificar los indicadores, dependiendo de su función y contexto en donde este actúa. A continuación describiremos sólo tres tipos de indicadores con el fin de que el lector pueda identificar su alcance frente a cualquier campo. Para empezar, mencionamos en qué consisten los \emph{indicadores de eficacia}. Estos tienen como propósito medir el grado de cumplimiento de una meta o un resultado propuesto. Asimismo, le sigue los \emph{indicadores de eficiencia} que miden el nivel de ejecución del proceso teniendo en cuenta la relación entre el logro del programa y los recursos utilizados para su cumplimiento mediante el tiempo, el esfuerzo o el costo. Por último, están los \emph{indicadores de calidad}, como su nombre lo dice, consiste en medir el nivel de calidad de un proceso o servicio mediante diferentes perspectivas como el nivel de satisfacción o la precisión en la ejecución del proceso.
 
-Para poder entender mejor lo anterior, daremos algunos ejemplos a grandes rasgos desde la perspectiva de la universidad y cómo actúan los indicadores a partir de un objetivo establecido.
+Para poder entender mejor lo anterior, daremos algunos ejemplos a grandes rasgos desde la perspectiva de la Universidad y cómo actúan los indicadores a partir de un objetivo establecido.
 
 \begin{table}
 
@@ -111,11 +149,11 @@ Dependencia & Objetivo & Indicadores\\
 \hline
 Bienestar universitario & Mantener la acreditación institucional y de alta calidad de sus programas académicos. & * Determinar el nivel de satisfacción en los usuarios de los servicios ofrecidos por Bienestar. <br> * El porcentaje  de estudiantes que califica con satisfacción alta o muy alta los servicios ofrecidos por bienestar académico.\\
 \hline
-Dirección académica & Contribuir a la internacionalización y bilingüismo como necesidad de la interacción con comunidades extranjeras. & * Medir el crecimiento de estudiantes extranjeros activos en la universidad.<br> * Costo que vale para la universidad dar un acompañamiento y seguimiento a un estudiante extranjero.<br> * Número de cursos de diferentes  idiomas no remotos ofertados por la universidad.\\
+Dirección académica & Contribuir a la internacionalización y bilingüismo como necesidad de la interacción con comunidades extranjeras. & * Medir el crecimiento de estudiantes extranjeros activos en la Universidad.<br> * Costo que vale para la Universidad dar un acompañamiento y seguimiento a un estudiante extranjero.<br> * Número de cursos de diferentes  idiomas no remotos ofertados por la Universidad.\\
 \hline
-Investigación & Fomentar el desarrollo de investigación formativa e investigación científica en cada programa académico. & * Porcentaje de grupos de investigación activos en la universidad. <br> * Número de eventos, seminarios o espacios de difusión para compartir resultados y experiencias de un tema en común. <br> * Número de horas semanales dedicadas por cada estudiante al grupo de investigación.\\
+Investigación & Fomentar el desarrollo de investigación formativa e investigación científica en cada programa académico. & * Porcentaje de grupos de investigación activos en la Universidad. <br> * Número de eventos, seminarios o espacios de difusión para compartir resultados y experiencias de un tema en común. <br> * Número de horas semanales dedicadas por cada estudiante al grupo de investigación.\\
 \hline
-Planeación institucional & Contribuir al desarrollo de políticas institucionales de buen gobierno que garanticen la estabilidad de cada programa académico. & * Determinar el nivel de participación entre cada ente que conforma la comunidad universitaria. <br> * Número de espacios asamblearios en cada programa académico de la universidad.\\
+Planeación institucional & Contribuir al desarrollo de políticas institucionales de buen gobierno que garanticen la estabilidad de cada programa académico. & * Determinar el nivel de participación entre cada ente que conforma la comunidad universitaria. <br> * Número de espacios asamblearios en cada programa académico de la Universidad.\\
 \hline
 \end{tabular}
 \end{table}
@@ -125,22 +163,21 @@ Como bien fue dicho, un indicador debe presentar la relación entre dos variable
 \hypertarget{proporciuxf3n}{%
 \chapter{Proporción}\label{proporciuxf3n}}
 
-Matematicamente, la proporción es un cociente donde el numerador está incluido en el denominador cuyo objetivo es establecer la relación entre una parte con respecto al todo, en otras palabras es la relación que se establece entre un subconjunto \(n\) de un conjunto universo \(N\) y se define como
+Matemáticamente, la proporción es un cociente donde el numerador está incluido en el denominador cuyo objetivo es establecer la relación entre una parte con respecto al todo, en otras palabras es la relación que se establece entre un subconjunto \(n\) de un conjunto universo \(N\) y se define como
 \[\begin{equation}
 \text{Proporción de}\hspace{2mm}n=\frac{\text{Número de elementos de}\hspace{2mm}n}{\text{Total de elementos en el universo de}\hspace{2mm} N}
 \end{equation}\]
-donde \(n\) es un subconjunto de \(N\).Observe que el numerador siempre está incluido en el denorminador. Veamos el siguiente ejemplo.
+donde \(n\) es un subconjunto de \(N\).Observe que el numerador siempre está incluido en el denominador. Veamos el siguiente ejemplo.
 
-\begin{longtable}[]{@{}l@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.00}}@{}}
 \toprule
-\begin{minipage}[b]{0.97\columnwidth}\raggedright
-Ejemplo. \emph{Proporción de mujeres y hombres en una empresa}\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+Ejemplo. \emph{Proporción de mujeres y hombres en una empresa}
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-En una empresa trabajan 27 mujeres y 18 hombres. Entonces podemos deducir que el total de trabajadores es \(27+18=45\) y por tanto la proporción de mujeres es \[\frac{\text{Número de mujeres}}{\text{Total de trabajadores}}=\frac{27}{45}=\frac{3}{5}\]. Similarmente, la proporción de hombres es \[\frac{\text{Número de hombres}}{\text{Total de trabajadores}}=\frac{18}{45}=\frac{2}{5}\]. En la empresa existen tres mujeres por cinco trabajadores y dos hombres por cada cinco trabajadores.\strut
-\end{minipage}\tabularnewline
+En una empresa trabajan 27 mujeres y 18 hombres. Entonces podemos deducir que el total de trabajadores es \(27+18=45\) y por tanto la proporción de mujeres es \(\frac{\text{Número de mujeres}}{\text{Total de trabajadores}}=\frac{27}{45}=\frac{3}{5}\). Similarmente, la proporción de hombres es \(\frac{\text{Número de hombres}}{\text{Total de trabajadores}}=\frac{18}{45}=\frac{2}{5}\). En la empresa existen tres mujeres por cinco trabajadores y dos hombres por cada cinco trabajadores. \\
 \bottomrule
 \end{longtable}
 
@@ -155,32 +192,31 @@ nunca será más grande que el segundo. Esta es la razón por la que el resultad
 \hline
 Nombre del indicador & Método de cálculo & Procedimiento\\
 \hline
-Porporción de matriculados extranjeros de pregrado en la universidad en el período \$2020-I\$ & Número de  matriculados extranjeros de pregrado en la universidad en el periodo \$2020-I\$ /Total de estudiantes matriculados de pregrado en el periodo \$2020-I\$ & \$\{300\}/\{36.358\}=0,008\$\\
+Proporción de matriculados extranjeros de pregrado en la Universidad en el período \$2020-I\$ & Número de  matriculados extranjeros de pregrado en la Universidad en el periodo \$2020-I\$ /Total de estudiantes matriculados de pregrado en el periodo \$2020-I\$ & \$\{300\}/\{36.358\}=0,008\$\\
 \hline
-Proporción de matriculados de pregrado en el área de ciencias sociales y humanas de la universidad en el periodo \$2020-I\$. & Número total matriculados de pregrado en el área de ciencias sociales y humanas en el período \$2020-I\$/Total de estudiantes matriculados de pregrado en el período \$2020-I\$ & \$\{5.946\}/\{36.358\}=0,16\$\\
+Proporción de matriculados de pregrado en el área de ciencias sociales y humanas de la Universidad en el periodo \$2020-I\$. & Número total matriculados de pregrado en el área de ciencias sociales y humanas en el período \$2020-I\$/Total de estudiantes matriculados de pregrado en el período \$2020-I\$ & \$\{5.946\}/\{36.358\}=0,16\$\\
 \hline
-Proporción de aspirantes para pregrado por estrato socioeconómico 2 o menos de la universidad en el período \$2019-I\$. & Número total de aspirantes para pregrado por estrato socioeconómico 2 o menos en el período \$2019-I\$/Total de aspirantes para pregrado en el período \$2019-I\$ & \$\{48.639\}/\{82.854\}=0,58\$\\
+Proporción de aspirantes para pregrado por estrato socioeconómico 2 o menos de la Universidad en el período \$2019-I\$. & Número total de aspirantes para pregrado por estrato socioeconómico 2 o menos en el período \$2019-I\$/Total de aspirantes para pregrado en el período \$2019-I\$ & \$\{48.639\}/\{82.854\}=0,58\$\\
 \hline
 \end{tabular}
 \end{table}
 
-Tomado de \citep{BibEntry244021Mar}
+Tomado de (\protect\hyperlink{ref-BibEntry244021Mar}{{``Cifras Generales''} 2021})
 
-Las proporciones son muy utilizadas en los cálculos estadísticos, sin embargo por simplicidad se acostumbre multiplicar por 100 el resultado final. Cuando esto pasa llamaremos a la proporción como \protect\hyperlink{porcentaje}{\emph{porcentaje}}. Veamos más ejemplos de proporciones.
+Las proporciones son muy utilizadas en los cálculos estadísticos, sin embargo, por simplicidad se acostumbre multiplicar por 100 el resultado final. Cuando esto pasa llamaremos a la proporción como \protect\hyperlink{porcentaje}{\emph{porcentaje}}. Veamos más ejemplos de proporciones.
 
-Como lo hace notar \citet{franco2016estadistica} en epidemiología, las proporciones permiten expresar la frecuencia de los eventos de salud, la enfermedad y las lesiones, en términos de su incidencia o prevalencia; es decir entre los casos nuevos o los casos existentes ocurridos. También permite mostrar en qué medida una población está expuesta a un
+Como lo hace notar \protect\hyperlink{ref-franco2016estadistica}{Franco} (\protect\hyperlink{ref-franco2016estadistica}{2016}) en epidemiología, las proporciones permiten expresar la frecuencia de los eventos de salud, la enfermedad y las lesiones, en términos de su incidencia o prevalencia; es decir entre los casos nuevos o los casos existentes ocurridos. También permite mostrar en qué medida una población está expuesta a un
 determinado factor de riesgo.
 
-\begin{longtable}[]{@{}l@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.00}}@{}}
 \toprule
-\begin{minipage}[b]{0.97\columnwidth}\raggedright
-Ejemplo. \emph{Proporción anual de muertes en una población}\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+Ejemplo. \emph{Proporción anual de muertes en una población}
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-Si en un año en una población de 450 habitantes se presentaron 10 muertes. Entonces \[\text{Proporción anual de muertes}=\frac{\text{Número de personas fallecidas en el año}}{\text{Población total}}=\frac{10}{450}=0,02\]\strut
-\end{minipage}\tabularnewline
+Si en un año en una población de 450 habitantes se presentaron 10 muertes. Entonces \(\text{Proporción anual de muertes}=\frac{\text{Número de personas fallecidas en el año}}{\text{Población total}}=\frac{10}{450}=0,02\) \\
 \bottomrule
 \end{longtable}
 
@@ -196,7 +232,7 @@ La razón entre \(a\) y \(b\) cuando \(b\) es una cantidad distinta de cero, se 
 \(\frac{a}{b}\) o \(a:b\) y se lee \(a\) es a \(b\).
 \end{quote}
 
-Véase también \citep{huircan2013guia}.
+Véase también (\protect\hyperlink{ref-huircan2013guia}{Huircán Cabrera 2013}).
 
 Esta relación nos da cuántas veces una cantidad es igual a la otra cantidad, como 6 estudiantes por 1 profesor o 2 tazas de azúcar para 5 tazas de harina. Independientemente de la situación, las comparaciones de razones siempre se relacionan de forma multiplicativa. Por ejemplo, la razón de 6 estudiantes por 2 profesores es que hay 3 veces más estudiantes que profesores. También se puede describir esta relación de varias formas, tales como:
 
@@ -212,8 +248,8 @@ Esta relación nos da cuántas veces una cantidad es igual a la otra cantidad, c
 
 Independientemente de la forma en que se comunique esta relación, debe ser claro que hay 3 veces más estudiantes que profesores.
 
-Cabe mencionar que, como lo afiman \citep{petit2020focus} la razón puede tener dos interpretaciones. La primera es por
-unir o componer dos cantidades de una manera que ``conserva una relación multiplicativa'', es decir, un cierto número de una cantidad junto con un cierto número de otra cantidad crea un compuesto unidad \citep{beckmann2017mathematics}. Por ejemplo,
+Cabe mencionar que, como lo afirman (\protect\hyperlink{ref-petit2020focus}{Petit and Abele-Austin 2020}) la razón puede tener dos interpretaciones. La primera es por
+unir o componer dos cantidades de una manera que ``conserva una relación multiplicativa,'' es decir, un cierto número de una cantidad junto con un cierto número de otra cantidad crea un compuesto unidad (\protect\hyperlink{ref-beckmann2017mathematics}{Beckmann 2017}). Por ejemplo,
 
 \includegraphics[width=0.3125in,height=\textheight]{https://static.vecteezy.com/system/resources/previews/001/209/957/non_2x/square-png.png} \includegraphics[width=0.3125in,height=\textheight]{https://static.vecteezy.com/system/resources/previews/001/209/957/non_2x/square-png.png} \includegraphics[width=0.3125in,height=\textheight]{https://static.vecteezy.com/system/resources/previews/001/209/957/non_2x/square-png.png} \includegraphics[width=0.29167in,height=\textheight]{https://www.nicepng.com/png/detail/926-9260681_cuadro-cuadrados-borde-monochrome.png}
 
@@ -245,7 +281,7 @@ unir o componer dos cantidades de una manera que ``conserva una relación multip
 
 \includegraphics[width=0.52083in,height=\textheight]{ProtectoR/arroz.png} \includegraphics[width=0.41667in,height=\textheight]{ProtectoR/harina.png}\includegraphics[width=0.41667in,height=\textheight]{ProtectoR/harina.png}
 
-Imágenes tomadas de \citet{BibEntry2021Marzo} y \citet{BibEntry2019Mar}.
+Imágenes tomadas de \protect\hyperlink{ref-BibEntry2021Marzo}{{``{El kilo, el medio kilo y el cuarto de kilo}''}} (\protect\hyperlink{ref-BibEntry2021Marzo}{2021}) y \protect\hyperlink{ref-BibEntry2019Mar}{{``{Un kilo de arroz}''}} (\protect\hyperlink{ref-BibEntry2019Mar}{2019}).
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -255,12 +291,12 @@ Imágenes tomadas de \citet{BibEntry2021Marzo} y \citet{BibEntry2019Mar}.
   La relación entre libras de arroz a kilos de harina es \(\frac{1}{2}\) ó \(1:2\).
 \end{enumerate}
 
-Observemos que libras de arroz y kilos de lentejas son cantidades de medidas diferentes mientras que en el anterior, las cantidades solo eran estudiantes. Esto nos dice que las cantidades que componen una unidad compuesta pueden ser las mismas o diferentes.
+Observemos que libras de arroz y kilos de lentejas son cantidades de medidas diferentes mientras que, en el anterior, las cantidades solo eran estudiantes. Esto nos dice que las cantidades que componen una unidad compuesta pueden ser las mismas o diferentes.
 
-La segunda interpretación consiste en comparar multiplicativamente dos cantidades. Por ejemplo, en una situación cotidiana en el que estamos comparando el precio de dos artículos, es conveniente notar cual es el artículo más costoso, de lo que lleva a decir: ``el artículo 1 es \(n\) veces más costoso que el artículo 2'', o también es válido decir: ``el artículo 2 vale \(\$5000\) más que el artículo 1. Sin embargo, la relación que ocurre es en términos multiplicativos contra aditivos. Por tanto, la primera expresión, la cual es dada en términos multiplicativos, es un ejemplo de razón como comparación multiplicativa.
+La segunda interpretación consiste en comparar multiplicativamente dos cantidades. Por ejemplo, en una situación cotidiana en el que estamos comparando el precio de dos artículos, es conveniente notar cual es el artículo más costoso, de lo que lleva a decir: ``el artículo 1 es \(n\) veces más costoso que el artículo 2,'' o también es válido decir: ``el artículo 2 vale \(\$5000\) más que el artículo 1. Sin embargo, la relación que ocurre es en términos multiplicativos contra aditivos. Por tanto, la primera expresión, la cual es dada en términos multiplicativos, es un ejemplo de razón como comparación multiplicativa.
 
 Precisamos advertir que la razón no es una fracción en el sentido matemático, la confusión puede deberse al hecho de que una de las notaciones para la razón, \(\frac{a}{b}\) donde \(b\neq 0\), comparte la misma forma con una fracción. Ilustremos mejor mediante el siguiente ejemplo:
-En el primer parcial, Ana acierta en \(3\) preguntas y desacierta en \(10\) preguntas. Después en el segundo parcial responde bien \(5\) y desacierta en \(7\) preguntas . ¿Cuál es la razón de las preguntas acertadas con las desaciertas en los dos parciales?
+En el primer parcial, Ana acierta en \(3\) preguntas y desacierta en \(10\) preguntas. Después en el segundo parcial responde bien \(5\) y desacierta en \(7\) preguntas. ¿Cuál es la razón de las preguntas acertadas con las desaciertas en los dos parciales?
 
 Número de preguntas acertadas:
 \(\frac{6 \hspace{2mm} aciertos}{10 \hspace{2mm} desaciertos}+\frac{4\hspace{2mm} aciertos}{7\hspace{2mm} desaciertos}=\frac{10 \hspace{2mm} aciertos}{17 \hspace{2mm} desaciertos}\).
@@ -283,7 +319,7 @@ lo que nos dice es una razón. Estos tipos de razones que involucran un periodo 
 \hypertarget{porcentaje}{%
 \chapter{Porcentaje}\label{porcentaje}}
 
-Un porcentaje es la forma de expresar un número como partes de cada cien. Como ya se dijo, Los porcentajes son proporciones multiplicado por \(100\). De manera más clara, podemos construir indicadores de porcentaje aplicando la operación
+Un porcentaje es la forma de expresar un número como partes de cada cien. Como ya se dijo, los porcentajes son proporciones multiplicado por \(100\). De manera más clara, podemos construir indicadores de porcentaje aplicando la operación
 
 \[\begin{equation}
 \text{Porcentaje de}\hspace{2mm}n=\frac{\text{Número de elementos de}\hspace{2mm}n}{\text{Total de elementos en el universo de}\hspace{2mm} N}\times 100.
@@ -301,16 +337,16 @@ Algunos ejemplos son los siguientes
 \hline
 Nombre del indicador & Método de cálculo & Procedimiento\\
 \hline
-Porcentaje de estudiantes vinculados a actividades de extensión en la universidad en el periodo \$2019-II\$. & Número de estudiantes vinculados a actividades de extensión en la universidad en el periodo \$2019-II /\$ Total de estudiantes matriculados en el periodo \$2019-II × 100\$ & \$\{3.600\}/\{54.284\} × 100=11,61\$\%\\
+Porcentaje de estudiantes vinculados a actividades de extensión en la Universidad en el periodo \$2019-II\$. & Número de estudiantes vinculados a actividades de extensión en la Universidad en el periodo \$2019-II /\$ Total de estudiantes matriculados en el periodo \$2019-II × 100\$ & \$\{3.600\}/\{54.284\} × 100=11,61\$\%\\
 \hline
-Porcentaje de tesis meritorias por estudiantes graduados en la universidad en el periodo \$2020-I\$. & Número total de tesis meritorias por estudiantes graduados en el universidad en el periodo \$2020-I /\$ Total de estudiantes graduados en el período \$2020-I × 100\$ & \$\{195\}/\{4.926\} × 100=3,95\$\%\\
+Porcentaje de tesis meritorias por estudiantes graduados en la Universidad en el periodo \$2020-I\$. & Número total de tesis meritorias por estudiantes graduados en el Universidad en el periodo \$2020-I /\$ Total de estudiantes graduados en el período \$2020-I × 100\$ & \$\{195\}/\{4.926\} × 100=3,95\$\%\\
 \hline
-Porcentaje de funcionarias administrativas en la universidad en el periodo \$2020-I\$. & Número de administrativos mujeres en el período \$2020-I/\$ Total de administrativos en el periodo \$2020-I × 100\$ & \$\{1.460\}/\{2.850\} × 100=51,2\$\%\\
+Porcentaje de funcionarias administrativas en la Universidad en el periodo \$2020-I\$. & Número de administrativos mujeres en el período \$2020-I/\$ Total de administrativos en el periodo \$2020-I × 100\$ & \$\{1.460\}/\{2.850\} × 100=51,2\$\%\\
 \hline
 \end{tabular}
 \end{table}
 
-Tomado de \citep{BibEntry244021Mar}
+Tomado de (\protect\hyperlink{ref-BibEntry244021Mar}{{``Cifras Generales''} 2021})
 
 Adicional a esto, es importante mencionar los procedimientos en el cálculo de porcentajes: Por aplicación directa o por proporciones, los cuales sirven como ruta para determinar otros hallazgos del indicador.
 
@@ -324,16 +360,15 @@ Adicional a esto, es importante mencionar los procedimientos en el cálculo de p
 \frac{t}{100}\times N.
 \end{equation}\]
 
-\begin{longtable}[]{@{}l@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.00}}@{}}
 \toprule
-\begin{minipage}[b]{0.97\columnwidth}\raggedright
-Ejemplo. Descuento de un artículo\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+Ejemplo. Descuento de un artículo
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-Un almacén tiene el \(30\%\) de descuento en artículos de cocina. Para calcular el precio final de una licuadora que vale \(\$80.000\) debemos \(\frac{30}{100}\times 80.000=24.000.\) Es decir, \(\$24.000\) equivale al \(30\%\) de la licuadora y como es un \(30\%\) menos, entonces \(\$80.000-\$24.000=\$56.000\) es el precio final.\strut
-\end{minipage}\tabularnewline
+Un almacén tiene el \(30\%\) de descuento en artículos de cocina. Para calcular el precio final de una licuadora que vale \(\$80.000\) debemos \(\frac{30}{100}\times 80.000=24.000.\) Es decir, \(\$24.000\) equivale al \(30\%\) de la licuadora y como es un \(30\%\) menos, entonces \(\$80.000-\$24.000=\$56.000\) es el precio final. \\
 \bottomrule
 \end{longtable}
 
@@ -347,16 +382,15 @@ Un almacén tiene el \(30\%\) de descuento en artículos de cocina. Para calcula
 \frac{t\%}{x}=\frac{100\%}{N}
 \end{equation}\]
 
-\begin{longtable}[]{@{}l@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.00}}@{}}
 \toprule
-\begin{minipage}[b]{0.97\columnwidth}\raggedright
-Ejemplo\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+Ejemplo
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-La cantidad de mujeres socias de una cadena de supermercados es \(1.455\) de \(9.700\), cifra que podemos obtener mediante \(\frac{t\%}{1.455}=\frac{100\%}{9.700}\) y haciendo el debido despeje resulta el \(15\%\). Tambien son equivalentes las expresiones: 1,5 de cada 10, 12 de cada 80, 15 de cada 100 ó 0,15 de 1.\strut
-\end{minipage}\tabularnewline
+La cantidad de mujeres socias de una cadena de supermercados es \(1.455\) de \(9.700\), cifra que podemos obtener mediante \(\frac{t\%}{1.455}=\frac{100\%}{9.700}\) y haciendo el debido despeje resulta el \(15\%\). También son equivalentes las expresiones: 1,5 de cada 10, 12 de cada 80, 15 de cada 100 o 0,15 de 1. \\
 \bottomrule
 \end{longtable}
 
@@ -365,13 +399,13 @@ Hemos visto, un porcentaje expresa una \protect\hyperlink{proporciuxf3n}{proporc
 \hypertarget{tasas}{%
 \chapter{Tasas}\label{tasas}}
 
-Una tasa es una razón entre dos cantidades con unidades distintas y expresan la dinámica de un suceso en una población a lo largo del tiempo. Si la tasa o la cantidad frente a la cual algo está cambiando no está especificada, usualmente la tasa es por unidad de tiempo. Sin embargo, una tasa puede ser especificada por unidad de tiempo, por unidad de medida o masa o cualquier otra cantidad. Naturalmente para describir las unidades de una tasa, la palabra ``por'' se utiliza para poder separar las unidades de dos medidas utilizadas para calcular la tasa como por ejemplo, pesos por libra, metros por segundo, millas por hora, y días enfermo por año. De aquí es conveniente clasificar algunas tasas cuando \emph{el denominador es una variable temporal, un ``stock'' poblacional} ó \emph{una variable monetaria}.
+Una tasa es una razón entre dos cantidades con unidades distintas y expresan la dinámica de un suceso en una población a lo largo del tiempo. Si la tasa o la cantidad frente a la cual algo está cambiando no está especificada, usualmente la tasa es por unidad de tiempo. Sin embargo, una tasa puede ser especificada por unidad de tiempo, por unidad de medida o masa o cualquier otra cantidad. Naturalmente para describir las unidades de una tasa, la palabra ``por'' se utiliza para poder separar las unidades de dos medidas utilizadas para calcular la tasa como, por ejemplo, pesos por libra, metros por segundo, millas por hora, y días enfermo por año. De aquí es conveniente clasificar algunas tasas cuando \emph{el denominador es una variable temporal, un ``stock'' poblacional} ó \emph{una variable monetaria}.
 
-\textbf{\emph{1. Cuando el denominador es un ``stock'' poblacional}}. Haciendo referencia a un ``stock'' poblacional como las poblaciones en un punto exacto de tiempo y tienen como fuentes los censos, padrones, estimaciones de población o encuestas. Para el cálculo, el numerador expresa el número de eventos ocurridos en una población durante un período. Como afirma \citet{moreno2000principales}, a diferencia de las \protect\hyperlink{proporcion}{proporciones}, el denominador no expresa el número de sujetos en observación sino el tiempo durante el cual tales sujetos estuvieron en riesgo de sufrir el evento. Así que, la tasa se calcula mediante la siguiente fórmula
+\textbf{\emph{1. Cuando el denominador es un ``stock'' poblacional}}. Haciendo referencia a un ``stock'' poblacional como las poblaciones en un punto exacto de tiempo y tienen como fuentes los censos, padrones, estimaciones de población o encuestas. Para el cálculo, el numerador expresa el número de eventos ocurridos en una población durante un período. Como afirma \protect\hyperlink{ref-moreno2000principales}{Moreno-Altamirano} (\protect\hyperlink{ref-moreno2000principales}{2000}), a diferencia de las \protect\hyperlink{proporcion}{proporciones}, el denominador no expresa el número de sujetos en observación sino el tiempo durante el cual tales sujetos estuvieron en riesgo de sufrir el evento. Así que, la tasa se calcula mediante la siguiente fórmula
 
 \(\frac{\text{Número de eventos ocurridos en un población en el periodo t}}{\text{Sumatoria de los periodos donde los individuos de la población libres del evento estuvieron expuestos al riesgo en el periodo t}}\times 10^n\)
 
-La unidad de medida empleada se conoce como \emph{tiempo-persona} de seguimiento. Por ejemplo, la observación de 100 individuos libres del evento durante un año corresponde a 100 años-persona de seguimiento; de manera similar, 10 sujetos observados durante diez años corresponden a 100 años-persona. Entonces, la población \(n\) en observación durante un año corresponde a \(n\) año-persona. Así que, esto explica el porque en los ejemplos clásicos sobre tasas en epidemiología (algunos se presentarán a continuación) que corresponden a estudios hechos durante un período de un año, la sumatoria de los períodos donde los individuos de la población libres del evento estuvieron expuestos al ``riesgo'' en el periodo de un año (el denominador de la tasa) coindice con la población en observación.
+La unidad de medida empleada se conoce como \emph{tiempo-persona} de seguimiento. Por ejemplo, la observación de 100 individuos libres del evento durante un año corresponde a 100 años-persona de seguimiento; de manera similar, 10 sujetos observados durante diez años corresponden a 100 años-persona. Entonces, la población \(n\) en observación durante un año corresponde a \(n\) año-persona. Así que, esto explica por qué en los ejemplos clásicos sobre tasas en epidemiología (algunos se presentarán a continuación) que corresponden a estudios hechos durante un período de un año, la sumatoria de los períodos donde los individuos de la población libres del evento estuvieron expuestos al ``riesgo'' en el periodo de un año (el denominador de la tasa) coindice con la población en observación.
 
 \begin{itemize}
 \tightlist
@@ -380,38 +414,35 @@ La unidad de medida empleada se conoce como \emph{tiempo-persona} de seguimiento
   \[\frac{\text{Número de nacimientos en un periodo de tiempo}}{\text{Población media en ese periodo}}\times 10^n\]
 \end{itemize}
 
-El uso de la constante \(10^n\), responde a la necesidad de comunicar el indicador de una manera comprensible y de fácil uso o recordación con el fin de permitir rápidamente su comparación con otras hechos.
+El uso de la constante \(10^n\), responde a la necesidad de comunicar el indicador de una manera comprensible y de fácil uso o recordación con el fin de permitir rápidamente su comparación con otros hechos.
 
-\begin{longtable}[]{@{}l@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.00}}@{}}
 \toprule
-\begin{minipage}[b]{0.97\columnwidth}\raggedright
-Ejemplo. \emph{Tasa de natalidad de una población}\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+Ejemplo. \emph{Tasa de natalidad de una población}
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-En una población nacieron \(73.010\) niños a la fecha frente a una población de \(5'000.000\) habitantes. La tasa de natalidad a la fecha es \(\frac{73.010}{5'000.000}\times 1.000=14,6\).\strut
-\end{minipage}\tabularnewline
+En una población nacieron \(73.010\) niños a la fecha frente a una población de \(5'000.000\) habitantes. La tasa de natalidad a la fecha es \(\frac{73.010}{5'000.000}\times 1.000=14,6\). \\
 \bottomrule
 \end{longtable}
 
 La tasa de natalidad será de \(0,0146\). No obstante, al usar el factor de \(1.000\) la cifra se presenta como ``\(14,6\) nacimientos por cada \(1.000\) habitantes'' lo cual es evidentemente más claro.
 
 \begin{itemize}
+\tightlist
 \item
   \emph{Tasa de mortalidad:} Es el número de fallecimientos con respecto a la población total por cada \(10^n\) habitantes en un año.
-  \[\frac{\text{Número de difunciones en un periodo de tiempo}}{\text{Población media en ese período}}\times 10^n\]
-\item
-  \emph{Tasa de desempleados:} Mide el nivel de desocupación en relación con la población activa por cada \(10^n\) habitantes en un año.
-  \[\frac{\text{Número de desempleados en un período de tiempo}}{\text{Población media en ese periodo}}\times 10^n\]
+  \[\frac{\text{Número de defunciones en un periodo de tiempo}}{\text{Población media en ese período}}\times 10^n\]
 \end{itemize}
 
-No siempre el ``stock'' poblacional representa la poblacion media de una región. Tambien puede ser una población con alguna caracteristica en cuestión, como lo veremos a continuación:
+No siempre el ``stock'' poblacional representa la población media de una región. También puede ser una población con alguna característica en cuestión, como lo veremos a continuación:
 
 \begin{itemize}
 \tightlist
 \item
-  \emph{Tasa de prevalencia:} Es una medida que dice cuantas personas sufren una enfermedad en una momento específico.
+  \emph{Tasa de prevalencia:} Es una medida que dice cuántas personas sufren una enfermedad en un momento específico.
 \end{itemize}
 
 \[\begin{equation}
@@ -426,52 +457,50 @@ en el momento}}\times 10^{n}
 \end{itemize}
 
 \[\begin{equation}
-\frac{\text{Número de muertes por una enfermedad en un perÍodo de tiempo}}{\text{Población dignosticada de la enfermedad en ese periodo}}\times 10^n
+\frac{\text{Número de muertes por una enfermedad en un período de tiempo}}{\text{Población diagnosticada de la enfermedad en ese periodo}}\times 10^n
 \end{equation}\]
 
-\begin{longtable}[]{@{}l@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.00}}@{}}
 \toprule
-\begin{minipage}[b]{0.97\columnwidth}\raggedright
-Ejemplo. \emph{Letalidad del cancer de páncreas}\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+Ejemplo. \emph{Letalidad del cáncer de páncreas}
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-En una población murieron \(266\) personas por cáncer de páncreas en el 2016 frente a un total de \(278\) personas diagnosticadas con cáncer de páncreas en ese mismo año. Se calcula que la tasa de letalidad sería \(\frac{266}{278}\times 100=95,7\%\).\strut
-\end{minipage}\tabularnewline
+En una población murieron \(266\) personas por cáncer de páncreas en el 2016 frente a un total de \(278\) personas diagnosticadas con cáncer de páncreas en ese mismo año. Se calcula que la tasa de letalidad sería \(\frac{266}{278}\times 100=95,7\%\). \\
 \bottomrule
 \end{longtable}
 
 \textbf{\emph{2. Cuando el denominador es una variable temporal}}. Mide la frecuencia con la que, en un período de tiempo, aparece un suceso en una población. El cálculo de tasas se realiza dividiendo el total de eventos ocurridos en un periodo dado en una población entre el tiempo de observación en el que ocurrieron dichos eventos. Las tasas se expresan multiplicando el resultado obtenido por una potencia de \(10\), que puede variar entre \(10\) y \(100.000\).
 
 \[\begin{equation}
-\frac{\text{Número de eventos sucedidos}}{\text{Periodo en que fueron observados}}\times 10^{n}
+\frac{\text{Número de eventos sucedidos}}{\text{Período en que fueron observados}}\times 10^{n}
 \end{equation}\]
 
-En efecto, magnitudes vectoriales como la velocidad que describe el cambio de posición con respecto al tiempo y la aceleración, el cambio de velocidad por unidad de tiempo son ejemplos de tasas muy comunes según esta clasificación. En otras áreas, también encontramos la tasa de flujo volumétrico, el cual relaciona el volumen de un líquido que pasa a través de un superfície dado por unidad temporal o la tasa de bits, en computación, que relaciona el número de bits enviados o procesados por un computador por unidad temporal.
+En efecto, magnitudes vectoriales como la velocidad que describe el cambio de posición con respecto al tiempo y la aceleración, el cambio de velocidad por unidad de tiempo son ejemplos de tasas muy comunes según esta clasificación. En otras áreas, también encontramos la tasa de flujo volumétrico, el cual relaciona el volumen de un líquido que pasa a través de un superficie dado por unidad temporal o la tasa de bits, en computación, que relaciona el número de bits enviados o procesados por un computador por unidad temporal.
 
-\textbf{\emph{3. Cuando el denominador es una variable monetaria }}
+\textbf{\emph{3. Cuando el denominador es una variable monetaria.}}
 
 \begin{itemize}
 \tightlist
 \item
-  \emph{Tasa de cambio:} La tasa de cambio muestra la relación que existe entre dos monedas. Dicha tasa es un indicador que expresa cuántas unidades de una divisa se necesitan para obtener una unidad de la otra. En el caso de Colombia, tenemos la siguiente relación o también véase \citet{BibEntry2019Jun}.
+  \emph{Tasa de cambio:} La tasa de cambio muestra la relación que existe entre dos monedas. Dicha tasa es un indicador que expresa cuántas unidades de una divisa se necesitan para obtener una unidad de la otra. En el caso de Colombia, tenemos la siguiente relación o también véase \protect\hyperlink{ref-BibEntry2019Jun}{{``{Tasa Representativa del Mercado TRM - Peso por d{\ifmmode\elseó\fi}lar}''}} (\protect\hyperlink{ref-BibEntry2019Jun}{2019}).
 \end{itemize}
 
 \[\begin{equation}
 \frac{\text{Cantidad o peso de la moneda local}}{\text{Una unidad de la moneda extrajera}}\times 10^{n}
 \end{equation}\]
 
-\begin{longtable}[]{@{}l@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.00}}@{}}
 \toprule
-\begin{minipage}[b]{0.97\columnwidth}\raggedright
-Ejemplo. \emph{Tasa de cambio entre el euro y el dolar}\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+Ejemplo. \emph{Tasa de cambio entre el euro y el dólar}
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-Si la tasa de cambio entre el euro y el dólar estadounidense fuera de 2,54. Esto implica a que el euro equivale a \(2,54\) dólares, es decir, \(\frac{2,54 \hspace{2mm} \text{dólares}}{1 \hspace{2mm}\text{euro}}= 2,54\).\strut
-\end{minipage}\tabularnewline
+Si la tasa de cambio entre el euro y el dólar estadounidense fuera de 2,54. Esto implica a que el euro equivale a \(2,54\) dólares, es decir, \(\frac{2,54 \hspace{2mm} \text{dólares}}{1 \hspace{2mm}\text{euro}}= 2,54\). \\
 \bottomrule
 \end{longtable}
 
@@ -485,6 +514,75 @@ Si la tasa de cambio entre el euro y el dólar estadounidense fuera de 2,54. Est
 \frac{\text{Impuestos pagados por la empresa en un periodo }}{\text{Ingresos obtenidos en el mismo periodo }}\times 10^{n}
 \end{equation}\]
 
+\hypertarget{tasas-en-el-mercado-laboral}{%
+\section{Tasas en el mercado laboral}\label{tasas-en-el-mercado-laboral}}
+
+Las tasas en el mercado laboral proporciona información sobre el estado de la fuerza de trabajo (empleo, desempleo o inactividad) de la población del país.
+
+En Colombia, según \protect\hyperlink{ref-DeCastroRamos2021Sep}{DANE} (\protect\hyperlink{ref-DeCastroRamos2021Sep}{2021a}) se tiene en cuenta las siguientes razones y se consideran que son válidas de desempleo.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  No hay trabajo disponible en la ciudad.
+\item
+  Está esperando que lo llamen.
+\item
+  No sabe cómo buscar trabajo.
+\item
+  Está cansado de buscar trabajo.
+\item
+  No encuentra trabajo apropiado en su oficio o profesión.
+\item
+  Está esperando la temporada alta.
+\item
+  Carece de la experiencia necesaria.
+\item
+  No tiene recursos para instalar un negocio.
+\item
+  Los empleadores lo consideran muy joven o muy viejo
+\end{enumerate}
+
+Caso contrario, las que no se consideran válidas son:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Se considera muy joven o muy viejo.
+\item
+  Actualmente no desea conseguir trabajo.
+\item
+  Responsabilidades familiares.
+\item
+  Problemas de salud.
+\item
+  Está estudiando.
+\item
+  Otra razón
+\end{enumerate}
+
+\hypertarget{tasa-de-desempleados-td}{%
+\subsection{Tasa de desempleados (TD):}\label{tasa-de-desempleados-td}}
+
+Es la relación porcentual entre el número de personas que están
+buscando trabajo (DS), y el número de personas que integran la fuerza laboral (PEA)
+
+\[\frac{\text{DS}}{\text{PEA}}\times 100\]
+
+donde el PEA está constituida por las personas de 12 y más años en la parte urbana, y de 10 años y más en la parte rural.
+
+\hypertarget{tasa-de-ocupaciuxf3n-to}{%
+\subsection{Tasa de ocupación (TO)}\label{tasa-de-ocupaciuxf3n-to}}
+
+Es la relación porcentual entre la población ocupada (OC) y el
+número de personas que integran la población en edad de trabajar (PET).
+
+\[\frac{\text{OC}}{\text{PET}}\times 100\]
+
+donde PET también se llama fuerza laboral y son las personas en edad de trabajar, que trabajan o están buscando empleo.
+
 \hypertarget{tasavariaciuxf3n}{%
 \section{Tasa de Variación}\label{tasavariaciuxf3n}}
 
@@ -494,7 +592,7 @@ Representa la razón de dos observaciones de una misma variable pero en dos dife
 \frac{\text{(Variable en el periodo}\hspace{2mm} t)-(\text{Variable en el periodo} \hspace{2mm} t-k)}{\text{Variable en el periodo} \hspace{2mm} t-k} \hspace{8mm} \text{(1)}
 \end{equation}\]
 
-donde el numerador indica el cambio de la variable en relación a dichos períodos. En otras palabras, al ser una razón, se está comparando el cambio de la variable en dos períodos con la variable en el período menos reciente. Es equivalente de \((1)\) expresarlo
+donde el numerador indica el cambio de la variable en relación a dichos periodos. En otras palabras, al ser una razón, se está comparando el cambio de la variable en dos períodos con la variable en el período menos reciente. Es equivalente de \((1)\) expresarlo
 
 \[\begin{equation}
 \frac{\text{Variable en el periodo}\hspace{2mm} t}{\text{Variable en el periodo} \hspace{2mm} t-k}-1
@@ -516,11 +614,11 @@ Ahora es conveniente mencionar algunos ejemplos en donde se calcula la tasa de v
 \hline
 Nombre del indicador & Método de cálculo & Procedimiento\\
 \hline
-Tasa de variación del total de libros publicados en la universidad con o sin sello editorial entre los años \$2019-2020\$. & [(Total del libros publicados en el año \$2020 /\$ Total de libros publicados en el año \$2019\$)\$-1\$]\$×100\$ & [\$\{410\}/\{400\}-1\$]\$×100=2,5\$\%\\
+Tasa de variación del total de libros publicados en la Universidad con o sin sello editorial entre los años \$2019-2020\$. & [(Total del libros publicados en el año \$2020 /\$ Total de libros publicados en el año \$2019\$)\$-1\$]\$×100\$ & [\$\{410\}/\{400\}-1\$]\$×100=2,5\$\%\\
 \hline
-Tasa de variación del total de docentes en la universidad entre los semestres \$2008-II\$ y \$2020-I\$. & [(Total de docentes  en el semestre \$2020-I /\$ Total de docentes en el semestre \$2008-II\$)\$-1\$]\$×100\$ & [\$\{3.113\}/\{2.940\}-1\$]\$×100=5,8\$\%\\
+Tasa de variación del total de docentes en la Universidad entre los semestres \$2008-II\$ y \$2020-I\$. & [(Total de docentes  en el semestre \$2020-I /\$ Total de docentes en el semestre \$2008-II\$)\$-1\$]\$×100\$ & [\$\{3.113\}/\{2.940\}-1\$]\$×100=5,8\$\%\\
 \hline
-Tasa de variación del total de estudiantes matriculados en la universidad entre los semestres \$2009-II\$ y \$2020-I\$. & [(Total de estudiantes matriculados en el semestre \$2020-I /\$ Total de estudiantes matriculados en el semestre \$2009-II\$)\$-1\$]\$×100\$ & [\$\{54.284\}/\{45.200\}-1\$]\$×100=20\$\%\\
+Tasa de variación del total de estudiantes matriculados en la Universidad entre los semestres \$2009-II\$ y \$2020-I\$. & [(Total de estudiantes matriculados en el semestre \$2020-I /\$ Total de estudiantes matriculados en el semestre \$2009-II\$)\$-1\$]\$×100\$ & [\$\{54.284\}/\{45.200\}-1\$]\$×100=20\$\%\\
 \hline
 \end{tabular}
 \end{table}
@@ -530,7 +628,7 @@ En la economía, encontramos otros ejemplos de tasa de variación.
 \begin{itemize}
 \tightlist
 \item
-  \textbf{\emph{Tasa de inflación:}} Muestra la variación porcentual de los precios de un determinado territorio, durante un período determinado y con esto, podemos saber como se han comportado los precios en un lugar determinado. El cálculo de esta tasa se determina en términos del \emph{Índice de Precios al Consumidor} (IPC) el cual es el encargado de recoger el cambio de los precios, mes a mes para evaluar el coste de la vida mediante artículos como alimentos, casa, transporte, cuidado de la salud, entretenimiento, ropa y otros gastos.
+  \textbf{\emph{Tasa de inflación:}} Muestra la variación porcentual de los precios de un determinado territorio, durante un periodo determinado y con esto, podemos saber cómo se han comportado los precios en un lugar determinado. El cálculo de esta tasa se determina en términos del \protect\hyperlink{ipc}{Índice de Precios al Consumidor (IPC)}.
 \end{itemize}
 
 \[\begin{equation}
@@ -540,52 +638,48 @@ En la economía, encontramos otros ejemplos de tasa de variación.
 \begin{itemize}
 \tightlist
 \item
-  \textbf{\emph{Tasa de crecimiento económico:}} Es la variación porcentual del PIB (Producto Interno Bruto) real en un período de tiempo determinado en el que pemite calcular cual ha sido el aumento de la cantidad de bienes y servicios que produce una economía \citep{de2009producto}.
+  \textbf{\emph{Tasa de crecimiento económico:}} Es la variación porcentual del PIB (Producto Interno Bruto) en un periodo de tiempo determinado en el que pemite calcular cual ha sido el aumento de la cantidad de bienes y servicios que produce una economía (\protect\hyperlink{ref-de2009producto}{Prensa 2009}).
 \end{itemize}
 
 \[\begin{equation}
-\left[\frac{\text{PBI actual}}{\text{PBI anterior}}-1\right]\times 10^{n}
+\left[\frac{\text{PIB actual}}{\text{PIB anterior}}-1\right]\times 10^{n}
 \end{equation}\]
 
 \hypertarget{diferencia-entre-proporciuxf3n-y-tasa}{%
 \chapter{Diferencia entre proporción y tasa}\label{diferencia-entre-proporciuxf3n-y-tasa}}
 
-Según \citep{colimon1990fundamentos}, el concepto de tasa es similar al de una \protect\hyperlink{proporciuxf3n}{proporción}, como bien se dijo, con la diferencia de que las \protect\hyperlink{tasas}{tasas} llevan incorporado el concepto de tiempo haciendo referencia a la unidad de medida empleada tiempo-persona. Para comprender mejor como actua dicha diferencia, consideremos la proporción de incidencia vs.~la tasa de incidencia de una determinada población.
+Según (\protect\hyperlink{ref-colimon1990fundamentos}{Colimon 1990}), el concepto de tasa es similar al de una \protect\hyperlink{proporciuxf3n}{proporción}, como bien se dijo, con la diferencia de que las \protect\hyperlink{tasas}{tasas} llevan incorporado el concepto de tiempo haciendo referencia a la unidad de medida empleada tiempo-persona. Para comprender mejor como actúa dicha diferencia, consideremos la proporción de incidencia vs.~la tasa de incidencia de una determinada población.
 
-Antes de empezar, tengamos en cuenta que incidencia se refiere a los nuevos casos de una enfermedad en una determinada población, en un lugar dado y en un período específico. Con lo anterior, la \emph{proporción de incidencia} relaciona el numero de casos nuevos (numerador) con el total de individuos (denominador).
+Antes de empezar, tengamos en cuenta que incidencia se refiere a los nuevos casos de una enfermedad en una determinada población, en un lugar dado y en un periodo específico. Con lo anterior, la \emph{proporción de incidencia} relaciona el número de casos nuevos (numerador) con el total de individuos (denominador).
 
-\begin{longtable}[]{@{}l@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.00}}@{}}
 \toprule
-\begin{minipage}[b]{0.97\columnwidth}\raggedright
-Ejemplo. \emph{Proporción de incidencia de covid-19 en una población}.\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+Ejemplo. \emph{Proporción de incidencia de covid-19 en una población}.
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-Una población de 10.000 habitantes, registró 1.800 nuevos casos del Covid-19 en tres meses. Proporción de incidencia \(\times 1.000=\frac{1.800}{10.000}\times 1.000=180\) por mil.\strut
-\end{minipage}\tabularnewline
+Una población de 10.000 habitantes, registró 1.800 nuevos casos del Covid-19 en tres meses. Proporción de incidencia \(\times 1.000=\frac{1.800}{10.000}\times 1.000=180\) por mil. \\
 \bottomrule
 \end{longtable}
 
 Ahora, cuando hablamos de \emph{tasa de incidencia} estamos midiendo la velocidad de presentación de una enfermedad durante un período. Notemos que una tasa consta de un numerador, que al igual que en la proporción, es el número de casos nuevos del evento, y de un denominador que es el número de unidades de tiempo-persona durante el cual pudo presentarse el evento.
 
-\begin{longtable}[]{@{}l@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.00}}@{}}
 \toprule
-\begin{minipage}[b]{0.97\columnwidth}\raggedright
-Ejemplo. \emph{Tasa de incidencia de covid en una población}\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+Ejemplo. \emph{Tasa de incidencia de Covid-19 en una población}
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-Una población de 10.000 habitantes, en un periodo de 3 meses registró 1.800 nuevos casos del Covid-19 en el mes de diciembre y con un total de 13.450 meses-persona de seguimiento. Tasa de incidencia \(\times 1.000=\frac{1.800}{4.850}\times 1.000=133,8\) por mil meses-persona.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-Indica que por cada 1.000 meses-persona de seguimiento durante 3 meses, se presentaron aproximadamente 134 nuevos casos de covid-19.\strut
-\end{minipage}\tabularnewline
+Una población de 10.000 habitantes, en un periodo de 3 meses registró 1.800 nuevos casos del Covid-19 en el mes de diciembre y con un total de 13.450 meses-persona de seguimiento. Tasa de incidencia \(\times 1.000=\frac{1.800}{4.850}\times 1.000=133,8\) por mil meses-persona. \\
+Indica que por cada 1.000 meses-persona de seguimiento durante 3 meses, se presentaron aproximadamente 134 nuevos casos de covid-19. \\
 \bottomrule
 \end{longtable}
 
-Tras haber leído el ejemplo anterior, es conveniente preguntarnos como se calculó el valor de 13.450 meses-persona y con que variables se relaciona. A manera de ilustración, consideraremos la siguiente tabla con el fin de tratar de explicar las tasas de incidencia dentro de un período de seguimiento de 3 meses.
+Tras haber leído el ejemplo anterior, es conveniente preguntarnos como se calculó el valor de 13.450 meses-persona y con qué variables se relaciona. A manera de ilustración, consideraremos la siguiente tabla con el fin de tratar de explicar las tasas de incidencia dentro de un período de seguimiento de 3 meses.
 
 \begin{table}
 
@@ -622,7 +716,7 @@ Variables & Mes 1 & Mes 2 & Mes 3 & Total en los tres meses \\
 
 \begin{quote}
 \emph{3). Nuevas entradas a la cohorte}\footnote{\emph{cohorte}, es un tipo de investigación observacional y analítica en la que se hace una comparación de la frecuencia de aparición de un evento entre dos grupos, uno de los cuales está expuesto a un factor que no está presente en el otro grupo. En un cohorte dinámico, se presenta la entrada y salida de nuevos sujetos de estudio durante la fase de seguimiento, por lo que el número de miembros puede variar a través del tiempo.}: Consta de las nuevas entradas a la
-cohorte hasta la fecha de cierre. Para el período total se suman las entradas de cadauno de los períodos anuales.
+cohorte hasta la fecha de cierre. Para el período total se suman las entradas de cada uno de los periodos anuales.
 \end{quote}
 
 \begin{quote}
@@ -654,47 +748,26 @@ mismos individuos de la cohorte inicial (10.000). Los individuos que hay al prin
 
 En definitiva, aunque la proporción y la tasa comparten el mismo numerador, que es en nuestro ejemplo, los enfermos nuevos por Covid-19 que se presentaron en tres meses, en el denominador reside la diferencia fundamental, como bien se dijo, la tasa de incidencia es una unidad de tiempo llamada tiempo-persona, mientras la proporción no tiene en cuenta variables como el tiempo de observación, ni desde luego el tiempo perdido en el seguimiento por adquisición del evento y las salidas por abandono u otra causa.
 
-Para terminar, establezcamos el compartivo entre tasa y proproción con base al mismo ejemplo.
+Para terminar, establezcamos el comparativo entre tasa y proporción con base al mismo ejemplo.
 
-\begin{longtable}[]{@{}lll@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.20}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.39}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.41}}@{}}
 \toprule
-\begin{minipage}[b]{0.18\columnwidth}\raggedright
-Período en meses\strut
-\end{minipage} & \begin{minipage}[b]{0.36\columnwidth}\raggedright
-Tasa de incidencia por mil\strut
-\end{minipage} & \begin{minipage}[b]{0.37\columnwidth}\raggedright
-Proporción de incidencia por mil\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+Período en meses
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tasa de incidencia por mil
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Proporción de incidencia por mil
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.18\columnwidth}\raggedright
-Mes 1\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-\(\frac{200}{4.900}\times 1.000=40,8\)\strut
-\end{minipage} & \begin{minipage}[t]{0.37\columnwidth}\raggedright
-\(\frac{200}{10.000}\times 1.000=20\)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.18\columnwidth}\raggedright
-Mes 2\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-\(\frac{600}{4.450}\times 1.000=134,8\)\strut
-\end{minipage} & \begin{minipage}[t]{0.37\columnwidth}\raggedright
-\(\frac{600}{10.000}\times 1.000=60\)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.18\columnwidth}\raggedright
-Mes 3\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-\(\frac{1.000}{4.100}\times 1.000=243,9\)\strut
-\end{minipage} & \begin{minipage}[t]{0.37\columnwidth}\raggedright
-\(\frac{1.000}{10.000}\times 1.000=100\)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.18\columnwidth}\raggedright
-Período total\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-\(\frac{1.800}{13.450}\times 1.000=133,8\)\strut
-\end{minipage} & \begin{minipage}[t]{0.37\columnwidth}\raggedright
-\(\frac{1.800}{10.000}\times 1.000=180\)\strut
-\end{minipage}\tabularnewline
+Mes 1 & \(\frac{200}{4.900}\times 1.000=40,8\) & \(\frac{200}{10.000}\times 1.000=20\) \\
+Mes 2 & \(\frac{600}{4.450}\times 1.000=134,8\) & \(\frac{600}{10.000}\times 1.000=60\) \\
+Mes 3 & \(\frac{1.000}{4.100}\times 1.000=243,9\) & \(\frac{1.000}{10.000}\times 1.000=100\) \\
+Período total & \(\frac{1.800}{13.450}\times 1.000=133,8\) & \(\frac{1.800}{10.000}\times 1.000=180\) \\
 \bottomrule
 \end{longtable}
 
@@ -704,15 +777,15 @@ reciente en el campo de la epidemiología. Es común encontrar en la literatura 
 \hypertarget{pbm}{%
 \chapter{Índice}\label{pbm}}
 
-Un índice es una estadística compuesta, es decir, es basada en múltiples elementos de datos, en otras palabras, un índice es una medida compuesta que agrega múltiples indicadores. Según \citet{ContributorstoWikimediaprojects2020Nov}, los índices, también conocidos como \emph{indicadores compuestos}, resumen y clasifican observaciones específicas, generalmente en la escala ordinal.
+Un índice es una estadística compuesta, es decir, es basada en múltiples elementos de datos, en otras palabras, un índice es una medida compuesta que agrega múltiples indicadores. Según \protect\hyperlink{ref-ContributorstoWikimediaprojects2020Nov}{Wikimedia} (\protect\hyperlink{ref-ContributorstoWikimediaprojects2020Nov}{2020}), los índices, también conocidos como \emph{indicadores compuestos}, resumen y clasifican observaciones específicas, generalmente en la escala ordinal.
 
 \textbf{La escala ordinal}
-tiene como caracteristica que sus categorías están ordenadas por rango; cada clase posee una misma relación posicional con la siguiente; es decir, la escala muestra situaciones escalonadas. Si se usan números, su única significación está en indicar la posición de las distintas categorías en la serie; sin embargo, no asumen que la distancia del primer escalón al segundo sea la misma que la del segundo al tercero.
+tiene como característica que sus categorías están ordenadas por rango; cada clase posee una misma relación posicional con la siguiente; es decir, la escala muestra situaciones escalonadas. Si se usan números, su única significación está en indicar la posición de las distintas categorías en la serie; sin embargo, no asumen que la distancia del primer escalón al segundo sea la misma que la del segundo al tercero.
 
 \begin{quote}
 \textbf{\emph{Puntaje Básico de Matrícula PBM}}.
 Es el indicador que utiliza la Universidad Nacional de Colombia para hacer la
-clasificación socioeconómica del estudiante y asignar la matrícula. Según la Resolución 2146 DE 1993 \citep{BibEntry2021Maria}. El Puntaje Básico de Matrícula PBM, es calculado con la información de 7 variables, cuyo
+clasificación socioeconómica del estudiante y asignar la matrícula. Según la Resolución 2146 DE 1993 (\protect\hyperlink{ref-BibEntry2021Maria}{{``{Secci{ó}n Contenido - Universidad Nacional de Colombia}''} 2021}). El Puntaje Básico de Matrícula PBM, es calculado con la información de 7 variables, cuyo
 soporte documental es aportado por el estudiante. A cada variable se le asigna un puntaje, un peso ponderado y una función específica dentro de la fórmula, el cual es calculado mediante la siguiente fórmula
 \[\begin{equation}
 PBM=(0,4A_1+0,3A_2+0,3A_3)\times B_1 \times B_2 \times B_3 \times B_4.
@@ -745,34 +818,34 @@ NO INFORMA & 100\\
 \end{tabular}
 \end{table}
 
-La OCDE, la Organización para la Cooperación y el Desarrollo Económicos \citep{BibEntry2020Dec} y el Centro Común de Investigación de la Comisión Europea \citep{BibEntry2015Jun} publicaron conjuntamente un manual para la construcción de indicadores compuestos en 2008. El manual, respaldado oficialmente por el comité estadístico de alto nivel de la OCDE, describe diez pasos recurrentes para la elaboración de un índice:
+La OCDE, la Organización para la Cooperación y el Desarrollo Económicos (\protect\hyperlink{ref-BibEntry2020Dec}{{``{Acerca de la OCDE - OECD}''} 2020}) y el Centro Común de Investigación de la Comisión Europea (\protect\hyperlink{ref-BibEntry2015Jun}{{``{Centro Com{ú}n de Investigaci{ó}n}''} 2015}) publicaron conjuntamente un manual para la construcción de indicadores compuestos en 2008. El manual, respaldado oficialmente por el comité estadístico de alto nivel de la OCDE, describe diez pasos recurrentes para la elaboración de un índice:
 
 \begin{itemize}
 \item
-  Paso 1: marco teórico
+  Paso 1: Marco teórico
 \item
-  Paso 2: selección de datos
+  Paso 2: Selección de datos
 \item
-  Paso 3: imputación de datos faltantes
+  Paso 3: Imputación de datos faltantes
 \item
-  Paso 4: análisis multivariado
+  Paso 4: Análisis multivariado
 \item
-  Paso 5: normalización
+  Paso 5: Normalización
 \item
-  Paso 6: ponderación
+  Paso 6: Ponderación
 \item
-  Paso 7: agregación de indicadores
+  Paso 7: Agregación de indicadores
 \item
-  Paso 8: análisis de sensibilidad
+  Paso 8: Análisis de sensibilidad
 \item
-  Paso 9: vincular a otras medidas
+  Paso 9: Vincular a otras medidas
 \item
-  Paso 10: visualización
+  Paso 10: Visualización
 \end{itemize}
 
 Como sugiere la lista, es laborioso construir un indicador compuesto, lo que hace que su uso sea cuestionable.
 
-En el funcionamiento, el índice presenta diferentes caracteristicas cuando va enfocado en las ciencias sociales o en la economía, por esta razón, haremos un comparativo por separado que nos permita identificar como actúan en estos dos campos.
+En el funcionamiento, el índice presenta diferentes características cuando va enfocado en las ciencias sociales o en la economía, por esta razón, haremos un comparativo por separado que nos permita identificar como actúan en estos dos campos.
 
 \hypertarget{uxedndice-en-la-economuxeda}{%
 \section{Índice en la economía}\label{uxedndice-en-la-economuxeda}}
@@ -786,7 +859,7 @@ Cuando el índice va referido a un valor de un producto será conveniente referi
 \hypertarget{numeroindice}{%
 \subsection{Número índice}\label{numeroindice}}
 
-Es una cifra de datos económicos que refleja el precio o la cantidad en comparación con un valor estándar o base. Particularmente, el número índice recoge la evolución relativa en el período \(t\) de una magnitud económica (precios, producciones, \ldots{}) de un conjunto de bienes o productos respecto al período base ó de referencia \(0\) \citep{fernandez2004introduccion}. Los números índices se utilizan especialmente para comparar la actividad empresarial, el costo de vida y el empleo.
+Es una cifra de datos económicos que refleja el precio o la cantidad en comparación con un valor estándar o base. Particularmente, el número índice recoge la evolución relativa en el período \(t\) de una magnitud económica (precios, producciones, \ldots) de un conjunto de bienes o productos respecto al período base ó de referencia 0 (\protect\hyperlink{ref-fernandez2004introduccion}{Fernández 2004}). Los números índices se utilizan especialmente para comparar la actividad empresarial, el costo de vida y el empleo.
 
 Al período inicial se le denomina período base o referencia y se le asigna el valor \(100\) y se compara con el período actual o también llamado corriente. Así, definimos a \(I_{0}^{t}\) como el número índice de un determinado valor en el período \(t\), respecto al período base \(0\).
 
@@ -805,84 +878,54 @@ donde \(x_t\) representa el valor de bien en el período \(t\) y \(x_0\) el valo
 
 \textbf{Ejemplo.} \textbf{\emph{Presupuesto de los ingresos totales de la Universidad Nacional, vigencias 2008 a 2017 (pesos constantes a 2017, cifras en millones de pesos).}}
 
-\begin{longtable}[]{@{}lllllll@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.15}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.12}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.13}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.16}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.15}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.15}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.15}}@{}}
 \toprule
-\begin{minipage}[b]{0.12\columnwidth}\raggedright
-\emph{Año}\strut
-\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedright
-2008\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
-2009\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
-2010\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
-2011\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
-2012\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
-2013\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+\emph{Año}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2008
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2009
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2010
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2011
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2012
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2013
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.12\columnwidth}\raggedright
-\emph{Total Presupuesto UN}\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-1.479.526\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-1.572.523\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-1.649.495\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-1.604.608\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-1.720.856\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-1.838.882\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\raggedright
-\(I_{año/2008}\)\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-100\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-106,28\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-104,89\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-97,27\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-107,24\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-106,85\strut
-\end{minipage}\tabularnewline
+\emph{Total Presupuesto UN} & 1.479.526 & 1.572.523 & 1.649.495 & 1.604.608 & 1.720.856 & 1.838.882 \\
+\(I_{año/2008}\) & 100 & 106,28 & 104,89 & 97,27 & 107,24 & 106,85 \\
 \bottomrule
 \end{longtable}
 
 \(I_{2009/2008}=\frac{1.572.523}{1.479.526}\times 100=106,28\), lo que significa que el presupuesto de los ingresos totales en el año 2009 aumentó un \(6,28\%\) con respecto al año 2008.
 
-Según \citet{perez2010nociones}, sería deseable que todo numero índice satisfaciera las siguientes propiedades:
+Según \protect\hyperlink{ref-perez2010nociones}{Pérez} (\protect\hyperlink{ref-perez2010nociones}{2010}), sería deseable que todo numero índice satisficiera las siguientes propiedades:
 
-\begin{longtable}[]{@{}l@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.00}}@{}}
 \toprule
-\begin{minipage}[b]{0.97\columnwidth}\raggedright
-Propiedades\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+Propiedades
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-\textbf{\emph{1. Existencia:}} Un número índice debe ser un número determinado y no nulo.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-\textbf{\emph{2. Identidad:}} Cuando coincide el período base y el período actual, el indicador tomará un valor unitario (o 100 si se expresa en porcentaje).\[I_{t/t}=\frac{x_t}{x_t}=1\]\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-\textbf{\emph{3. Homogeneidad:}} El valor del índice no se altera si se produce un cambio en las unidades de medida.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-\textbf{\emph{4. Inversión:}}El índice con los períodos invertidos resulta la inversa del índice.\[I_{t/0}=\frac{x_t}{x_0}=\frac{1}{\frac{x_0}{x_t}}=\frac{1}{I_{0/t}}\Longrightarrow I_{t/0}I_{0/t}=I_{t/t}=1\]\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.97\columnwidth}\raggedright
-\textbf{\emph{5. Proporcionalidad:}} Si se produce una variación proporcional en todas las magnitudes, el índice variará en la misma proporción.\strut
-\end{minipage}\tabularnewline
+\textbf{\emph{1. Existencia:}} Un número índice debe ser un número determinado y no nulo. \\
+\textbf{\emph{2. Identidad:}} Cuando coincide el período base y el período actual, el indicador tomará un valor unitario (o 100 si se expresa en porcentaje).\(I_{t/t}=\frac{x_t}{x_t}=1\) \\
+\textbf{\emph{3. Homogeneidad:}} El valor del índice no se altera si se produce un cambio en las unidades de medida. \\
+\textbf{\emph{4. Inversión:}}El índice con los períodos invertidos resulta la inversa del índice.\(I_{t/0}=\frac{x_t}{x_0}=\frac{1}{\frac{x_0}{x_t}}=\frac{1}{I_{0/t}}\Longrightarrow I_{t/0}I_{0/t}=I_{t/t}=1\) \\
+\textbf{\emph{5. Proporcionalidad:}} Si se produce una variación proporcional en todas las magnitudes, el índice variará en la misma proporción. \\
 \bottomrule
 \end{longtable}
 
@@ -896,68 +939,39 @@ Por tanto, lo que nos interesa ahora, es encontrar una clasificación para ident
 P_{t/0}=\frac{p_{t}}{p_{0}}\times 100
 \end{equation}\]
 
-donde \(p_{t}\) indica el valor del precio de un producto en un período \(t\) y \(p_{0}\) el precio del producto en el período base.
+donde \(p_{t}\) indica el valor del precio de un producto en un periodo \(t\) y \(p_{0}\) el precio del producto en el periodo base.
 
 \textbf{Ejemplo: Precio de una libra de arroz en una población desde el año 2012 a 2015.}
 
-\begin{longtable}[]{@{}llllll@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.14}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.16}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.19}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}@{}}
 \toprule
-\begin{minipage}[b]{0.14\columnwidth}\raggedright
-\emph{Año}\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
-2012\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
-2013\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright
-2014\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
-2015\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+\emph{Año}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2012
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2013
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2014
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2015
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.14\columnwidth}\raggedright
-\emph{Precio del arroz (pesos)}\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-700\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-850\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
-910\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-1.050\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.14\columnwidth}\raggedright
-\(I_{año/2012}\)(\(\%\))\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-\(100\)\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-\(\frac{850}{700}\times 100=121,4\)\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
-\(\frac{910}{850}\times 100=107\)\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-\(\frac{1.050}{910}\times 100=115,3\)\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
+\emph{Precio del arroz (pesos)} & 700 & 850 & 910 & 1.050 & \\
+\(I_{año/2012}\)(\(\%\)) & \(100\) & \(\frac{850}{700}\times 100=121,4\) & \(\frac{910}{850}\times 100=107\) & \(\frac{1.050}{910}\times 100=115,3\) & \\
 \bottomrule
 \end{longtable}
 
-\begin{itemize}
-\tightlist
-\item
-  \emph{Índice de precios al consumidor (IPC):} El IPC nos indica cómo va evolucionando con respecto del conjunto de precios de los bienes y servicios básicos que consume la población. La principal función del IPC es señalar la evolución del coste de la vida y resulta primordial para el conocimiento de la inflación.
-\end{itemize}
-
-\[\begin{equation}
-IPC=\frac{\text{Precio de la cesta de bienes y servicios en el año en cuestión}}{\text{Precio de la cesta en el año base}}\times 100.
-\end{equation}\]
-
 \textbf{\emph{b). Índice de cantidad:}} Consiste en comparar las cantidades (o volúmenes) de producción, consumo o exportación.
-De igual manera, si \(q_{t}\) indica la cantidad de un articulo producido o vendido en el período \(t\) dado y \(q_{0}\) la cantidad en el periodo base, la fórmula general para el índice simple de cantidad es:
+De igual manera, si \(q_{t}\) indica la cantidad de un artículo producido o vendido en el período \(t\) dado y \(q_{0}\) la cantidad en el periodo base, la fórmula general para el índice simple de cantidad es:
 
 \[\begin{equation}
 Q_{t/0}=\frac{q_{t}}{q_{0}}\times 100.
@@ -967,49 +981,30 @@ Q_{t/0}=\frac{q_{t}}{q_{0}}\times 100.
 
 Continuando con el estudio del arroz, supongamos que obtenemos los siguientes datos.
 
-\begin{longtable}[]{@{}llllll@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.14}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.16}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.19}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}@{}}
 \toprule
-\begin{minipage}[b]{0.14\columnwidth}\raggedright
-\emph{Año}\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
-2012\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
-2013\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright
-2014\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
-2015\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+\emph{Año}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2012
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2013
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2014
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2015
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.14\columnwidth}\raggedright
-\emph{Consumo (kg)}\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-39,62\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-40,21\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
-41,60\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-39,20\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.14\columnwidth}\raggedright
-\(I_{año/2012}\)(\(\%\))\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-\(100\)\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-\(\frac{40,21}{39,62}\times 100=101,48\)\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
-\(\frac{41,60}{40,21}\times 100=103,45\)\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-\(\frac{39,20}{41,60}\times 100=94,23\)\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
+\emph{Consumo (kg)} & 39,62 & 40,21 & 41,60 & 39,20 & \\
+\(I_{año/2012}\)(\(\%\)) & \(100\) & \(\frac{40,21}{39,62}\times 100=101,48\) & \(\frac{41,60}{40,21}\times 100=103,45\) & \(\frac{39,20}{41,60}\times 100=94,23\) & \\
 \bottomrule
 \end{longtable}
 
@@ -1027,17 +1022,17 @@ y así, se obtiene el resto de valores.
 
 \begin{longtable}[]{@{}llllll@{}}
 \toprule
-\emph{Año} & 2012 & 2013 & 2014 & 2015 &\tabularnewline
+\emph{Año} & 2012 & 2013 & 2014 & 2015 & \\
 \midrule
 \endhead
-\(I_{año/2012}\)(\(\%\)) & 100 & 123,2 & 110,7 & 108,7 &\tabularnewline
+\(I_{año/2012}\)(\(\%\)) & 100 & 123,2 & 110,7 & 108,7 & \\
 \bottomrule
 \end{longtable}
 
 \hypertarget{indicecomplejo}{%
 \subsubsection{Índice complejo}\label{indicecomplejo}}
 
-Como expresa \citet{lorenzo2007estadistica}, hablaremos de \emph{índices complejos} cuando se forman a partir de los índices simples. Su función principal será sintetizar o resumir la información que proporcionan los índices simples que entran en su composición.
+Como expresa \protect\hyperlink{ref-lorenzo2007estadistica}{Lorenzo} (\protect\hyperlink{ref-lorenzo2007estadistica}{2007}), hablaremos de \emph{índices complejos} cuando se forman a partir de los índices simples. Su función principal será sintetizar o resumir la información que proporcionan los índices simples que entran en su composición.
 
 Supongamos ahora que se observa la evolución de variables \(X_1,X_2,\cdots, X_n\) a lo largo de una sucesión de ``años'' \(t=0,1,2,\cdots,T\) cuya descripción es la siguiente:
 
@@ -1069,9 +1064,9 @@ donde \(x_{ij}\) denota el valor que la variable \(X_i\) toma en el período \(j
 
 donde \(I_{t0}^{i}=\frac{x_{it}}{x_{i0}}\) es el índice simple de la \(i\)-ésima variable correspondiente al año \(t\) con base el año 0.
 
-De lo anteriormente expuesto, debemos tener en cuenta si las magnitudes de cada uno de los índices simples que conforman los índices complejos tienen la misma importancia o de lo contrario, unas son más relevantes que otras. En otros términos, por ejemplo, para medir la evolución de los precios de los bienes de consumo en un país determinado, habrá que dar mas importancia a la evolución de los precios de la alimentación que los de las medicinas, ya que el gasto de alimentación es mayor que el gasto en medicinas. Otro ejemplo, en el sector industrial, el índice salarial se elabora a partir de los índices salariales de cada una de las empresas que integran el sector, resulta evidente que habrá que ponderar más los índices correspondientes a las empresas con más trabajadores.
+De lo anteriormente expuesto, debemos tener en cuenta si las magnitudes de cada uno de los índices simples que conforman los índices complejos tienen la misma importancia o de lo contrario, unas son más relevantes que otras. En otros términos, por ejemplo, para medir la evolución de los precios de los bienes de consumo en un país determinado, habrá que dar más importancia a la evolución de los precios de la alimentación que los de las medicinas, ya que el gasto de alimentación es mayor que el gasto en medicinas. Otro ejemplo, en el sector industrial, el índice salarial se elabora a partir de los índices salariales de cada una de las empresas que integran el sector, resulta evidente que habrá que ponderar más los índices correspondientes a las empresas con más trabajadores.
 
-Por lo tanto, según \citet{arroyo2006manual} procede distinguir dos tipos de índices complejos:
+Por lo tanto, según \protect\hyperlink{ref-arroyo2006manual}{Arroyo} (\protect\hyperlink{ref-arroyo2006manual}{2006}) procede distinguir dos tipos de índices complejos:
 
 \begin{itemize}
 \item
@@ -1082,7 +1077,9 @@ Por lo tanto, según \citet{arroyo2006manual} procede distinguir dos tipos de í
 
 Ilustraremos ahora los dos tipos de índices mediante la media aritmética o promedio, la cual es la más conocida y usada para el análisis de los datos.
 
-\textbf{Índice complejo no ponderado (Media aritmética de índices simples)}
+\textbf{Índice complejo no ponderado}
+
+\textbf{\emph{a. Media aritmética de índices simples:}}
 
 \[ \overline{I}_{t/0}=\frac{1}{N}\sum^{N}_{i=1}I_{t0}^{i} \]
 donde \(N\) es el número de elementos de cada índice simple.
@@ -1110,9 +1107,11 @@ Teniendo en cuenta que \(N=3\) y el período base es 2017, encontramos que el í
 
 \[ I_{2018/2017}=\frac{116,6+110+125}{3}=117,2\].
 
-\textbf{Índice complejo ponderado (Media aritmética ponderada)}
+\textbf{Índice complejo ponderado }
 
-Sea \(w_i\) la ponderación asociada, luego se define el índice complejos ponderados por el método de media aritmética ponderada como,
+\textbf{\emph{a. Media aritmética ponderada}}
+
+Sea \(w_i\) la ponderación asociada, luego se define el índice complejo ponderado por el método de media aritmética ponderada como,
 
 \[ \overline{I}_{t/0}=\frac{\sum^{N}_{i=1}w_iI_{t0}^{i}}{\sum^{N}_{i=1}w_i}. \]
 
@@ -1133,18 +1132,280 @@ Huevos & Leche & Harina\\
 \end{tabular}
 \end{table}
 
-\[\overline{I}_{1018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118\]
+\[\overline{I}_{2018/2017}=\frac{(40*116,6)+(55*110)+(71*125)}{40+55+71}=118\]
+
+\textbf{\emph{b. Índice de Laspeyres:}}
+
+Es el más utilizado en los indicadores generales de precios. Usaremos la notación \(P_{t0}^{i}\) para especificar el índice de precios de la \(i\)-ésima variable correspondiente al año \(t\) con base al año de referencia 0. Con lo anterior, la fórmula del índice de Laspeyres es
+
+\[ {I}_{t/0}=\frac{\sum^{N}_{i=1}w_iP_{t0}^{i}}{\sum^{N}_{i=1}w_i}= \frac{\sum^{N}_{i=1}p_{i0}q_{i0}\frac{p_{it}}{p_{i0}}}{\sum^{N}_{i=1}p_{i0}q_{i0}}=\frac{\sum^{N}_{i=1}p_{it}q_{i0}}{\sum^{N}_{i=1}p_{i0}q_{i0}}\].
+
+donde \(p_{it}\) es el precio del bien o servicio \(i\)-ésimo en el periodo \(t\) y \(q_{i0}\) es la cantidad del bien o servicio \(i\)-ésimo en el periodo 0.
+
+Nótese, a medida que nos alejamos del periodo de referencia, este índice se vuelve cada vez menos representativo con lo que es necesario fijar un nuevo periodo de referencia.
+
+\hypertarget{ipc}{%
+\subsection{Índice de precios del consumidor en Colombia (IPC)}\label{ipc}}
+
+Según el \protect\hyperlink{ref-DeCastroRamos2021Sep2}{DANE} (\protect\hyperlink{ref-DeCastroRamos2021Sep2}{2021b}), el Índice de Precios del Consumidor, IPC, es una medida del cambio en el precio de bienes y servicios representativos del consumo de los hogares del país conocido como canasta. Esta canasta se define a partir de la Encuesta Nacional de Presupuesto de los Hogares --ENPH-, que el DANE realiza cada 10 años.
+
+El IPC nos indica cómo va evolucionando con respecto del conjunto de precios de los bienes y servicios básicos que consume la población. La principal función del IPC es señalar la evolución del coste de la vida y resulta primordial para el conocimiento de la inflación.
+
+Entre los elementos que se incluyen para conocer el dato de IPC se incluyen 443 artículos que consumen las familias, clasificados en 12 grupos, cada uno de los cuales recibe una ponderación según el porcentaje del presupuesto familiar que se destina a su compra. Según su presencia porcentual de mayor a menor, estos grupos son:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Alimentos y bebidas no alcohólicas
+\item
+  Bebidas alcohólicas y tabaco
+\item
+  Prendas de vestir y calzado
+\item
+  Alojamiento, agua, electricidad, gas y otros combustibles
+\item
+  Muebles, artículos para el hogar y conservación ordinaria de la vivienda
+\item
+  Salud
+\item
+  Transporte
+\item
+  Información y comunicación
+\item
+  Recreación y cultura
+\item
+  Educación
+\item
+  Restaurantes y hoteles
+\item
+  Bienes y servicios diversos
+\end{enumerate}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-9}Ponderaciones IPC según divisiones}
+\centering
+\begin{tabular}[t]{l|r|r|r|r|r}
+\hline
+Nombre & Pobres & Vulnerables & Clase Media & Ingresos Altos & Total\\
+\hline
+Alimentos y bebidas no alcohólicas & 23.78 & 22.24 & 15.80 & 8.16 & 15.05\\
+\hline
+Bebidas alcohólicas y tabaco & 1.82 & 1.88 & 1.72 & 1.53 & 1.70\\
+\hline
+Prendas de vestir y calzado & 3.30 & 3.50 & 3.91 & 4.49 & 3.98\\
+\hline
+Alojamiento, agua, electricidad, gas y otros combustibles & 40.17 & 36.33 & 33.13 & 30.44 & 33.12\\
+\hline
+Muebles, artículos para el hogar y para la conservación ordinaria del hogar & 2.97 & 3.07 & 3.75 & 5.99 & 4.19\\
+\hline
+Salud & 1.51 & 1.40 & 1.52 & 2.34 & 1.71\\
+\hline
+Transporte & 7.08 & 10.07 & 13.00 & 15.12 & 12.93\\
+\hline
+Información y comunicación & 2.66 & 3.25 & 4.58 & 4.56 & 4.33\\
+\hline
+Recreación y cultura & 2.61 & 2.89 & 3.46 & 5.19 & 3.79\\
+\hline
+Educación & 1.64 & 1.74 & 4.29 & 6.55 & 4.41\\
+\hline
+Restaurantes y hoteles & 7.23 & 8.17 & 9.48 & 10.31 & 9.43\\
+\hline
+Bienes y servicios diversos & 5.23 & 5.46 & 5.35 & 5.32 & 5.36\\
+\hline
+\end{tabular}
+\end{table}
+
+Tomada de la página del DANE \href{https://www.dane.gov.co/index.php/estadisticas-por-tema/precios-y-costos/indice-de-precios-al-consumidor-ipc/ipc-actualizacion-metodologica-2019/ipc-ponderadores}{Ponderaciones IPC según divisiones}.
+
+Un dato importante es, el IPC es un ejemplo de un índice de Laspeyres. Ahora veamos un ejemplo sobre como calcular el IPC de ciertas divisiones, siguiendo la tabla de ponderaciones en los años 2017 y 2018.
+
+\textbf{Ejemplo:}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-10}Ejemplo}
+\centering
+\begin{tabular}[t]{l|r|r|r}
+\hline
+Alimentos  & Ponderación & Indice de precios 2017 & Índice de precios 2018\\
+\hline
+Alimentos & 15.05 & 175.4 & 181.1\\
+\hline
+Calzado & 3.98 & 179.7 & 188.4\\
+\hline
+Transporte & 12.93 & 161.0 & 166.5\\
+\hline
+\end{tabular}
+\end{table}
+
+usando la fórmula de índice de Laspeyres podemos encontrar el IPC de la siguiente manera.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.56}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.44}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+IPC
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Procedimiento
+\end{minipage} \\
+\midrule
+\endhead
+\(IPC_{2017}\) & \(\frac{15.05 \times 175.4+3.98 \times 179.7+ 12.93\times 161}{15.05+3.98+12.93}=\frac{5436.7}{31.93}=170.26\) \\
+\(IPC_{2018}\) & \(\frac{15.05 \times 181.1+3.98 \times 188.4+ 12.93\times 166.5}{15.05+3.98+12.93}=\frac{5628.23}{31.96}=176.10\) \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{uxedndice-de-pobreza-multidimensional-en-colombia-ipm}{%
+\subsection{Índice de pobreza multidimensional en Colombia (IPM)}\label{uxedndice-de-pobreza-multidimensional-en-colombia-ipm}}
+
+Según el \protect\hyperlink{ref-paginadane}{DANE} (\protect\hyperlink{ref-paginadane}{2021c}), la medición de la pobreza se hace tradicionalmente de forma directa e indirecta, siguiendo la clasificación de \protect\hyperlink{ref-sen1981issues}{Sen} (\protect\hyperlink{ref-sen1981issues}{1981}). El método directo evalúa los resultados de satisfacción (o no privación) que tiene un individuo respecto a ciertas características que se consideran vitales como salud, educación, empleo, entre otras. La medición indirecta evalúa la capacidad de adquisición de bienes y servicios que tienen los hogares.
+
+El IPM está compuesto por cinco dimensiones: condiciones educativas del hogar, condiciones de la
+niñez y juventud, salud, trabajo, acceso a servicios públicos domiciliarios y condiciones de la
+vivienda y servicio público. Adicionalmente, el CONPES 150 de 2012 establece al DANE como el encargado oficial
+del cálculo de la pobreza multidimensional y divulgación de las cifras.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-11}División de Condiciones educativas del hogar }
+\centering
+\begin{tabular}[t]{l|r}
+\hline
+Indicadores  & Ponderaciones\\
+\hline
+Analfabetismo & 0.1\\
+\hline
+Bajo logro educativo & 0.1\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-12}División de Condiciones de la niñez y juventud }
+\centering
+\begin{tabular}[t]{l|r}
+\hline
+Indicadores  & Ponderaciones\\
+\hline
+Inasistencia escolar & 0.05\\
+\hline
+Rezago escolar & 0.05\\
+\hline
+Barreras de acceso a servicios de cuidado de la primera infancia & 0.05\\
+\hline
+Trabajo infantil & 0.05\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-13}División de Trabajo }
+\centering
+\begin{tabular}[t]{l|r}
+\hline
+Indicadores  & Ponderaciones\\
+\hline
+Trabajo informal & 0.1\\
+\hline
+Desempleo de larga duración & 0.1\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-14}División de Salud }
+\centering
+\begin{tabular}[t]{l|r}
+\hline
+Indicadores  & Ponderaciones\\
+\hline
+Sin aseguramiento a salud & 0.1\\
+\hline
+Barreras de acceso a salud de una necesidad & 0.1\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-15}División de Condiciones de la vivienda y servicios públicos}
+\centering
+\begin{tabular}[t]{l|r}
+\hline
+Indicadores  & Ponderaciones\\
+\hline
+Sin acceso a fuente de agua mejorada & 0.04\\
+\hline
+Inadecuada eliminación de excrementos & 0.04\\
+\hline
+Material inadecuado de pisos & 0.04\\
+\hline
+Material inadecuado de paredes & 0.04\\
+\hline
+Hacinamiento crítico & 0.04\\
+\hline
+\end{tabular}
+\end{table}
+
+Tablas extraídas de \protect\hyperlink{ref-botello2017avances}{Botello} (\protect\hyperlink{ref-botello2017avances}{2017}). Rediseño del IPM Colombia, \url{https://www.cepal.org/sites/default/files/presentations/2017-05-silvia-botello-ipmcolombia.pdf}
+
+Cabe señalar, no hay criterios universalmente aceptados para definir las ponderaciones de las dimensiones, estos se construyen y se adaptan dependiendo al contexto de cada país.
+
+Según \protect\hyperlink{ref-alkire2011counting}{Alkire and Foster} (\protect\hyperlink{ref-alkire2011counting}{2011}), estos son algunas decisiones relevantes basado en el método de Alkire Foster para la construcción de una IPM son:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Seleccionar las dimensiones e indicadores
+\item
+  Definir la unidad de análisis (personas, hogares)
+\item
+  Definir los umbrales para cada dimensión
+\item
+  Ponderar las dimensiones e indicadores
+\item
+  Definir el procedimiento de identificación de los multidimensionalmente pobres (valor k)
+\item
+  Definir el procedimiento de agregación
+\end{enumerate}
+
+Para consultar más, puede visitar \href{https://mppn.org/es/pobreza-multidimensional/como-se-calcula/}{cómo aplicar el método Alkire Foster en IPM}.
+
+\hypertarget{uxedndice-de-transparencia-y-acceso-a-la-informaciuxf3n-en-colombia-ita}{%
+\subsection{Índice de transparencia y acceso a la información en Colombia (ITA)}\label{uxedndice-de-transparencia-y-acceso-a-la-informaciuxf3n-en-colombia-ita}}
+
+Según \protect\hyperlink{ref-Pgn2021Sep}{General} (\protect\hyperlink{ref-Pgn2021Sep}{2021}), ITA, es un indicador sintético de pesos preestablecidos, se alimenta de un formulario de autodiligenciamiento compuesto de una serie de preguntas agrupadas en subcategorías, que a su vez se agrupan en categorías y éstas en dimensiones, las cuales describen el cumplimiento del sujeto
+frente a las obligaciones de Ley; por lo tanto, estas opciones establecen el nivel de observancia
+de cada pregunta agregada y que constituyen la Matriz de Cumplimiento de la Ley 1712, diseñada
+por la Procuraduría General de la Nación. Según lo anterior, el cálculo del indicador se genera a
+partir del porcentaje de cumplimiento que resulta del auto-diligenciamiento del formulario por
+parte de los sujetos obligados. Este indicador sintético se establece en una escala ordinal de 0 a
+100 puntos, donde a mayor valor se obtenga; mayor será el nivel de cumplimiento de la Ley.
+
+\hypertarget{matriz-de-cumplimiento}{%
+\subsubsection{Matriz de cumplimiento:}\label{matriz-de-cumplimiento}}
+
+Consta de 182 preguntas con las cuales se busca validar la publicación de información en distintas temáticas tales como Presupuesto, Normatividad, Planeación, Contratación, Control y otras.
+
+Esta matriz condensa lo que está en la ley en un formulario de 182 preguntas que están clasificadas en una jerarquía de 3 niveles de mayor a menor denominados respectivamente: Dimensión, Categoría, y Subcategoría. Para consultar la estructura de la matriz visite el siguiente documento en la página 10 \href{https://www.procuraduria.gov.co/portal/media/file/Resultados\%20Medicion\%20ITA\%202019.pdf}{Informe medición del ITA 2019}.
 
 \hypertarget{uxedndices-en-las-ciencias-sociales}{%
 \section{Índices en las ciencias sociales}\label{uxedndices-en-las-ciencias-sociales}}
 
 \begin{quote}
-Estos índices representan una medida que se obtiene mediante la agregación adecuada de un conjunto de indicadores sociales. Gran parte de los datos están representados en varios índices como el índice de brecha de género, el índice de desarrollo humano, el índice de bienestar social, entre otros. Véase \citet{foa2015indices}.
+Estos índices representan una medida que se obtiene mediante la agregación adecuada de un conjunto de indicadores sociales. Gran parte de los datos están representados en varios índices como el índice de brecha de género, el índice de desarrollo humano, el índice de bienestar social, entre otros. Véase \protect\hyperlink{ref-foa2015indices}{Foa} (\protect\hyperlink{ref-foa2015indices}{2015}).
 \end{quote}
 
-Según \citet{babbie2020practice}, los elementos de los índices suelen ponderarse por igual, a menos que existan razones en contra (por ejemplo, si dos elementos reflejan esencialmente el mismo aspecto de una variable, podrían tener un peso de 0,5 cada uno).
+Según \protect\hyperlink{ref-babbie2020practice}{Babbie} (\protect\hyperlink{ref-babbie2020practice}{2020}), los elementos de los índices suelen ponderarse por igual, a menos que existan razones en contra (por ejemplo, si dos elementos reflejan esencialmente el mismo aspecto de una variable, podrían tener un peso de 0,5 cada uno).
 
-Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y veremos como se calcula a grandes rasgos. El \emph{índice sintético de bienestar social (IBS)} se mide con seis índices parciales: índice de salud, seguridad ciudadana, educacíon, trabajo, vivienda e ingresos relativos y estos a su vez, se subdividen en los siguientes índices parciales.
+Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y veremos cómo se calcula a grandes rasgos. El \emph{índice sintético de bienestar social (IBS)} se mide con seis índices parciales: índice de salud, seguridad ciudadana, educación, trabajo, vivienda e ingresos relativos y estos a su vez, se subdividen en los siguientes índices parciales.
 
 \begin{itemize}
 \tightlist
@@ -1203,7 +1464,7 @@ Para ilustrar lo anterior, tomaremos el índice sintético de bienestar social y
   \item
     Índice de techo-piso
   \item
-    Índice de de acceso al agua
+    Índice de acceso al agua
   \item
     Índice sobre disposición de excretas y saneamiento
   \item
@@ -1232,7 +1493,7 @@ IBS=0,15A_1+0,15A_2+0,1A_3+0,3A_4+0,2A_5+0,1A_6.
 \hypertarget{uxedndice-sintuxe9tico-de-la-calidad-educativa-isce}{%
 \subsection{Índice Sintético de la Calidad Educativa (ISCE)}\label{uxedndice-sintuxe9tico-de-la-calidad-educativa-isce}}
 
-Es un índice, calculado por el \citet{BibEntry2021Mayo}, que mide cuatro
+Es un índice, calculado por el \protect\hyperlink{ref-BibEntry2021Mayo}{{``{Icfes Instituto Colombiano para la Evaluaci{ó}n de la Educaci{ó}}n - Portal Icfes''}} (\protect\hyperlink{ref-BibEntry2021Mayo}{n.d.}), que mide cuatro
 aspectos de la calidad de la educación en todos los colegios
 del país: Progreso, Desempeño, Eficiencia y Ambiente Escolar. \emph{El progreso} mide cambio porcentual de un año a otro en el porcentaje de estudiantes en el nivel de desempeño insuficiente y en el nivel de desempeño avanzado. \emph{El desempeño} mide los resultados de las pruebas estandarizadas de matemáticas y lenguaje en cada nivel educativo. \emph{La eficiencia} se mide como la tasa
 de aprobación al siguiente año escolar de cada nivel educativo. \emph{El ambiente escolar} se mide con base en una encuesta a estudiantes.
@@ -1243,7 +1504,7 @@ El ISCE está en una escala de 1 a 10, en donde Progreso y Desempeño pesan 40 p
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-9}*Indicador 1: Porcentaje de estudiantes en nivel insuficiente*}
+\caption{\label{tab:unnamed-chunk-16}*Indicador 1: Porcentaje de estudiantes en nivel insuficiente*}
 \centering
 \begin{tabular}[t]{l|l|l|l}
 \hline
@@ -1262,7 +1523,7 @@ Quinto & Lenguaje & 22\% & 23\%\\
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-10}*Indicador 2: Porcentaje de estudiantes en nivel avanzado*}
+\caption{\label{tab:unnamed-chunk-17}*Indicador 2: Porcentaje de estudiantes en nivel avanzado*}
 \centering
 \begin{tabular}[t]{l|l|l|l}
 \hline
@@ -1281,7 +1542,7 @@ Quinto & Lenguaje & 26\% & 30\%\\
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-11}*Indicador 3: Promedio de los resultados obtenidos en las últimas pruebas*}
+\caption{\label{tab:unnamed-chunk-18}*Indicador 3: Promedio de los resultados obtenidos en las últimas pruebas*}
 \centering
 \begin{tabular}[t]{l|l|r}
 \hline
@@ -1302,13 +1563,13 @@ Quinto & Lenguaje & 298\\
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-12}*Indicador 5: Ambiente escolar*}
+\caption{\label{tab:unnamed-chunk-19}*Indicador 5: Ambiente escolar*}
 \centering
 \begin{tabular}[t]{l|r}
 \hline
 Parámetros & Puntaje\\
 \hline
-Seguimiento al apredizaje & 47\\
+Seguimiento al aprendizaje & 47\\
 \hline
 Ambiente en el aula & 49\\
 \hline
@@ -1344,7 +1605,7 @@ El indicador progreso estará definido como
 PROGRESO=  -0,75\times DI+0,25\times DA.
 \end{equation}\]
 
-Notesé que el peso de \(DI\) es \(-75\%\), es decir, \(DI\) obtiene un valor negativo, y por tanto \(DI\) toma el valor de cero, debido a que nunca se suman valores negativos, ya que el objetivo del índice no es restar. Luego el desempeño insuficiente se expresa como:
+Nótese que el peso de \(DI\) es \(-75\%\), es decir, \(DI\) obtiene un valor negativo, y por tanto \(DI\) toma el valor de cero, debido a que nunca se suman valores negativos, ya que el objetivo del índice no es restar. Luego el desempeño insuficiente se expresa como:
 
 \[\begin{equation}
 DI=0
@@ -1361,7 +1622,7 @@ DESEMPEÑO&=&  \frac{220+300+270+298}{4}\times \frac{4}{500}\\
 &=& 2,37
 \end{eqnarray}\]
 el cual es un promedio de puntajes multiplicado por una ponderación. Ahora, como el componente desempeño pesa 40 por ciento del ISCE, es
-decir que el máximo puntaje posible de obtener es 4 y 500 es el máximo valor posible de obtener en la prueba. Por esta razón, se usa el fractor de \(\frac{4}{500}\) en la fórmula.
+decir que el máximo puntaje posible de obtener es 4 y 500 es el máximo valor posible de obtener en la prueba. Por esta razón, se usa el factor de \(\frac{4}{500}\) en la fórmula.
 
 La eficiencia sería la tasa de aprobación al siguiente año escolar de cada nivel educativo
 \[\begin{equation}
@@ -1375,7 +1636,7 @@ AMB.ESCOLAR= \frac{47+49+200}{400}
 \end{eqnarray}\]
 tal fórmula proviene de un estudio de la entidad encargada, teniendo en cuenta los parámetros y escalas empleados para cálculo del puntaje.
 
-En denitiva, el índice sintético de calidad de la educación en el nivel educativo de primaria para ese colegio sería la suma de los anteriores subcomponentes:
+En definitiva, el índice sintético de calidad de la educación en el nivel educativo de primaria para ese colegio sería la suma de los anteriores subcomponentes:
 
 \[\begin{eqnarray}
 ISCE&=&PROGRESO+DESEMPEÑO+EFICIENCIA+AMB.ESCOLAR\\&=& 0,03+2,37+0,9+0,74\\&=&4,04.
@@ -1383,16 +1644,16 @@ ISCE&=&PROGRESO+DESEMPEÑO+EFICIENCIA+AMB.ESCOLAR\\&=& 0,03+2,37+0,9+0,74\\&=&4,
 
 Dado que el índice varía entre cero y diez, una puntuación de 4 muestra que el colegio se encuentra en un bajo nivel de calidad educativa.
 
-Ejemplo tomado de \citet{lora2008tecnicas}.
+Ejemplo tomado de \protect\hyperlink{ref-lora2008tecnicas}{Lora} (\protect\hyperlink{ref-lora2008tecnicas}{2008}).
 
 \hypertarget{puntaje-buxe1sico-de-matruxedcula-pbm}{%
 \subsection{Puntaje Básico de Matrícula (PBM)}\label{puntaje-buxe1sico-de-matruxedcula-pbm}}
 
-En la parte inicial del capítulo explicamos en que consistía el \protect\hyperlink{pbm}{PBM}. A continuación haremos el ejercicio de calcular dicho puntaje para un aspirante de pregrado de la universidad. Para ello, recolectamos los siguientes datos.
+En la parte inicial del capítulo explicamos en qué consistía el \protect\hyperlink{pbm}{PBM}. A continuación, haremos el ejercicio de calcular dicho puntaje para un aspirante de pregrado de la Universidad. Para ello, recolectamos los siguientes datos.
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-13}*PBM de un estudiante*}
+\caption{\label{tab:unnamed-chunk-20}*PBM de un estudiante*}
 \centering
 \begin{tabular}[t]{l|l}
 \hline
@@ -1417,14 +1678,14 @@ Número de hijos dependientes del ingreso familiar & 2\\
 
 Empezaremos determinando el indicador pensión \(A_1\) teniendo en cuenta la siguiente tabla.
 
-\textbackslash{}begin\{figure\}
-
-\{\centering \includegraphics[width=1\linewidth]{ProtectoR/pension}
-
-\}
-
-\textbackslash{}caption\{Pensión. Recuperado de \url{http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298}\}\label{fig:unnamed-chunk-14}
-\textbackslash{}end\{figure\}
+\begin{figure}
+ 
+ {\centering \includegraphics[width=1\linewidth]{ProtectoR/pension} 
+ 
+ }
+ 
+ \caption{Pensión. Recuperado de http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298}\label{fig:unnamed-chunk-21}
+ \end{figure}
 
 de donde \(A_1=500\times 0,03=15\). Para el indicador estrato \(A_2\) la tabla \ref{tab:estrato} nos indica que \(A_2=30\). Siguiendo con el indicador \(A_3\) se asigna mediante la expresión
 \[ A_3=9\times ING=9\times 3,33=55\]
@@ -1436,7 +1697,7 @@ donde \(ING\) son los ingresos mensuales expresados como un múltiplo del salari
  
  }
  
- \caption{$B_1$ Carácter del colegio.}\label{fig:unnamed-chunk-15}
+ \caption{$B_1$ Carácter del colegio.}\label{fig:unnamed-chunk-22}
  \end{figure}
  \begin{figure}
  
@@ -1444,7 +1705,7 @@ donde \(ING\) son los ingresos mensuales expresados como un múltiplo del salari
  
  }
  
- \caption{$B_2$ Lugar de residencia. }\label{fig:unnamed-chunk-16}
+ \caption{$B_2$ Lugar de residencia. }\label{fig:unnamed-chunk-23}
  \end{figure}
 \begin{figure}
 
@@ -1452,7 +1713,7 @@ donde \(ING\) son los ingresos mensuales expresados como un múltiplo del salari
 
 }
 
-\caption{$B_3$ Propiedad de la vivienda familiar.}\label{fig:unnamed-chunk-17}
+\caption{$B_3$ Propiedad de la vivienda familiar.}\label{fig:unnamed-chunk-24}
 \end{figure}
 
 \begin{figure}
@@ -1461,10 +1722,10 @@ donde \(ING\) son los ingresos mensuales expresados como un múltiplo del salari
 
 }
 
-\caption{$B_4$ Número de hijos dependientes del ingreso del hogar.}\label{fig:unnamed-chunk-18}
+\caption{$B_4$ Número de hijos dependientes del ingreso del hogar.}\label{fig:unnamed-chunk-25}
 \end{figure}
 
-Imágenes tomadas de \citet{BibEntry2021Maria}.
+Imágenes tomadas de \protect\hyperlink{ref-BibEntry2021Maria}{{``{Secci{ó}n Contenido - Universidad Nacional de Colombia}''}} (\protect\hyperlink{ref-BibEntry2021Maria}{2021}).
 
 Como lo indica las tablas, se obtiene los puntajes \(B_1=0,95\), \(B_2=0,80\), \(B_3=1\) y \(B_4=1\) respectivamente. Utilizando la fórmula
 
@@ -1476,6 +1737,135 @@ PBM&=&(0,4A_1+0,3A_2+0,3A_3)\times B_1 \times B_2 \times B_3 \times B_4\\
 
 se llega a que la aspirante obtiene un puntaje de 24.
 
-  \bibliography{biblio.bib,packages.bib}
+\hypertarget{PIB}{%
+\chapter{Producto interno bruto (PIB)}\label{PIB}}
+
+Según el \protect\hyperlink{ref-BibEntry2020Jul}{{``{Banco de la Rep{ú\fi}blica }''}} (\protect\hyperlink{ref-BibEntry2020Jul}{2020}), el PIB representa el resultado final de la actividad productiva de las unidades de producción residentes. Se mide desde el punto de vista del valor agregado, de la demanda final o las utilizaciones finales de los bienes y servicios y de los ingresos primarios distribuidos por las unidades de producción residentes. En síntesis, el crecimiento del PIB refleja, la evolución económica de un país (el ritmo al que se incrementa su producción de bienes y servicios y, por tanto, su renta).
+
+Mencionaremos dos formas para calcular el PIB, las cuales son:
+
+\textbf{1. Método del gasto:} Consiste en sumar el valor a precio de mercado de todas las compras realizadas de bienes y servicios finales. Esto incluye: el consumo de hogares e instituciones sin fines de lucro (A), la inversión de las empresas y familias (B), el gasto en consumo final del sector público (C) y el valor de las exportaciones netas (valor de las exportaciones (X) menos valor de las importaciones (Y)).
+
+\[\begin{equation}
+PIB= A+B+C+(X-Y)
+\end{equation}\]
+
+\textbf{2. Método del valor añadido :} Se basa en la ventas u ofertas de los productores. Sin embargo, esto podria causar que varias veces se sume el valor de un mismo producto, dado que los productos finales de un productor son, a menudo, un consumo intermedio de otro. Por ejemplo, si sumamos el valor de las ventas de una empresa de textiles y el valor de las ventas de un almacén de ropa, el valor de las telas se contaria dos veces.
+
+Por tanto, es suma el valor de las ventas de los productos de las empresas menos el valor de las materias primas y de otros bienes intermedios utilizados en la elaboración de dichos productos: con esto se obtiene el \emph{Valor Añadido Bruto}.
+
+Los datos de valor añadido de las empresas se agrupan por sectores para dar lugar al \emph{Valor Añadido Bruto Total} que es la suma del Valor Añadido Bruto de cada sector; a lo cual se le deben agregar los impuestos y restar las subvenciones sobre los productos para obtener el producto interno bruto.
+
+PIB= Valor Añadido Bruto Total - (impuestos menos subvenciones a los productos).
+
+En Colombia, la entidad encargada de calcularlo es el Departamento Administrativo Nacional de Estadística (DANE) y la recolección de los datos se realiza a través de encuestas, investigaciones especiales o se toma informaciones administrativas disponibles en el corto plazo. Paralelamente, se manejan indicadores y algunos se clasifican de la siguiente manera:
+
+\begin{itemize}
+\item
+  \emph{Indices calculados con base en muestras representativas de un sector:} La muestra mensual manufacturera como guía del comportamiento de la industria, la encuesta de comercio al por menor y la de grandes cadenas del consumo de los hogares, la encuesta de hogares del ingreso de las familias.
+\item
+  \emph{Unidades físicas:} Kilovatios generados, alumnos matriculados, pasajeros transportados, barriles producidos, etc..
+\item
+  \emph{Variables generadas mediante cálculos especiales:} Como la producción y el valor agregado de las instituciones financieras.
+\end{itemize}
+
+Para más información puede consultar el documento de preguntas frecuentes del DANE, \href{https://www.dane.gov.co/files/faqs/faq_pib.pdf}{Producto Interno Bruto}.
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-BibEntry2020Dec}{}}%
+{``{Acerca de la OCDE - OECD}.''} 2020. \url{http://www.oecd.org/acerca}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-alkire2011counting}{}}%
+Alkire, Sabina, and James Foster. 2011. {``Counting and Multidimensional Poverty Measurement.''} \emph{Journal of Public Economics} 95 (7-8): 476--87.
+
+\leavevmode\vadjust pre{\hypertarget{ref-arroyo2006manual}{}}%
+Arroyo, Emil Hernández. 2006. \emph{Manual de Estad{ı́}stica}. Universidad Cooperativa de Colombia.
+
+\leavevmode\vadjust pre{\hypertarget{ref-babbie2020practice}{}}%
+Babbie, Earl R. 2020. \emph{The Practice of Social Research}. Cengage learning.
+
+\leavevmode\vadjust pre{\hypertarget{ref-BibEntry2020Jul}{}}%
+{``{Banco de la Rep{ú\fi}blica }.''} 2020. \emph{Banco de La Rep{\ifmmode\acute{u}\elseú\fi}blica (Banco Central de Colombia)}. \url{https://www.banrep.gov.co/es/glosario/producto-interno-bruto-pib}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-beckmann2017mathematics}{}}%
+Beckmann, Sybilla. 2017. \emph{Mathematics for Elementary Teachers with Activities}. Pearson.
+
+\leavevmode\vadjust pre{\hypertarget{ref-botello2017avances}{}}%
+Botello, Silvia. 2017. {``Avances Del Redise{ñ}o Del {ı́}Ndice de Pobreza Multidimensional de Colombia.''} \emph{Indicadores No Monetarios de Pobreza: Avances y Desaf{ı́}os Para Su Medici{ó}n. Santiago: CEPAL, 2017. LC/TS. 2017/149. P. 117-124}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-BibEntry2015Jun}{}}%
+{``{Centro Com{ú}n de Investigaci{ó}n}.''} 2015. \emph{Comisi{\ifmmode\acute{o}\elseó\fi}n Europea - European Commission}. \url{https://ec.europa.eu/info/departments/joint-research-centre_es}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-BibEntry244021Mar}{}}%
+{``Cifras Generales.''} 2021. \url{http://estadisticas.unal.edu.co/menu-principal/cifras-generales\%20\%20\%20\%20\%20\%20\%20\%20\%20/cifras-generales}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-colimon1990fundamentos}{}}%
+Colimon, Kahl-Martin. 1990. \emph{Fundamentos de Epidemiolog{ı́}a}. Ediciones D{ı́}az de Santos.
+
+\leavevmode\vadjust pre{\hypertarget{ref-DeCastroRamos2021Sep}{}}%
+DANE. 2021a. {``{Empleo y desempleo}.''} \url{https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral/empleo-y-desempleo}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-DeCastroRamos2021Sep2}{}}%
+---------. 2021b. {``{{\ifmmode\acute{I}\elseÍ\fi}ndice de Precios al Consumidor (IPC)}.''} \url{https://www.dane.gov.co/index.php/estadisticas-por-tema/precios-y-costos/indice-de-precios-al-consumidor-ipc}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-paginadane}{}}%
+---------. 2021c. {``{Pobreza multidimensional}.''} \url{https://www.dane.gov.co/index.php/estadisticas-por-tema/pobreza-y-condiciones-de-vida/pobreza-multidimensional}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-BibEntry2021Marzo}{}}%
+{``{El kilo, el medio kilo y el cuarto de kilo}.''} 2021. \url{http://rincondeunamaestra.blogspot.com/2014/02/el-kilo-el-medio-kilo-y-el-cuarto-de.html}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-fernandez2004introduccion}{}}%
+Fernández, Jesús Sánchez. 2004. \emph{Introducci{ó}n a La Estad{ı́}stica Empresarial}. Juan Carlos Mart{ı́}nez Coll.
+
+\leavevmode\vadjust pre{\hypertarget{ref-foa2015indices}{}}%
+Foa, Arjan y Van Staveren, Roberto y De Haan. 2015. {``Indices of Social Development.''} \emph{Handbook. ISS The Hague. Retrieved on} 24.
+
+\leavevmode\vadjust pre{\hypertarget{ref-franco2016estadistica}{}}%
+Franco, Alberto Isaac Pierdant y Jiménez, Jesús Rodrı́guez y Rodrı́guez. 2016. \emph{Estad{ı́}stica Para Administraci{ó}n}. Grupo Editorial Patria.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Pgn2021Sep}{}}%
+General, Procuraduria. 2021. {``{ Índice de Transparencia y Acceso a la Información Pública I.T.A. }.''} \emph{Procuraduria General de Colombia}. \url{https://www.procuraduria.gov.co/portal/IndiceITAGTICP.page}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-huircan2013guia}{}}%
+Huircán Cabrera, Katherina, Mauricio y Carmona Valdés. 2013. {``Gu{ı́}a de Aprendizaje n° 2: Razones y Proporciones. Educaci{ó}n Matem{á}tica Primer Nivel o Ciclo Educaci{ó}n Media. Educaci{ó}n Para Personas j{ó}venes y Adultas.''}
+
+\leavevmode\vadjust pre{\hypertarget{ref-BibEntry2021Mayo}{}}%
+{``{Icfes Instituto Colombiano para la Evaluaci{ó}n de la Educaci{ó}}n - Portal Icfes.''} n.d.
+
+\leavevmode\vadjust pre{\hypertarget{ref-lora2008tecnicas}{}}%
+Lora, Eduardo. 2008. {``T{é}cnicas de Medici{ó}n Econ{ó}mica.''} \emph{Metodolog{ı́}a y Aplicaciones En Colombia} 4.
+
+\leavevmode\vadjust pre{\hypertarget{ref-lorenzo2007estadistica}{}}%
+Lorenzo, Jose, Montero y Marı́a. 2007. \emph{Estad{ı́}stica Descriptiva}. Editorial Paraninfo.
+
+\leavevmode\vadjust pre{\hypertarget{ref-moreno2000principales}{}}%
+Moreno-Altamirano, Sergio y Corcho-Berdugo, Alejandra y López-Moreno. 2000. {``Principales Medidas En Epidemiolog{ı́}a.''} \emph{Salud p{ú}blica de M{é}xico} 42: 337--48.
+
+\leavevmode\vadjust pre{\hypertarget{ref-perez2010nociones}{}}%
+Pérez, Rigoberto. 2010. \emph{Nociones b{á}sicas de Estad{ı́}stica}. Rigoberto Perez.
+
+\leavevmode\vadjust pre{\hypertarget{ref-petit2020focus}{}}%
+Petit, Robert E y Wyneken, Marjorie M y Laird, and Jean D Abele-Austin Mary D y Sequeira. 2020. \emph{A Focus on Ratios and Proportions: Bringing Mathematics Education Research to the Classroom}. Routledge.
+
+\leavevmode\vadjust pre{\hypertarget{ref-de2009producto}{}}%
+Prensa, DANE Boletı́n de. 2009. {``Producto Interno Bruto.''} \emph{Primer Trimestre de}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-BibEntry2021Maria}{}}%
+{``{Secci{ó}n Contenido - Universidad Nacional de Colombia}.''} 2021. \url{http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=34298}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sen1981issues}{}}%
+Sen, Amartya. 1981. {``Issues in the Measurement of Poverty.''} In \emph{Measurement in Public Choice}, 144--66. Springer.
+
+\leavevmode\vadjust pre{\hypertarget{ref-BibEntry2019Jun}{}}%
+{``{Tasa Representativa del Mercado TRM - Peso por d{\ifmmode\elseó\fi}lar}.''} 2019. \url{https://www.banrep.gov.co/es/estadisticas/trm}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-BibEntry2019Mar}{}}%
+{``{Un kilo de arroz}.''} 2019. \emph{Sobre Todo, Matem{\a}ticas}. \url{https://matemelga.wordpress.com/2019/05/08/un-kilo-de-arroz}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ContributorstoWikimediaprojects2020Nov}{}}%
+Wikimedia. 2020. {``{Index (statistics)}.''} \url{https://en.wikipedia.org/w/index.php?title=Index_(statistics)\&oldid=989351965}.
+
+\end{CSLReferences}
 
 \end{document}
